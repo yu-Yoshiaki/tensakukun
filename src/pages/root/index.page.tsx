@@ -2,14 +2,11 @@ import type { CustomNextPage } from "next";
 import { FluidLayout } from "src/layout";
 
 const Root: CustomNextPage = () => {
-  const handleClick = () => {
-    window.alert("Hello, World!");
-  };
 
   return (
     <div>
       <h2>Root</h2>
-      <button className="p-2" onClick={handleClick}>
+      <button className="p-2" >
         Click me!
       </button>
     </div>
