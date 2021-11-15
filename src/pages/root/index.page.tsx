@@ -7,7 +7,7 @@ const Root: CustomNextPage = () => {
     <div>
       <h2>Root</h2>
       <button className="p-2" >
-        Click me!
+        Click me!　更新
       </button>
     </div>
   );
