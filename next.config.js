@@ -8,7 +8,7 @@ const nextConfig = {
     return [{ source: "/", destination: "/root" }];
   },
   i18n: { locales: ["ja"], defaultLocale: "ja" },
-  future: { strictPostcssConfiguration: true },
+  // future: { strictPostcssConfiguration: true },
   pageExtensions: ["page.tsx", "page.ts"],
   reactStrictMode: true,
   poweredByHeader: false,
