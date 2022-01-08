@@ -1,5 +1,5 @@
 import type { CustomNextPage } from "next";
-import { FluidLayout } from "src/layout";
+import { BlogLayout } from "src/layout/BlogLayout";
 
 const Root: CustomNextPage = () => {
   return (
@@ -10,6 +10,6 @@ const Root: CustomNextPage = () => {
   );
 };
 
-Root.getLayout = FluidLayout;
+Root.getLayout = BlogLayout;
 
 export default Root;
