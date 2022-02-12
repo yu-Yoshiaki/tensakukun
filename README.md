@@ -6,3 +6,6 @@
 - Prettier
 - Jest
 - Tailwind CSS
+
+## yarn upgrade 
+yarn upgrade-interactive 
