@@ -7,5 +7,6 @@
 - Jest
 - Tailwind CSS
 
-## yarn upgrade 
-yarn upgrade-interactive 
+## yarn upgrade
+
+yarn upgrade-interactive

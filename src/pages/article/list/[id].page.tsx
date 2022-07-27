@@ -1,5 +1,5 @@
 import type { CustomNextPage } from "next";
-import { BlogLayout } from "src/layout";
+import { BlogLayout } from "src/component";
 
 //導入
 const Introduction = () => {

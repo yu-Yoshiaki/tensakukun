@@ -1,6 +1,6 @@
 import { Tab } from "@headlessui/react";
 import type { CustomNextPage } from "next";
-import { BlogLayout } from "src/layout/BlogLayout";
+import { BlogLayout } from "src/component/BlogLayout";
 
 import { OneGrid } from "./OneGrid";
 import { ThreeGrid } from "./ThreeGrid";
@@ -38,7 +38,9 @@ const ArticleList: CustomNextPage = () => {
                     return classNames(
                       "w-full py-2.5 text-sm leading-5 font-medium text-blue-700 ",
                       "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60",
-                      selected ? "bg-white shadow" : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
+                      selected
+                        ? "bg-white shadow"
+                        : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
                     );
                   }}
                 >

@@ -8,8 +8,12 @@ export const OneGrid = (props: { article: Article }) => {
       {props.article.map((article) => {
         return (
           <div key={article.articleId} className="pb-10 bg-white">
-            <div className="p-6 text-2xl font-bold md:p-10 md:text-4xl">{article.title}</div>
-            <div className="py-[80px] w-full bg-gray-400 md:py-[150px]">Image</div>
+            <div className="p-6 text-2xl font-bold md:p-10 md:text-4xl">
+              {article.title}
+            </div>
+            <div className="py-[80px] w-full bg-gray-400 md:py-[150px]">
+              Image
+            </div>
             <div className="py-[50px] w-full">詳細</div>
 
             <Link href={`/article/list/${article.id}`}>

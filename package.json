@@ -6,12 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "run-p -l -c --aggregate-output lint:*",
-    "lint:eslint": "eslint --cache .",
-    "lint:prettier": "prettier --check .",
-    "fix": "run-s -l -c fix:eslint fix:prettier",
-    "fix:eslint": "yarn lint:eslint --fix",
-    "fix:prettier": "yarn lint:prettier --write",
+    "lint": "next lint",
+    "prettier": "prettier --check .",
+    "fix": "run-s -l -c fix:lint fix:prettier",
+    "fix:lint": "next lint --fix",
+    "fix:prettier": "prettier --write .",
     "unit": "jest",
     "test": "run-p -l -c --aggregate-output lint:* unit",
     "cypress": "cypress open",
@@ -21,23 +20,16 @@
     "env": "vc env pull .env.local",
     "prepare": "husky install"
   },
-  "babel": {
-    "presets": [
-      "next/babel"
-    ]
-  },
   "postcss": {
     "plugins": {
       "tailwindcss": {},
       "autoprefixer": {}
     }
   },
-  "prettier": {
-    "printWidth": 120
-  },
   "dependencies": {
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "0.4.0",
     "@tailwindcss/line-clamp": "0.3.0",
     "@tailwindcss/typography": "0.5.0",
@@ -57,7 +49,6 @@
     "@typescript-eslint/eslint-plugin": "5.8.0",
     "@typescript-eslint/parser": "5.8.0",
     "autoprefixer": "10.4.0",
-    "babel-jest": "27.4.5",
     "cypress": "9.2.0",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
@@ -79,12 +70,16 @@
     "typescript": "4.5.4"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "yarn fix:eslint",
-    "*": "yarn fix:prettier"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix .",
+      "prettier --write ."
+    ],
+    "**/*.{json,md,mdx,css,html,yml,yaml,scss}": [
+      "prettier --write ."
+    ]
   },
   "volta": {
     "node": "16.13.1",
-    "yarn": "1.22.17",
-    "npm": "8.3.0"
+    "yarn": "1.22.17"
   }
 }

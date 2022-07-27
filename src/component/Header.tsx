@@ -24,8 +24,14 @@ export const Header: VFC = () => {
 
   return (
     <header>
-      <h1 className="py-4 text-4xl font-bold text-center bg-white border-b">Title</h1>
-      <div className={`flex justify-between items-center px-3 ${isEnabled ? "bg-black text-white" : "bg-white"}`}>
+      <h1 className="py-4 text-4xl font-bold text-center bg-white border-b">
+        Title
+      </h1>
+      <div
+        className={`flex justify-between items-center px-3 ${
+          isEnabled ? "bg-black text-white" : "bg-white"
+        }`}
+      >
         <nav className="py-2 ">
           {items.map(({ href, label, icon }) => {
             return (
@@ -33,7 +39,11 @@ export const Header: VFC = () => {
                 <a
                   className={
                     "inline-block py-4 px-6 text-lg　" +
-                    `${isEnabled ? "hover:bg-white hover:text-black" : "hover:bg-black hover:text-white"}`
+                    `${
+                      isEnabled
+                        ? "hover:bg-white hover:text-black"
+                        : "hover:bg-black hover:text-white"
+                    }`
                   }
                 >
                   <div className="flex justify-between">
