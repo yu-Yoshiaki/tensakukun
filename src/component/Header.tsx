@@ -7,7 +7,6 @@ import { NavLink } from "src/component/Button";
 const items = [
   { href: "/", label: "", icon: <HomeIcon className="w-6 h-7" /> },
   { href: "/about", label: "私達について" },
-  { href: "/article/list", label: "NEWS" },
   { href: "/about", label: "ビジネス" },
   { href: "/about", label: "テック" },
   { href: "/about", label: "フード" },
