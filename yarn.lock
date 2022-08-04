@@ -629,7 +629,433 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@line/bot-sdk@^7.5.0":
+"@liff/add-to-home-screen@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/add-to-home-screen/-/add-to-home-screen-2.20.3.tgz#a9e0661293fd9bfea68496788a2ae2273d3cf3d9"
+  integrity sha512-6StM2amy1RyZ0M2qeP8CNGllxetHwZ2wNLxMdj3k8vjKXrKeWgYML66vy0ElglYM26sxbiTjAeixbbMFa+CLng==
+  dependencies:
+    "@liff/check-availability" "2.20.3"
+    "@liff/consts" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/is-sub-window" "2.20.3"
+    "@liff/native-bridge" "2.20.3"
+    "@liff/open-window" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/analytics@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/analytics/-/analytics-2.20.3.tgz#f7f154668bc1226911acf0cf982b23f1c9b4e33c"
+  integrity sha512-yasjO4SP/a8c9fngmHiaoUl0KS0qUe7o9zyh6wsgcfWHr4KyTuMJGb0zYDCM+xCrKoTjv2a9axdH6qdvibxvTA==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/get-profile" "2.20.3"
+    "@liff/get-version" "2.20.3"
+    "@liff/is-logged-in" "2.20.3"
+    "@liff/logger" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/types" "2.20.3"
+    "@liff/use" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/check-availability@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/check-availability/-/check-availability-2.20.3.tgz#0649278c0dc380307858656cb82df6e604a35f4d"
+  integrity sha512-hD7QA0lFrLkKOsHYvoukFzfomiZqrrklc+lFEFqOZtFgtXwiZkNZbrjBTO4Rg4dr2DS0mrPR+pTK5Fh5+PAmnw==
+  dependencies:
+    "@liff/get-version" "2.20.3"
+    "@liff/is-api-available" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/close-window@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/close-window/-/close-window-2.20.3.tgz#950bced8e4febc20f48ed3929e079f13a89c5e31"
+  integrity sha512-J6v+sPwqC098q3AQBiwnvoKmP1YExd1i2xsqfTEutd58qgQCC/hjoD5AjnKjE5CeUCWJh0LaAf4ida7l6D/ABw==
+  dependencies:
+    "@liff/get-line-version" "2.20.3"
+    "@liff/get-os" "2.20.3"
+    "@liff/native-bridge" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/consts@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/consts/-/consts-2.20.3.tgz#aba323023585d72ec399bd15a10a4a49d943ca5c"
+  integrity sha512-Uin/3dKI3skehdHsjqQMOzRLkLXiTi/ZfEfNPg4xiiwszA5D4DSoEqyeiUERIzMiOKBcvBVK7O5VRgs5qRWHPQ==
+
+"@liff/extensions@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/extensions/-/extensions-2.20.3.tgz#908b5cbd09938cd1ee7bce9c2b2d5c6e3c9cb199"
+  integrity sha512-MGs4+PechJtVibgqIXqRgRsnXjB6tSjKt77CFS6NZ+f9xIJcFY3zhdaemMYmMLnzeseL6e19/wdjspc41OAKZA==
+  dependencies:
+    "@liff/add-to-home-screen" "2.20.3"
+    "@liff/check-availability" "2.20.3"
+    "@liff/consts" "2.20.3"
+    "@liff/get-advertising-id" "2.20.3"
+    "@liff/get-line-version" "2.20.3"
+    "@liff/get-os" "2.20.3"
+    "@liff/logger" "2.20.3"
+    "@liff/scan-code" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/get-advertising-id@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/get-advertising-id/-/get-advertising-id-2.20.3.tgz#d77ce57be8d4d11239ae417900efbb8c5704c0e0"
+  integrity sha512-RFgLtOEfCZhKa5Y23LRnGB+Ro9DsroiL9/RwWaZNu/WWFoUWYOlFn/XUR3/Fv733QPr8L1YUQqy1+B324Zsu1g==
+  dependencies:
+    "@liff/check-availability" "2.20.3"
+    "@liff/consts" "2.20.3"
+    "@liff/native-bridge" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/get-friendship@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/get-friendship/-/get-friendship-2.20.3.tgz#08862697965baaba51db3d8ac7190ad28c5ce602"
+  integrity sha512-2zzIesg0B5ZSh7zF3qdGpDkDAxs1F+S8xgfEOAiQ9zLeOijaOyIQ1MRWnR6a2sI0kCFa6GwLXpektEgfM2PYXQ==
+  dependencies:
+    "@liff/server-api" "2.20.3"
+
+"@liff/get-language@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/get-language/-/get-language-2.20.3.tgz#40e9cfc24d770330ad9964fc9a0071ae96ee2243"
+  integrity sha512-YjD8a+1HoAtyfIW0Zfyb8LQ97Tez+nzrPr0w3HbkNVRmewCFkCrVN7pELOfC//rImk1qrynfSZlA/kaQWpHe2Q==
+
+"@liff/get-line-version@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/get-line-version/-/get-line-version-2.20.3.tgz#5af0b41b70b3a2be0844ff7b968b3c951753c2a5"
+  integrity sha512-nQii9D/hE8NVKmdP8UMHhhNRc7bhU34RkGHUcqXnxZVH9kwAIVv1KEZtISvuQsFkCmBbwNdG7U3bDIQNhGWdLQ==
+
+"@liff/get-os@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/get-os/-/get-os-2.20.3.tgz#1c409fb782cca5e07344c7d592600085839b1008"
+  integrity sha512-7f7cHT70fSRM8YG/56iF/PSSoeIhnpg8mKCfhcMrXmseU+519EEghMf2MgmtDqwBCyRNIpBTAU5w7VJVvhqYRQ==
+
+"@liff/get-profile@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/get-profile/-/get-profile-2.20.3.tgz#5a3b8751a7634e7d3e49fd966fc5aa2cb5a421d8"
+  integrity sha512-hMY/33Ju3xQYt26UpXzgkq5SQ+zyBMJcX602lLD5D215D7qNWGxsg0rbVnd7hZyx102B4vPtoPslkqzdKJ/IIg==
+  dependencies:
+    "@liff/server-api" "2.20.3"
+
+"@liff/get-version@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/get-version/-/get-version-2.20.3.tgz#f5e018419b21f2ae9f2832ada536b631c3d10333"
+  integrity sha512-//eBNVnIcP1UqMT0kSW45paww8Af0OFzb5utcbfJg9b3uMyp4oFRP9pSSI11Fyc6Sw1Vz4ysA8D/r8sKmpqp1Q==
+
+"@liff/hooks@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/hooks/-/hooks-2.20.3.tgz#8d7c4c93700e1c89e7886e05dbaa8b6ad1d0c3d6"
+  integrity sha512-HzqqI02SCML129gHKQe+i2mesN0QIhuoxOd+rWXawiNgqRS+NMn2JE1deWOwBhnCKCYYaZRBXiM1McJJTuAX6Q==
+
+"@liff/init@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/init/-/init-2.20.3.tgz#d9e3e36f70746c801466eba75dc05f8ced18b0db"
+  integrity sha512-anCJUisNpnRMocgdA3W2Bu+qsoAimb/8zF8TR2IdqSS0AI3VOBaJJpk0UVuZmwOn9lA7yVsJs2sOX4NExhF0Fg==
+  dependencies:
+    "@liff/close-window" "2.20.3"
+    "@liff/consts" "2.20.3"
+    "@liff/extensions" "2.20.3"
+    "@liff/get-line-version" "2.20.3"
+    "@liff/get-os" "2.20.3"
+    "@liff/hooks" "2.20.3"
+    "@liff/is-api-available" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/is-logged-in" "2.20.3"
+    "@liff/is-sub-window" "2.20.3"
+    "@liff/logger" "2.20.3"
+    "@liff/login" "2.20.3"
+    "@liff/logout" "2.20.3"
+    "@liff/message-bus" "2.20.3"
+    "@liff/native-bridge" "2.20.3"
+    "@liff/ready" "2.20.3"
+    "@liff/server-api" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/sub-window" "2.20.3"
+    "@liff/types" "2.20.3"
+    "@liff/use" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/is-api-available@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/is-api-available/-/is-api-available-2.20.3.tgz#a7414c73cd6b94cedaf366651caa4786d2fceb3d"
+  integrity sha512-BYP5ZH5u8cI6msXtYUUcmzWF+nUyHxZxSTjZdQ6Wjlc1BHMQWCLadYM9ClU/Ts1V1JbFAUY09TNlIEFdaHP2mg==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/get-line-version" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/is-logged-in" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/is-in-client@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/is-in-client/-/is-in-client-2.20.3.tgz#dbbf071e34971411559e0a33da7f0e792446ff81"
+  integrity sha512-JFpxj79hgmuqrVJlhTmTGpjSk6bzCXvWO720hS6cyYCPPKq57hmRaqn/iW6ELAuOtqzPniJwQ4fpzd4vGomQSw==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/is-logged-in@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/is-logged-in/-/is-logged-in-2.20.3.tgz#fbe3f229525cc9b6c8ff8f0d6258a308f62df7d9"
+  integrity sha512-qGoapm7qHdbzLPAXqFChKnEydH9wVwrIJUDBkMvD6eHZOuN/8skAb5Fqgz+/gd6RsQh2dtFs52rCok9ok4+lzw==
+  dependencies:
+    "@liff/store" "2.20.3"
+
+"@liff/is-sub-window@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/is-sub-window/-/is-sub-window-2.20.3.tgz#90fb64c8f8cf5ddb567861a420bc4fd326bfac66"
+  integrity sha512-fRATj+NcSCjlejAG5d2oox7gNLVReN4xmGoQ2PdVeV5bbhGAzeDnqN7ATrn3fSuhfUOyzTky2hg+y2qG6ahZpQ==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/use" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/liff-types@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/liff-types/-/liff-types-2.20.3.tgz#c254a8fdc1c2bd0e12fb7050a5ff18a22173e3d4"
+  integrity sha512-wlu350hNqqiUG1wUNrjd9XfecUnL0vMdSqi7tGpD/SOIhenVOychF0DBpW9o2ewOOGsWzlqowbAW7Rb3a+doyA==
+  dependencies:
+    "@liff/analytics" "2.20.3"
+    "@liff/close-window" "2.20.3"
+    "@liff/get-friendship" "2.20.3"
+    "@liff/get-language" "2.20.3"
+    "@liff/get-line-version" "2.20.3"
+    "@liff/get-os" "2.20.3"
+    "@liff/get-profile" "2.20.3"
+    "@liff/get-version" "2.20.3"
+    "@liff/init" "2.20.3"
+    "@liff/is-api-available" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/is-logged-in" "2.20.3"
+    "@liff/is-sub-window" "2.20.3"
+    "@liff/login" "2.20.3"
+    "@liff/logout" "2.20.3"
+    "@liff/native-bridge" "2.20.3"
+    "@liff/open-window" "2.20.3"
+    "@liff/permanent-link" "2.20.3"
+    "@liff/permission" "2.20.3"
+    "@liff/ready" "2.20.3"
+    "@liff/scan-code-v2" "2.20.3"
+    "@liff/send-messages" "2.20.3"
+    "@liff/share-target-picker" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/sub-window" "2.20.3"
+    "@liff/use" "2.20.3"
+
+"@liff/logger@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/logger/-/logger-2.20.3.tgz#3482a37c5725d2399fc85e29d8e2b47073afa37e"
+  integrity sha512-iP/ZYbr09NFRkUnZi6+gGgi7aslqSDciG9PVtExg9QAT8I8Ijs3+6g96HcmI4ijSwj3cEj1SceO++DN16YLvHg==
+
+"@liff/login@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/login/-/login-2.20.3.tgz#df5b12061e763dc529a1387412a6bc7069966860"
+  integrity sha512-oONdfQKhJOfVO7YosoGBfLSPN+PNzKV10GTQcNYtpNl01jTreAD/CVdq044mFNKSEwBhAwpiGbEaU0WNo1atrQ==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/get-version" "2.20.3"
+    "@liff/hooks" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/is-sub-window" "2.20.3"
+    "@liff/logger" "2.20.3"
+    "@liff/server-api" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/sub-window" "2.20.3"
+    "@liff/use" "2.20.3"
+    "@liff/util" "2.20.3"
+    tiny-sha256 "^1.0.2"
+
+"@liff/logout@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/logout/-/logout-2.20.3.tgz#bf3fdcfc6024f9b0bbdf6871b80aac7f4ae98e5e"
+  integrity sha512-whTeWhmdBhMS988XniNPryjO3LTmLrmqcvatdtLovinWxiqVGguCVFxUZZK/fYAfKnMmEUM/fo77GpJ7tTGZbA==
+  dependencies:
+    "@liff/store" "2.20.3"
+
+"@liff/message-bus@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/message-bus/-/message-bus-2.20.3.tgz#0b902f492c373b317fbd60652c5c73b0f026d582"
+  integrity sha512-Z6NUfAYiaxE4zQNsvadadKKXUGNyoIArUONZpO5qyVQsPjA0+2RQJtctfrNOB1d7slHwR+jFy8WaYN33rYfp+Q==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/native-bridge@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/native-bridge/-/native-bridge-2.20.3.tgz#278540ff65652ba33c33ddb736a8027c98cc3cc3"
+  integrity sha512-2rjYCIj2qEc9npjxMWOGI9B1YQVoeRVTn99bhuZ1jIoQ5QBXH0RwBXU4yXoaYbqbs/tYTX9t6dAOVpniK3IW1Q==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/logger" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/open-window@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/open-window/-/open-window-2.20.3.tgz#3adb9d6c7d496090b29d1202b44fac5d47b1ccc1"
+  integrity sha512-UcKFS/EouZ4VsAvR81jBqYZ4YC2XlztnEqW5DOZp2qOA4RVSBX8VYUUe1tq4vI3DgGX6AeQRGk1S57ncUaBj6A==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/get-line-version" "2.20.3"
+    "@liff/get-os" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/native-bridge" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/permanent-link@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/permanent-link/-/permanent-link-2.20.3.tgz#9f91ca13435a40552e13211175d10bb5c47c3bb2"
+  integrity sha512-NLO/U4UR7mG5KXhm3zgX3OM+VN2IXtZUc59054mXYgCLNbW/c2VdVdi8PzzPL5DNzMYM77Qh6u6whpGT+5qhkg==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/server-api" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/use" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/permission@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/permission/-/permission-2.20.3.tgz#80f53fefed0b41d1e851276ac38d966c8ea1b732"
+  integrity sha512-w1zmwt9jYGWDKQZ5Plyz9L2NQCCi+Dpv8a2z/1HOPuh5YqRu1Qq0cr4zKqOSTu9zhbHwFAptG0ut7QWTW4IGEg==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/is-api-available" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/server-api" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/sub-window" "2.20.3"
+    "@liff/use" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/ready@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/ready/-/ready-2.20.3.tgz#7697126735d9d9c2e408aac668e3596c6c0cfca2"
+  integrity sha512-fRgYEvYTD+KnKzS/Xo/OMFMho2BCm8XtsyRJznfDC4vBlcrlnFAeyHwC0SnqnU+9f6nL4VD5q0Heoi0Sr0v6Gg==
+
+"@liff/scan-code-v2@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/scan-code-v2/-/scan-code-v2-2.20.3.tgz#2a7d8bf7c03f20100a68a3469a02d46789114173"
+  integrity sha512-l5DZEqFwJ6wELDBsLcb6HDIG1dkkkl61kCSrfssHzElQkT98se9cQkvo7d+JRrKKIxRlgPWR7rCSWCniUfb+vQ==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/is-api-available" "2.20.3"
+    "@liff/sub-window" "2.20.3"
+    "@liff/use" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/scan-code@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/scan-code/-/scan-code-2.20.3.tgz#cd3089d0e6e4167fda95967bcb4c07daf7fbeadb"
+  integrity sha512-SZB9TyiSdgMYGHPl9ZHCaTiJjSUouDsaaNMNqBVvWNZbECnrUeLxqNgq4sWWqa+G9ctEYRQDntMMLaFqBw834Q==
+  dependencies:
+    "@liff/check-availability" "2.20.3"
+    "@liff/consts" "2.20.3"
+    "@liff/native-bridge" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/send-messages@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/send-messages/-/send-messages-2.20.3.tgz#d91d9f5273c7111bdf8f49e2de946866b1e7d3a7"
+  integrity sha512-wtoLpgqu4avMiA/gRDWeE3s6dKxnNW+PgLaVgle3zhwiDmGBLVhVwfF1Fyeg1qJG4h6P+VHAdEX3TY9Pa7USjg==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/get-line-version" "2.20.3"
+    "@liff/get-os" "2.20.3"
+    "@liff/server-api" "2.20.3"
+    "@liff/util" "2.20.3"
+    "@line/bot-sdk" "^7.0.0"
+
+"@liff/server-api@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/server-api/-/server-api-2.20.3.tgz#73a7182e0a2e127e48e79470ef70e6bc6ca3d92c"
+  integrity sha512-1+PXyEJkiEUFqvUtbCFGj6SCck6cTI8DMvbdLL2+PWYyJuaPWxpP7dDMvL7U48ZWDlJD8+2OCC4VgVhsnRK2OQ==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/share-target-picker@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/share-target-picker/-/share-target-picker-2.20.3.tgz#6e2a008dfdde1d7b9a50b73ca142b225d5651438"
+  integrity sha512-lcMX0ttxfQsGfIqA//P69IpSUJYMxdnRwRdEjJjAxywM9+6Ctq52kklGY/HvWwiXAnMGz7k7XU/MYg6h0r4rCw==
+  dependencies:
+    "@liff/analytics" "2.20.3"
+    "@liff/consts" "2.20.3"
+    "@liff/get-line-version" "2.20.3"
+    "@liff/get-os" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/is-logged-in" "2.20.3"
+    "@liff/is-sub-window" "2.20.3"
+    "@liff/logger" "2.20.3"
+    "@liff/send-messages" "2.20.3"
+    "@liff/server-api" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/types" "2.20.3"
+    "@liff/use" "2.20.3"
+    "@liff/util" "2.20.3"
+    "@liff/window-postmessage" "2.20.3"
+
+"@liff/store@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/store/-/store-2.20.3.tgz#871748a5714b3f6913aef67e0a8a031dc6bd9ad5"
+  integrity sha512-Dy0yNBDr8xXc8LFxKDig9Pz18dRddyTt9EhlvZPdQDIT0k1J8zQawG3rj1IU9eXcEs1/I6oP8JVGHhIqr9mUww==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/types" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/sub-window@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/sub-window/-/sub-window-2.20.3.tgz#1ad19aab6eeb0be7b90bf082571f3cff0f649ab5"
+  integrity sha512-ZJ9Niya34bDQ0D3QWlTisENU9ZTxs6alYsE2XTsVYUWpdgH9hDVt6Wdo/MQGc6yE4qoX3hvgLn7NN+Nm/eMcfw==
+  dependencies:
+    "@liff/close-window" "2.20.3"
+    "@liff/consts" "2.20.3"
+    "@liff/get-os" "2.20.3"
+    "@liff/is-api-available" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/is-sub-window" "2.20.3"
+    "@liff/logger" "2.20.3"
+    "@liff/message-bus" "2.20.3"
+    "@liff/server-api" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@liff/types@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/types/-/types-2.20.3.tgz#57aa0bc5959b160e2badaa7cffc0bf542d9a19d2"
+  integrity sha512-Am8Y37FjYfToXqNP6EHuhl3qG4xfx2KEUEMIlVkVvD4UvV3B5Y9/RzdYytDw5rtm8sycsNak+DnLBbrSX0x25g==
+
+"@liff/use@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/use/-/use-2.20.3.tgz#53dd1e6eb25cdf918d9f6a57b95fa3d6f3d27f06"
+  integrity sha512-VlO6bOpea05A14YKkEecxOy2MRBCUh0FUokC0Po5mnGkzaCz888//+KyD7QAWKa7hKUJoDbBRtyaGFg7xUmoFg==
+  dependencies:
+    "@liff/hooks" "2.20.3"
+    "@liff/logger" "2.20.3"
+
+"@liff/util@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/util/-/util-2.20.3.tgz#c24697c91bec5e8cabe4d254131ce07056612f5c"
+  integrity sha512-46+EekX2eqM5BG6WKqjiYyqgRDWPZLQxdSKfB6lI7nmsAuBLiGMDmtEiaUdyAqJo9ai1Nyid3X2VvLJ0z5ohqw==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/logger" "2.20.3"
+
+"@liff/window-postmessage@2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@liff/window-postmessage/-/window-postmessage-2.20.3.tgz#e2065c2a44b7d0644e940b915e102892107ec9fe"
+  integrity sha512-WI7k4/CeHEQ24GROSKgM2PgTUiAa9/QbVf4c54pR0/zboNvAHwytEkaoCuQXFpNbSPFdtZdcr/MlgmNohBJ4vA==
+  dependencies:
+    "@liff/consts" "2.20.3"
+    "@liff/logger" "2.20.3"
+    "@liff/util" "2.20.3"
+
+"@line/bot-sdk@^7.0.0", "@line/bot-sdk@^7.5.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@line/bot-sdk/-/bot-sdk-7.5.0.tgz#db280e7733bcf990deb893646ba12d4d76b67c85"
   integrity sha512-1PQW/tlg13olH93Ue+X4LwD4JvTK7JR5k59z2xM/rNNKWINbCigBgvwB0lwqnpQmehN7EvxolkN2aEPoSQ+JGw==
@@ -640,6 +1066,52 @@
     body-parser "^1.20.0"
     file-type "^15.0.0"
     form-data "^3.0.0"
+
+"@line/liff-mock@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@line/liff-mock/-/liff-mock-1.0.2.tgz#c2cd88941bea28fc055906189d67d504c8e66425"
+  integrity sha512-TWAexoHcsnIizatnSqNz5ToNb1XOh/KRzs8e4bp7d2kYQGjuRRBpyqdYCv4A/9aM9j1P45Heuams9Tyfh1G8sQ==
+
+"@line/liff@^2.20.3":
+  version "2.20.3"
+  resolved "https://registry.yarnpkg.com/@line/liff/-/liff-2.20.3.tgz#be120daf9b324422bdf09a6a08fbfe70b9d4aa88"
+  integrity sha512-Y8n6yO4MRCvp9c1uZxAOB1QX8U71RjkXF6SFG7vXKotX3lB0CsRueuokU3ugcomK9xY37/5F4Tyvg4JuUrectA==
+  dependencies:
+    "@liff/analytics" "2.20.3"
+    "@liff/close-window" "2.20.3"
+    "@liff/consts" "2.20.3"
+    "@liff/extensions" "2.20.3"
+    "@liff/get-friendship" "2.20.3"
+    "@liff/get-language" "2.20.3"
+    "@liff/get-line-version" "2.20.3"
+    "@liff/get-os" "2.20.3"
+    "@liff/get-profile" "2.20.3"
+    "@liff/get-version" "2.20.3"
+    "@liff/hooks" "2.20.3"
+    "@liff/init" "2.20.3"
+    "@liff/is-api-available" "2.20.3"
+    "@liff/is-in-client" "2.20.3"
+    "@liff/is-logged-in" "2.20.3"
+    "@liff/is-sub-window" "2.20.3"
+    "@liff/liff-types" "2.20.3"
+    "@liff/login" "2.20.3"
+    "@liff/logout" "2.20.3"
+    "@liff/native-bridge" "2.20.3"
+    "@liff/open-window" "2.20.3"
+    "@liff/permanent-link" "2.20.3"
+    "@liff/permission" "2.20.3"
+    "@liff/ready" "2.20.3"
+    "@liff/scan-code-v2" "2.20.3"
+    "@liff/send-messages" "2.20.3"
+    "@liff/server-api" "2.20.3"
+    "@liff/share-target-picker" "2.20.3"
+    "@liff/store" "2.20.3"
+    "@liff/sub-window" "2.20.3"
+    "@liff/use" "2.20.3"
+    "@liff/util" "2.20.3"
+    promise-polyfill "^8.1.3"
+    tslib "^2.3.0"
+    whatwg-fetch "^3.0.0"
 
 "@napi-rs/triples@1.0.3":
   version "1.0.3"
@@ -5442,6 +5914,11 @@ progress@^2.0.0:
   resolved "https://registry.npmjs.org/progress/-/progress-2.0.3.tgz"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
+promise-polyfill@^8.1.3:
+  version "8.2.3"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.2.3.tgz#2edc7e4b81aff781c88a0d577e5fe9da822107c6"
+  integrity sha512-Og0+jCRQetV84U8wVjMNccfGCnMQ9mGs9Hv78QFe+pSDD3gWTpz0y+1QCuxy5d/vBFuZ3iwP2eycAkvqIMPmWg==
+
 prompts@^2.0.1:
   version "2.4.2"
   resolved "https://registry.npmjs.org/prompts/-/prompts-2.4.2.tgz"
@@ -6454,6 +6931,11 @@ timers-browserify@2.0.12:
   dependencies:
     setimmediate "^1.0.4"
 
+tiny-sha256@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/tiny-sha256/-/tiny-sha256-1.0.2.tgz#3b20a75f77097dcec1af513f5189c26ec2f54992"
+  integrity sha512-IdsPtu8eJ0SwuCWUFm2euFH3jJvtpGQC0VpZNZlqxRvQ2zGvSjbXDO+4T8Rm5ETsmCQHHvKUGds69bJYrlb3Tg==
+
 tmp@^0.2.1, tmp@~0.2.1:
   version "0.2.1"
   resolved "https://registry.npmjs.org/tmp/-/tmp-0.2.1.tgz"
@@ -6541,6 +7023,11 @@ tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
+
+tslib@^2.3.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
+  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
 tslib@~2.1.0:
   version "2.1.0"
@@ -6796,6 +7283,11 @@ whatwg-encoding@^1.0.5:
   integrity sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw==
   dependencies:
     iconv-lite "0.4.24"
+
+whatwg-fetch@^3.0.0:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
+  integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
 
 whatwg-mimetype@^2.3.0:
   version "2.3.0"
