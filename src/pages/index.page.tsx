@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import type { CustomNextPage } from "next";
 import { useState } from "react";
-import { BlogLayout } from "src/component/BlogLayout";
+import { BlogLayout } from "src/component";
 
 const Root: CustomNextPage = () => {
   const [displayName, setDisplayName] = useState<string>();
