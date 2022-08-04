@@ -6,7 +6,7 @@ import { BlogLayout } from "src/component";
 const Root: CustomNextPage = () => {
   const [displayName, setDisplayName] = useState<string>();
 
-  const handleQrCamera = async () => {
+  const handleFetchProfile = async () => {
     try {
       const profile = await liff.getProfile();
       setDisplayName(profile.displayName);
@@ -15,10 +15,27 @@ const Root: CustomNextPage = () => {
     }
   };
 
+  const handleQrCamera = async () => {
+    try {
+      const scan = await liff.scanCodeV2();
+      console.log(scan);
+    } catch (err: any) {
+      console.log(err.message, "===");
+    }
+  };
+
   return (
     <div>
       <h2>Root</h2>
-      <button onClick={handleQrCamera}>Click</button>
+      <button
+        onClick={handleFetchProfile}
+        className="p-4 border border-blue-400"
+      >
+        FetchProfile
+      </button>
+      <button onClick={handleQrCamera} className="p-4 border border-blue-400">
+        QR
+      </button>
       <p>{displayName}</p>
     </div>
   );
