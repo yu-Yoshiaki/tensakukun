@@ -1,4 +1,4 @@
-# Next.js starter template.
+# pocket-online
 
 - Next.js
 - TypeScript
@@ -6,7 +6,4 @@
 - Prettier
 - Jest
 - Tailwind CSS
-
-## yarn upgrade
-
-yarn upgrade-interactive
+- LIFF
