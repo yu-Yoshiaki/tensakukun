@@ -11,7 +11,7 @@ const CreateCheckout: CustomNextPage = () => {
       `/api/createCheckoutSession?userId=${userId}&priceId=${priceId}`
     );
     const { url } = await res.json();
-    return url;
+    return url as string;
   };
 
   useEffect(() => {
