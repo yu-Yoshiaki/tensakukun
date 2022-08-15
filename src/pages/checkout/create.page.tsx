@@ -19,8 +19,8 @@ const CreateCheckout: CustomNextPage = () => {
       .then((url) => {
         window.location.href = url;
       })
-      .catch(() => {
-        alert("エラー");
+      .catch((err: any) => {
+        alert(err.message);
       });
   });
 
