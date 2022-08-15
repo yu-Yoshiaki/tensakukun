@@ -27,12 +27,13 @@ const createCheckoutSession = async (
         },
         mode: "subscription",
         payment_method_types: ["card"],
-        success_url: process.env.LINE_FRIEND_URL as string,
-        cancel_url: process.env.LINE_FRIEND_URL as string,
+        success_url:
+          (process.env.LINE_FRIEND_URL as string) || "http://localhost:3001",
+        cancel_url:
+          (process.env.LINE_FRIEND_URL as string) || "http://localhost:3001",
       });
 
       res.status(200).json({ url });
-      // res.redirect(303, url as string);
     } catch (err: any) {
       res.status(err.statusCode || 500).json(err.message);
     }

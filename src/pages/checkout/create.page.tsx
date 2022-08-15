@@ -7,21 +7,17 @@ const CreateCheckout: CustomNextPage = () => {
   const { userId, priceId } = router.query;
 
   const fetchCheckoutSessionUrl = async () => {
-    const res = await fetch(
-      `/api/createCheckoutSession?userId=${userId}&priceId=${priceId}`
-    );
+    const endpoint = `/api/createCheckoutSession/?userId=${userId}&priceId=${priceId}`;
+    const res = await fetch(endpoint);
     const { url } = await res.json();
+
     return url as string;
   };
 
   useEffect(() => {
-    fetchCheckoutSessionUrl()
-      .then((url) => {
-        window.location.href = url;
-      })
-      .catch((err: any) => {
-        alert(err.message);
-      });
+    fetchCheckoutSessionUrl().then((url) => {
+      window.location.href = url;
+    });
   });
 
   return <div>画面遷移しています...</div>;
