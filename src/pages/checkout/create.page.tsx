@@ -8,7 +8,7 @@ const CreateCheckout: CustomNextPage = () => {
 
   const fetchCheckoutSessionUrl = async () => {
     const res = await fetch(
-      `/api/createCheckoutSession.page?userId=${userId}&priceId=${priceId}`
+      `/api/createCheckoutSession?userId=${userId}&priceId=${priceId}`
     );
     const { url } = await res.json();
     return url;
@@ -24,7 +24,7 @@ const CreateCheckout: CustomNextPage = () => {
       });
   });
 
-  return <div>Loading...</div>;
+  return <div>画面遷移しています...</div>;
 };
 
 export default CreateCheckout;

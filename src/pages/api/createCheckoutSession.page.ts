@@ -6,7 +6,8 @@ const createCheckoutSession = async (
   req: NextApiRequest,
   res: NextApiResponse
 ) => {
-  const { userId, priceid } = req.query;
+  const { userId, priceId } = req.query;
+
   if (req.method === "GET") {
     try {
       const { data: customers } = await stripe.customers.search({
@@ -17,7 +18,7 @@ const createCheckoutSession = async (
         customer: customers[0].id,
         line_items: [
           {
-            price: priceid,
+            price: priceId,
             quantity: 1,
           },
         ],
@@ -26,8 +27,10 @@ const createCheckoutSession = async (
         },
         mode: "subscription",
         payment_method_types: ["card"],
-        success_url: process.env.LINE_FRIEND_URL as string,
-        cancel_url: process.env.LINE_FRIEND_URL as string,
+        success_url:
+          (process.env.LINE_FRIEND_URL as string) || "http://localhost:3001",
+        cancel_url:
+          (process.env.LINE_FRIEND_URL as string) || "http://localhost:3001",
       });
 
       res.status(200).json({ url });
