@@ -20,7 +20,11 @@ const CreateCheckout: CustomNextPage = () => {
     });
   });
 
-  return <div>画面遷移しています...</div>;
+  return (
+    <div className="flex justify-center items-center w-full h-screen bg-gray-100">
+      <p className="text-white animate-spin">▷</p>
+    </div>
+  );
 };
 
 export default CreateCheckout;
