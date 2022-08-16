@@ -2,12 +2,12 @@ import type { CustomNextPage } from "next";
 
 const CompleteCheckout: CustomNextPage = () => {
   const handleBackTalk = async () => {
-    // await liff.sendMessages([
-    //   {
-    //     type: "text",
-    //     text: "ご購入ありがとうございます。",
-    //   },
-    // ]);
+    await liff.sendMessages([
+      {
+        type: "text",
+        text: "ご購入ありがとうございます。",
+      },
+    ]);
     window.location.href = process.env.NEXT_PUBLIC_LINE_FRIEND_URL as string;
   };
   return (
