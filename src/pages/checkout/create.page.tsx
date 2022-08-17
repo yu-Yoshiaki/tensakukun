@@ -22,7 +22,7 @@ const CreateCheckout: CustomNextPage = () => {
 
   return (
     <div className="flex justify-center items-center w-full h-screen bg-gray-100">
-      <p className="text-white animate-spin">▷</p>
+      <p className="text-white animate-spin">maru</p>
     </div>
   );
 };

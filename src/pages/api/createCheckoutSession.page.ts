@@ -28,8 +28,7 @@ const createCheckoutSession = async (
         mode: "subscription",
         payment_method_types: ["card"],
         success_url: "http://pocket-online.vercel.app/checkout/completed",
-        cancel_url:
-          (process.env.LINE_FRIEND_URL as string) || "http://localhost:3001",
+        cancel_url: process.env.NEXT_PUBLIC_LINE_FRIEND_URL as string,
       });
 
       res.status(200).json({ url });
