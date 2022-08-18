@@ -26,7 +26,7 @@ const createCheckoutSession = async (
           allowed_countries: ["JP"],
         },
         mode: "subscription",
-        payment_method_types: ["card"],
+        payment_method_types: ["card", "konbini"],
         success_url: "http://pocket-online.vercel.app/checkout/completed",
         cancel_url: process.env.NEXT_PUBLIC_LINE_FRIEND_URL as string,
       });
