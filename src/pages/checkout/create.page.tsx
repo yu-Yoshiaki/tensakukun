@@ -15,14 +15,18 @@ const CreateCheckout: CustomNextPage = () => {
   };
 
   useEffect(() => {
-    fetchCheckoutSessionUrl().then((url) => {
-      window.location.href = url;
-    });
+    fetchCheckoutSessionUrl()
+      .then((url) => {
+        window.location.href = url;
+      })
+      .catch((err: any) => {
+        alert(err.message);
+      });
   });
 
   return (
-    <div className="flex justify-center items-center w-full h-screen bg-gray-100">
-      <p className="text-white animate-spin">maru</p>
+    <div className="flex justify-center items-center w-full h-screen bg-gray-300">
+      <p className="text-white animate-spin">○</p>
     </div>
   );
 };
