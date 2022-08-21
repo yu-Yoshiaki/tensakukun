@@ -1,6 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import type { Stripe } from "stripe";
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY as string);
+const stripe: Stripe = require("stripe")(
+  process.env.STRIPE_SECRET_KEY as string
+);
 
 const createCheckoutSession = async (
   req: NextApiRequest,
@@ -18,7 +21,7 @@ const createCheckoutSession = async (
         customer: customers[0].id,
         line_items: [
           {
-            price: priceId,
+            price: priceId as string,
             quantity: 1,
           },
         ],
