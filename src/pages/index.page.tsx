@@ -1,15 +1,12 @@
+/* eslint-disable no-console */
 import type { CustomNextPage } from "next";
-import { BlogLayout } from "src/component/BlogLayout";
 
 const Root: CustomNextPage = () => {
   return (
-    <div>
-      <h2>Root</h2>
-      <button className="p-2">Click me!　更新</button>
+    <div className="flex justify-center items-center w-full h-screen">
+      画面遷移します。
     </div>
   );
 };
-
-Root.getLayout = BlogLayout;
 
 export default Root;
