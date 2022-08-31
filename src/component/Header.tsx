@@ -1,8 +1,6 @@
 import { NavLink } from "src/component/Button";
 
-const items = [
-  { href: "/", label: "HOME" },
-];
+const items = [{ href: "/", label: "HOME" }];
 
 /**
  * @package
