@@ -1,4 +1,4 @@
-import { CustomNextPage } from "next";
+import type { CustomNextPage } from "next";
 import { SignupForm } from "src/component/SignupForm";
 
 const createUser: CustomNextPage = () => {
