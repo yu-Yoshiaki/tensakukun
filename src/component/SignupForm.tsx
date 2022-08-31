@@ -26,7 +26,7 @@ export const SignupForm = () => {
       if (error) return alert(error.message);
     }
 
-    return alert(data);
+    return router.push("/success");
   };
 
   return (
