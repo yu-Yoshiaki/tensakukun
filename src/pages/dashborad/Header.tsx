@@ -1,6 +1,6 @@
 export const Header = () => {
   return (
-    <header className="flex justify-between items-center px-3 rounded-xl bg-green-400">
+    <header className="flex justify-between items-center px-3 bg-green-400 rounded-xl">
       <h1 className="flex items-center px-5 h-[80px] text-2xl font-bold">
         CHU-HOTEL-ONLINE
       </h1>
