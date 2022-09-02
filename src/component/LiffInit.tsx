@@ -14,13 +14,13 @@ const liffId = process.env.NEXT_PUBLIC_LIFF_ID as string;
 export const Authenticated = () => {
   const liffInit = async () => {
     try {
-      if (process.env.NODE_ENV === "development") {
-        liff.use(new LiffMockPlugin());
-        await liff.init({ liffId, mock: true });
-        liff.login();
-      } else {
-        await liff.init({ liffId });
-      }
+      // if (process.env.NODE_ENV === "development") {
+      //   liff.use(new LiffMockPlugin());
+      //   await liff.init({ liffId, mock: true });
+      //   liff.login();
+      // } else {
+      await liff.init({ liffId });
+      // }
     } catch (err: any) {
       alert(err.message);
     }

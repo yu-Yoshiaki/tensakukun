@@ -1,0 +1,12 @@
+export const Header = () => {
+  return (
+    <header className="flex justify-between items-center px-3 rounded-xl bg-green-400">
+      <h1 className="flex items-center px-5 h-[80px] text-2xl font-bold">
+        CHU-HOTEL-ONLINE
+      </h1>
+      <button className="px-5 h-[60px] bg-yellow-200 rounded-xl">
+        ログイン
+      </button>
+    </header>
+  );
+};

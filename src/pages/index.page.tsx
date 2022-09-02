@@ -1,11 +1,21 @@
 /* eslint-disable no-console */
 import type { CustomNextPage } from "next";
+import Link from "next/link";
 
+const menu = [{ title: "SIGNUP", path: "/signup" }];
 const Root: CustomNextPage = () => {
   return (
-    <div className="flex justify-center items-center w-full h-screen">
-      画面遷移します。
-    </div>
+    <ul className="flex justify-around items-center w-full h-screen">
+      {menu.map(({ title, path }) => {
+        return (
+          <li key={title}>
+            <Link href={path}>
+              <a className="p-4 bg-red-50">{title}</a>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

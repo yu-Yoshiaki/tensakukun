@@ -27,6 +27,7 @@
     }
   },
   "dependencies": {
+    "@line/bot-sdk": "^7.5.0",
     "@line/liff": "^2.21.0",
     "@line/liff-mock": "^1.0.2",
     "@supabase/supabase-js": "^1.35.6",
