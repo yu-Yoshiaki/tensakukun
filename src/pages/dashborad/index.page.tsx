@@ -9,12 +9,12 @@ import { Header } from "./Header";
 
 const Index = (props: { reserve: definitions["reserve"][] }) => {
   return (
-    <div className="p-5 space-y-5 bg-gray-50">
+    <div className="space-y-5 bg-gray-50 p-5">
       <Head>
         <title>CHU-HOTEL-ONLINE</title>
       </Head>
       <Header />
-      <main className="grid grid-cols-4 gap-x-4 min-h-[80vh]">
+      <main className="min-h-[80vh] grid-cols-4 gap-x-4 space-y-4 lg:grid lg:space-y-0">
         <Sidemenu />
         <Reservation reserve={props.reserve} />
       </main>

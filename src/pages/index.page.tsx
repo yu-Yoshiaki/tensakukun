@@ -5,12 +5,12 @@ import Link from "next/link";
 const menu = [{ title: "SIGNUP", path: "/signup" }];
 const Root: CustomNextPage = () => {
   return (
-    <ul className="flex justify-around items-center w-full h-screen">
+    <ul className="flex h-screen w-full items-center justify-around">
       {menu.map(({ title, path }) => {
         return (
           <li key={title}>
             <Link href={path}>
-              <a className="p-4 bg-red-50">{title}</a>
+              <a className="bg-red-50 p-4">{title}</a>
             </Link>
           </li>
         );

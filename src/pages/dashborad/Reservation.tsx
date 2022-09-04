@@ -1,38 +1,40 @@
 import dayjs from "dayjs";
-import { PushMessageForm } from "src/pages/dashborad/PushMessaegeForm";
+import { SendMessageButton } from "src/pages/dashborad/PushMessaegeForm";
 import type { definitions } from "src/type/supabase";
 
 export const Reservation = (props: { reserve: definitions["reserve"][] }) => {
   return (
-    <div className="col-span-3 py-5 px-3 w-full bg-white rounded-xl">
-      <table className="table-auto ">
-        <thead>
-          <tr className="border-b">
-            <th className="py-2 px-4 border-r">予約番号</th>
-            <th className="py-2 px-4 border-r">予約日</th>
-            <th className="py-2 px-4">人数</th>
-            <th className="py-2 px-4 text-blue-600">メッセージ</th>
-          </tr>
-        </thead>
-        <tbody>
-          {props.reserve.length !== 0 &&
-            props.reserve.map((data) => {
-              const date = dayjs(data.date);
-              return (
-                <tr className="text-center border-b" key={data.reserveid}>
-                  <td className="py-2 px-4 border-r">{data.reserveid}</td>
-                  <td className="py-2 px-4 border-r">
-                    {date.format("M月D日")}
-                  </td>
-                  <td className="py-2 px-4">{data.member} 名</td>
-                  <td>
-                    <PushMessageForm userId={data.lineid} />
-                  </td>
-                </tr>
-              );
-            })}
-        </tbody>
-      </table>
+    <div className="col-span-3 space-y-4 whitespace-nowrap text-gray-800">
+      {props.reserve.length !== 0 &&
+        props.reserve.map((data) => {
+          const date = dayjs(data.date);
+          return (
+            <div
+              className="relative flex h-[140px] items-end rounded-xl bg-sky-200 shadow-md"
+              key={data.reserveid}
+            >
+              <div className="h-[80%] w-full rounded-b-xl bg-white py-3 px-4">
+                <div className="flex items-center gap-2">
+                  <p className="w-20 text-sm text-gray-600">予約番号</p>
+                  <p className="overflow-x-auto pr-2 text-lg font-semibold">
+                    {data.reserveid}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <p className="w-16 text-sm text-gray-600">予約日</p>
+                  <p className="text-lg">{date.format("M月D日")}</p>
+                </div>
+                <div className="flex justify-between">
+                  <div className="flex items-center gap-2">
+                    <p className="w-16 text-sm text-gray-600">予約人数</p>
+                    <p className="text-lg">{data.member} 名</p>
+                  </div>
+                  <SendMessageButton lineId={data.lineid} />
+                </div>
+              </div>
+            </div>
+          );
+        })}
     </div>
   );
 };

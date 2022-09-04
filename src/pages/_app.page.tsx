@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-import "tailwindcss/tailwind.css";
+import "../style/index.css";
 
 import type { CustomAppProps } from "next/app";
 import Head from "next/head";
