@@ -8,7 +8,7 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
-    domains: [],
+    domains: ["sprofile.line-scdn.net"],
   },
 };
 

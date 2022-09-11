@@ -15,7 +15,7 @@ const App = (props: CustomAppProps) => {
   return (
     <>
       <Head>
-        <title>ポケットonLINE</title>
+        <title>CHU-HOTEL-ONLINE</title>
       </Head>
       <Authenticated />
       {getLayout(<props.Component {...props.pageProps} />)}

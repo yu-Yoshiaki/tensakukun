@@ -6,16 +6,20 @@ export const SignupForm = () => {
   const [username, setUsername] = useState<string>();
   const [email, setEmail] = useState<string>();
   const [phone, setPhone] = useState<string>();
-  const { createCustomer } = useCustomer();
+  const { updateCustomer } = useCustomer();
   const router = useRouter();
 
   const handleClick = async () => {
     const lineid = (await liff.getProfile()).userId;
 
+    alert("lineid");
+
+    alert(lineid);
+
     if (username === undefined || phone === undefined || email === undefined)
       return;
 
-    const { data, error } = await createCustomer({
+    const { error } = await updateCustomer({
       username,
       email,
       phone,
