@@ -1,10 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
-const line = require("@line/bot-sdk");
-
-const client = new line.Client({
-  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN as string,
-});
+import { client } from "src/lib/client";
 
 const sendPushMessage = async (req: NextApiRequest, res: NextApiResponse) => {
   const { userId, message } = req.body;

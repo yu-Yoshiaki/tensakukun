@@ -41,7 +41,6 @@ export const useCustomer = () => {
         username,
         email,
         phone,
-        lineid,
         updated_at: now.format(),
       })
       .eq("lineid", lineid);

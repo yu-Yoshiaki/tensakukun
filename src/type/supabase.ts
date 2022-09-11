@@ -12,6 +12,135 @@ export interface paths {
       };
     };
   };
+  "/talks": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.talks.id"];
+          inserted_at?: parameters["rowFilter.talks.inserted_at"];
+          updated_at?: parameters["rowFilter.talks.updated_at"];
+          istype?: parameters["rowFilter.talks.istype"];
+          messagetype?: parameters["rowFilter.talks.messagetype"];
+          messageid?: parameters["rowFilter.talks.messageid"];
+          messagetext?: parameters["rowFilter.talks.messagetext"];
+          webhookeventid?: parameters["rowFilter.talks.webhookeventid"];
+          isredelivery?: parameters["rowFilter.talks.isredelivery"];
+          istimestamp?: parameters["rowFilter.talks.istimestamp"];
+          replytoken?: parameters["rowFilter.talks.replytoken"];
+          ismode?: parameters["rowFilter.talks.ismode"];
+          /** このメッセージに対して、返信したかどうか */
+          isReply?: parameters["rowFilter.talks.isReply"];
+          userId?: parameters["rowFilter.talks.userId"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["talks"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** talks */
+          talks?: definitions["talks"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.talks.id"];
+          inserted_at?: parameters["rowFilter.talks.inserted_at"];
+          updated_at?: parameters["rowFilter.talks.updated_at"];
+          istype?: parameters["rowFilter.talks.istype"];
+          messagetype?: parameters["rowFilter.talks.messagetype"];
+          messageid?: parameters["rowFilter.talks.messageid"];
+          messagetext?: parameters["rowFilter.talks.messagetext"];
+          webhookeventid?: parameters["rowFilter.talks.webhookeventid"];
+          isredelivery?: parameters["rowFilter.talks.isredelivery"];
+          istimestamp?: parameters["rowFilter.talks.istimestamp"];
+          replytoken?: parameters["rowFilter.talks.replytoken"];
+          ismode?: parameters["rowFilter.talks.ismode"];
+          /** このメッセージに対して、返信したかどうか */
+          isReply?: parameters["rowFilter.talks.isReply"];
+          userId?: parameters["rowFilter.talks.userId"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.talks.id"];
+          inserted_at?: parameters["rowFilter.talks.inserted_at"];
+          updated_at?: parameters["rowFilter.talks.updated_at"];
+          istype?: parameters["rowFilter.talks.istype"];
+          messagetype?: parameters["rowFilter.talks.messagetype"];
+          messageid?: parameters["rowFilter.talks.messageid"];
+          messagetext?: parameters["rowFilter.talks.messagetext"];
+          webhookeventid?: parameters["rowFilter.talks.webhookeventid"];
+          isredelivery?: parameters["rowFilter.talks.isredelivery"];
+          istimestamp?: parameters["rowFilter.talks.istimestamp"];
+          replytoken?: parameters["rowFilter.talks.replytoken"];
+          ismode?: parameters["rowFilter.talks.ismode"];
+          /** このメッセージに対して、返信したかどうか */
+          isReply?: parameters["rowFilter.talks.isReply"];
+          userId?: parameters["rowFilter.talks.userId"];
+        };
+        body: {
+          /** talks */
+          talks?: definitions["talks"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/reserve": {
     get: {
       parameters: {
@@ -114,13 +243,16 @@ export interface paths {
       };
     };
   };
-  "/users": {
+  "/pushmessages": {
     get: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.users.id"];
-          full_name?: parameters["rowFilter.users.full_name"];
-          line_id?: parameters["rowFilter.users.line_id"];
+          id?: parameters["rowFilter.pushmessages.id"];
+          inserted_at?: parameters["rowFilter.pushmessages.inserted_at"];
+          updated_at?: parameters["rowFilter.pushmessages.updated_at"];
+          message?: parameters["rowFilter.pushmessages.message"];
+          touserid?: parameters["rowFilter.pushmessages.touserid"];
+          istype?: parameters["rowFilter.pushmessages.istype"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -142,7 +274,7 @@ export interface paths {
       responses: {
         /** OK */
         200: {
-          schema: definitions["users"][];
+          schema: definitions["pushmessages"][];
         };
         /** Partial Content */
         206: unknown;
@@ -151,8 +283,8 @@ export interface paths {
     post: {
       parameters: {
         body: {
-          /** users */
-          users?: definitions["users"];
+          /** pushmessages */
+          pushmessages?: definitions["pushmessages"];
         };
         query: {
           /** Filtering Columns */
@@ -171,9 +303,12 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.users.id"];
-          full_name?: parameters["rowFilter.users.full_name"];
-          line_id?: parameters["rowFilter.users.line_id"];
+          id?: parameters["rowFilter.pushmessages.id"];
+          inserted_at?: parameters["rowFilter.pushmessages.inserted_at"];
+          updated_at?: parameters["rowFilter.pushmessages.updated_at"];
+          message?: parameters["rowFilter.pushmessages.message"];
+          touserid?: parameters["rowFilter.pushmessages.touserid"];
+          istype?: parameters["rowFilter.pushmessages.istype"];
         };
         header: {
           /** Preference */
@@ -188,13 +323,118 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.users.id"];
-          full_name?: parameters["rowFilter.users.full_name"];
-          line_id?: parameters["rowFilter.users.line_id"];
+          id?: parameters["rowFilter.pushmessages.id"];
+          inserted_at?: parameters["rowFilter.pushmessages.inserted_at"];
+          updated_at?: parameters["rowFilter.pushmessages.updated_at"];
+          message?: parameters["rowFilter.pushmessages.message"];
+          touserid?: parameters["rowFilter.pushmessages.touserid"];
+          istype?: parameters["rowFilter.pushmessages.istype"];
         };
         body: {
-          /** users */
-          users?: definitions["users"];
+          /** pushmessages */
+          pushmessages?: definitions["pushmessages"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/automessagekeyword": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.automessagekeyword.id"];
+          exactmatchornot?: parameters["rowFilter.automessagekeyword.exactmatchornot"];
+          isaction?: parameters["rowFilter.automessagekeyword.isaction"];
+          inserted_at?: parameters["rowFilter.automessagekeyword.inserted_at"];
+          updated_at?: parameters["rowFilter.automessagekeyword.updated_at"];
+          keyword?: parameters["rowFilter.automessagekeyword.keyword"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["automessagekeyword"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** automessagekeyword */
+          automessagekeyword?: definitions["automessagekeyword"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.automessagekeyword.id"];
+          exactmatchornot?: parameters["rowFilter.automessagekeyword.exactmatchornot"];
+          isaction?: parameters["rowFilter.automessagekeyword.isaction"];
+          inserted_at?: parameters["rowFilter.automessagekeyword.inserted_at"];
+          updated_at?: parameters["rowFilter.automessagekeyword.updated_at"];
+          keyword?: parameters["rowFilter.automessagekeyword.keyword"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.automessagekeyword.id"];
+          exactmatchornot?: parameters["rowFilter.automessagekeyword.exactmatchornot"];
+          isaction?: parameters["rowFilter.automessagekeyword.isaction"];
+          inserted_at?: parameters["rowFilter.automessagekeyword.inserted_at"];
+          updated_at?: parameters["rowFilter.automessagekeyword.updated_at"];
+          keyword?: parameters["rowFilter.automessagekeyword.keyword"];
+        };
+        body: {
+          /** automessagekeyword */
+          automessagekeyword?: definitions["automessagekeyword"];
         };
         header: {
           /** Preference */
@@ -218,6 +458,10 @@ export interface paths {
           inserted_at?: parameters["rowFilter.customers.inserted_at"];
           updated_at?: parameters["rowFilter.customers.updated_at"];
           username?: parameters["rowFilter.customers.username"];
+          tag?: parameters["rowFilter.customers.tag"];
+          displayname?: parameters["rowFilter.customers.displayname"];
+          pictureurl?: parameters["rowFilter.customers.pictureurl"];
+          status?: parameters["rowFilter.customers.status"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -275,6 +519,10 @@ export interface paths {
           inserted_at?: parameters["rowFilter.customers.inserted_at"];
           updated_at?: parameters["rowFilter.customers.updated_at"];
           username?: parameters["rowFilter.customers.username"];
+          tag?: parameters["rowFilter.customers.tag"];
+          displayname?: parameters["rowFilter.customers.displayname"];
+          pictureurl?: parameters["rowFilter.customers.pictureurl"];
+          status?: parameters["rowFilter.customers.status"];
         };
         header: {
           /** Preference */
@@ -296,6 +544,10 @@ export interface paths {
           inserted_at?: parameters["rowFilter.customers.inserted_at"];
           updated_at?: parameters["rowFilter.customers.updated_at"];
           username?: parameters["rowFilter.customers.username"];
+          tag?: parameters["rowFilter.customers.tag"];
+          displayname?: parameters["rowFilter.customers.displayname"];
+          pictureurl?: parameters["rowFilter.customers.pictureurl"];
+          status?: parameters["rowFilter.customers.status"];
         };
         body: {
           /** customers */
@@ -315,6 +567,55 @@ export interface paths {
 }
 
 export interface definitions {
+  talks: {
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
+     */
+    id: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    inserted_at: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    updated_at: string;
+    /** Format: character varying */
+    istype?: string;
+    /** Format: character varying */
+    messagetype?: string;
+    /** Format: character varying */
+    messageid?: string;
+    /** Format: character varying */
+    messagetext?: string;
+    /** Format: character varying */
+    webhookeventid?: string;
+    /** Format: boolean */
+    isredelivery?: boolean;
+    /** Format: character varying */
+    istimestamp?: string;
+    /** Format: character varying */
+    replytoken?: string;
+    /** Format: character varying */
+    ismode?: string;
+    /**
+     * Format: boolean
+     * @description このメッセージに対して、返信したかどうか
+     * @default false
+     */
+    isReply: boolean;
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Foreign Key to `customers.lineid`.<fk table='customers' column='lineid'/>
+     */
+    userId: string;
+  };
   reserve: {
     /**
      * Format: timestamp with time zone
@@ -341,20 +642,65 @@ export interface definitions {
      */
     reserveid: string;
   };
-  users: {
+  pushmessages: {
     /**
      * Format: uuid
      * @description Note:
      * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
      */
     id: string;
-    /** Format: text */
-    full_name?: string;
     /**
-     * Format: text
-     * @default
+     * Format: timestamp with time zone
+     * @default now()
      */
-    line_id: string;
+    inserted_at: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    updated_at: string;
+    /** Format: character varying */
+    message?: string;
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Foreign Key to `customers.lineid`.<fk table='customers' column='lineid'/>
+     */
+    touserid: string;
+    /**
+     * Format: character varying
+     * @default pushmessage
+     */
+    istype: string;
+  };
+  automessagekeyword: {
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
+     */
+    id: string;
+    /**
+     * Format: boolean
+     * @default false
+     */
+    exactmatchornot: boolean;
+    /** Format: character varying */
+    isaction?: string;
+    /**
+     * Format: timestamp with time zone
+     * @default timezone(''::text, now())
+     */
+    inserted_at: string;
+    /**
+     * Format: timestamp with time zone
+     * @default timezone('utc'::text, now())
+     */
+    updated_at: string;
+    /** Format: character varying */
+    keyword: string;
   };
   customers: {
     /**
@@ -364,9 +710,9 @@ export interface definitions {
      */
     lineid: string;
     /** Format: character varying */
-    phone: string;
+    phone?: string;
     /** Format: character varying */
-    email: string;
+    email?: string;
     /** Format: character varying */
     address?: string;
     /**
@@ -380,7 +726,18 @@ export interface definitions {
      */
     updated_at?: string;
     /** Format: character varying */
-    username: string;
+    username?: string;
+    /** Format: ARRAY */
+    tag?: unknown[];
+    /** Format: character varying */
+    displayname?: string;
+    /** Format: character varying */
+    pictureurl?: string;
+    /**
+     * Format: character varying
+     * @default follow
+     */
+    status?: string;
   };
 }
 
@@ -417,6 +774,39 @@ export interface parameters {
   offset: string;
   /** @description Limiting and Pagination */
   limit: string;
+  /** @description talks */
+  "body.talks": definitions["talks"];
+  /** Format: uuid */
+  "rowFilter.talks.id": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.talks.inserted_at": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.talks.updated_at": string;
+  /** Format: character varying */
+  "rowFilter.talks.istype": string;
+  /** Format: character varying */
+  "rowFilter.talks.messagetype": string;
+  /** Format: character varying */
+  "rowFilter.talks.messageid": string;
+  /** Format: character varying */
+  "rowFilter.talks.messagetext": string;
+  /** Format: character varying */
+  "rowFilter.talks.webhookeventid": string;
+  /** Format: boolean */
+  "rowFilter.talks.isredelivery": string;
+  /** Format: character varying */
+  "rowFilter.talks.istimestamp": string;
+  /** Format: character varying */
+  "rowFilter.talks.replytoken": string;
+  /** Format: character varying */
+  "rowFilter.talks.ismode": string;
+  /**
+   * Format: boolean
+   * @description このメッセージに対して、返信したかどうか
+   */
+  "rowFilter.talks.isReply": string;
+  /** Format: character varying */
+  "rowFilter.talks.userId": string;
   /** @description reserve */
   "body.reserve": definitions["reserve"];
   /** Format: timestamp with time zone */
@@ -431,14 +821,34 @@ export interface parameters {
   "rowFilter.reserve.lineid": string;
   /** Format: uuid */
   "rowFilter.reserve.reserveid": string;
-  /** @description users */
-  "body.users": definitions["users"];
+  /** @description pushmessages */
+  "body.pushmessages": definitions["pushmessages"];
   /** Format: uuid */
-  "rowFilter.users.id": string;
-  /** Format: text */
-  "rowFilter.users.full_name": string;
-  /** Format: text */
-  "rowFilter.users.line_id": string;
+  "rowFilter.pushmessages.id": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.pushmessages.inserted_at": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.pushmessages.updated_at": string;
+  /** Format: character varying */
+  "rowFilter.pushmessages.message": string;
+  /** Format: character varying */
+  "rowFilter.pushmessages.touserid": string;
+  /** Format: character varying */
+  "rowFilter.pushmessages.istype": string;
+  /** @description automessagekeyword */
+  "body.automessagekeyword": definitions["automessagekeyword"];
+  /** Format: uuid */
+  "rowFilter.automessagekeyword.id": string;
+  /** Format: boolean */
+  "rowFilter.automessagekeyword.exactmatchornot": string;
+  /** Format: character varying */
+  "rowFilter.automessagekeyword.isaction": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.automessagekeyword.inserted_at": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.automessagekeyword.updated_at": string;
+  /** Format: character varying */
+  "rowFilter.automessagekeyword.keyword": string;
   /** @description customers */
   "body.customers": definitions["customers"];
   /** Format: character varying */
@@ -455,6 +865,14 @@ export interface parameters {
   "rowFilter.customers.updated_at": string;
   /** Format: character varying */
   "rowFilter.customers.username": string;
+  /** Format: ARRAY */
+  "rowFilter.customers.tag": string;
+  /** Format: character varying */
+  "rowFilter.customers.displayname": string;
+  /** Format: character varying */
+  "rowFilter.customers.pictureurl": string;
+  /** Format: character varying */
+  "rowFilter.customers.status": string;
 }
 
 export interface operations {}
