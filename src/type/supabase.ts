@@ -12,6 +12,105 @@ export interface paths {
       };
     };
   };
+  "/messagetemplatecontent": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.messagetemplatecontent.id"];
+          inserted_at?: parameters["rowFilter.messagetemplatecontent.inserted_at"];
+          updated_at?: parameters["rowFilter.messagetemplatecontent.updated_at"];
+          istype?: parameters["rowFilter.messagetemplatecontent.istype"];
+          istext?: parameters["rowFilter.messagetemplatecontent.istext"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["messagetemplatecontent"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** messagetemplatecontent */
+          messagetemplatecontent?: definitions["messagetemplatecontent"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.messagetemplatecontent.id"];
+          inserted_at?: parameters["rowFilter.messagetemplatecontent.inserted_at"];
+          updated_at?: parameters["rowFilter.messagetemplatecontent.updated_at"];
+          istype?: parameters["rowFilter.messagetemplatecontent.istype"];
+          istext?: parameters["rowFilter.messagetemplatecontent.istext"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.messagetemplatecontent.id"];
+          inserted_at?: parameters["rowFilter.messagetemplatecontent.inserted_at"];
+          updated_at?: parameters["rowFilter.messagetemplatecontent.updated_at"];
+          istype?: parameters["rowFilter.messagetemplatecontent.istype"];
+          istext?: parameters["rowFilter.messagetemplatecontent.istext"];
+        };
+        body: {
+          /** messagetemplatecontent */
+          messagetemplatecontent?: definitions["messagetemplatecontent"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/talks": {
     get: {
       parameters: {
@@ -243,6 +342,390 @@ export interface paths {
       };
     };
   };
+  "/messagetemplate": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.messagetemplate.id"];
+          inserted_at?: parameters["rowFilter.messagetemplate.inserted_at"];
+          updated_at?: parameters["rowFilter.messagetemplate.updated_at"];
+          content?: parameters["rowFilter.messagetemplate.content"];
+          name?: parameters["rowFilter.messagetemplate.name"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["messagetemplate"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** messagetemplate */
+          messagetemplate?: definitions["messagetemplate"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.messagetemplate.id"];
+          inserted_at?: parameters["rowFilter.messagetemplate.inserted_at"];
+          updated_at?: parameters["rowFilter.messagetemplate.updated_at"];
+          content?: parameters["rowFilter.messagetemplate.content"];
+          name?: parameters["rowFilter.messagetemplate.name"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.messagetemplate.id"];
+          inserted_at?: parameters["rowFilter.messagetemplate.inserted_at"];
+          updated_at?: parameters["rowFilter.messagetemplate.updated_at"];
+          content?: parameters["rowFilter.messagetemplate.content"];
+          name?: parameters["rowFilter.messagetemplate.name"];
+        };
+        body: {
+          /** messagetemplate */
+          messagetemplate?: definitions["messagetemplate"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/urls_tags": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.urls_tags.id"];
+          created_at?: parameters["rowFilter.urls_tags.created_at"];
+          url_id?: parameters["rowFilter.urls_tags.url_id"];
+          tag_id?: parameters["rowFilter.urls_tags.tag_id"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["urls_tags"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** urls_tags */
+          urls_tags?: definitions["urls_tags"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.urls_tags.id"];
+          created_at?: parameters["rowFilter.urls_tags.created_at"];
+          url_id?: parameters["rowFilter.urls_tags.url_id"];
+          tag_id?: parameters["rowFilter.urls_tags.tag_id"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.urls_tags.id"];
+          created_at?: parameters["rowFilter.urls_tags.created_at"];
+          url_id?: parameters["rowFilter.urls_tags.url_id"];
+          tag_id?: parameters["rowFilter.urls_tags.tag_id"];
+        };
+        body: {
+          /** urls_tags */
+          urls_tags?: definitions["urls_tags"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/autoreplymessage": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.autoreplymessage.id"];
+          inserted_at?: parameters["rowFilter.autoreplymessage.inserted_at"];
+          updated_at?: parameters["rowFilter.autoreplymessage.updated_at"];
+          trigger?: parameters["rowFilter.autoreplymessage.trigger"];
+          content?: parameters["rowFilter.autoreplymessage.content"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["autoreplymessage"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** autoreplymessage */
+          autoreplymessage?: definitions["autoreplymessage"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.autoreplymessage.id"];
+          inserted_at?: parameters["rowFilter.autoreplymessage.inserted_at"];
+          updated_at?: parameters["rowFilter.autoreplymessage.updated_at"];
+          trigger?: parameters["rowFilter.autoreplymessage.trigger"];
+          content?: parameters["rowFilter.autoreplymessage.content"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.autoreplymessage.id"];
+          inserted_at?: parameters["rowFilter.autoreplymessage.inserted_at"];
+          updated_at?: parameters["rowFilter.autoreplymessage.updated_at"];
+          trigger?: parameters["rowFilter.autoreplymessage.trigger"];
+          content?: parameters["rowFilter.autoreplymessage.content"];
+        };
+        body: {
+          /** autoreplymessage */
+          autoreplymessage?: definitions["autoreplymessage"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/countup": {
+    get: {
+      parameters: {
+        query: {
+          url?: parameters["rowFilter.countup.url"];
+          count?: parameters["rowFilter.countup.count"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["countup"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** countup */
+          countup?: definitions["countup"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          url?: parameters["rowFilter.countup.url"];
+          count?: parameters["rowFilter.countup.count"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          url?: parameters["rowFilter.countup.url"];
+          count?: parameters["rowFilter.countup.count"];
+        };
+        body: {
+          /** countup */
+          countup?: definitions["countup"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
   "/pushmessages": {
     get: {
       parameters: {
@@ -345,16 +828,14 @@ export interface paths {
       };
     };
   };
-  "/automessagekeyword": {
+  "/tags": {
     get: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.automessagekeyword.id"];
-          exactmatchornot?: parameters["rowFilter.automessagekeyword.exactmatchornot"];
-          isaction?: parameters["rowFilter.automessagekeyword.isaction"];
-          inserted_at?: parameters["rowFilter.automessagekeyword.inserted_at"];
-          updated_at?: parameters["rowFilter.automessagekeyword.updated_at"];
-          keyword?: parameters["rowFilter.automessagekeyword.keyword"];
+          id?: parameters["rowFilter.tags.id"];
+          inserted_at?: parameters["rowFilter.tags.inserted_at"];
+          updated_at?: parameters["rowFilter.tags.updated_at"];
+          name?: parameters["rowFilter.tags.name"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -376,7 +857,7 @@ export interface paths {
       responses: {
         /** OK */
         200: {
-          schema: definitions["automessagekeyword"][];
+          schema: definitions["tags"][];
         };
         /** Partial Content */
         206: unknown;
@@ -385,8 +866,8 @@ export interface paths {
     post: {
       parameters: {
         body: {
-          /** automessagekeyword */
-          automessagekeyword?: definitions["automessagekeyword"];
+          /** tags */
+          tags?: definitions["tags"];
         };
         query: {
           /** Filtering Columns */
@@ -405,12 +886,10 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.automessagekeyword.id"];
-          exactmatchornot?: parameters["rowFilter.automessagekeyword.exactmatchornot"];
-          isaction?: parameters["rowFilter.automessagekeyword.isaction"];
-          inserted_at?: parameters["rowFilter.automessagekeyword.inserted_at"];
-          updated_at?: parameters["rowFilter.automessagekeyword.updated_at"];
-          keyword?: parameters["rowFilter.automessagekeyword.keyword"];
+          id?: parameters["rowFilter.tags.id"];
+          inserted_at?: parameters["rowFilter.tags.inserted_at"];
+          updated_at?: parameters["rowFilter.tags.updated_at"];
+          name?: parameters["rowFilter.tags.name"];
         };
         header: {
           /** Preference */
@@ -425,16 +904,14 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          id?: parameters["rowFilter.automessagekeyword.id"];
-          exactmatchornot?: parameters["rowFilter.automessagekeyword.exactmatchornot"];
-          isaction?: parameters["rowFilter.automessagekeyword.isaction"];
-          inserted_at?: parameters["rowFilter.automessagekeyword.inserted_at"];
-          updated_at?: parameters["rowFilter.automessagekeyword.updated_at"];
-          keyword?: parameters["rowFilter.automessagekeyword.keyword"];
+          id?: parameters["rowFilter.tags.id"];
+          inserted_at?: parameters["rowFilter.tags.inserted_at"];
+          updated_at?: parameters["rowFilter.tags.updated_at"];
+          name?: parameters["rowFilter.tags.name"];
         };
         body: {
-          /** automessagekeyword */
-          automessagekeyword?: definitions["automessagekeyword"];
+          /** tags */
+          tags?: definitions["tags"];
         };
         header: {
           /** Preference */
@@ -458,7 +935,6 @@ export interface paths {
           inserted_at?: parameters["rowFilter.customers.inserted_at"];
           updated_at?: parameters["rowFilter.customers.updated_at"];
           username?: parameters["rowFilter.customers.username"];
-          tag?: parameters["rowFilter.customers.tag"];
           displayname?: parameters["rowFilter.customers.displayname"];
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
           status?: parameters["rowFilter.customers.status"];
@@ -519,7 +995,6 @@ export interface paths {
           inserted_at?: parameters["rowFilter.customers.inserted_at"];
           updated_at?: parameters["rowFilter.customers.updated_at"];
           username?: parameters["rowFilter.customers.username"];
-          tag?: parameters["rowFilter.customers.tag"];
           displayname?: parameters["rowFilter.customers.displayname"];
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
           status?: parameters["rowFilter.customers.status"];
@@ -544,7 +1019,6 @@ export interface paths {
           inserted_at?: parameters["rowFilter.customers.inserted_at"];
           updated_at?: parameters["rowFilter.customers.updated_at"];
           username?: parameters["rowFilter.customers.username"];
-          tag?: parameters["rowFilter.customers.tag"];
           displayname?: parameters["rowFilter.customers.displayname"];
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
           status?: parameters["rowFilter.customers.status"];
@@ -564,9 +1038,230 @@ export interface paths {
       };
     };
   };
+  "/urls": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.urls.id"];
+          name?: parameters["rowFilter.urls.name"];
+          createdAt?: parameters["rowFilter.urls.createdAt"];
+          updatedAt?: parameters["rowFilter.urls.updatedAt"];
+          click?: parameters["rowFilter.urls.click"];
+          impression?: parameters["rowFilter.urls.impression"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["urls"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** urls */
+          urls?: definitions["urls"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.urls.id"];
+          name?: parameters["rowFilter.urls.name"];
+          createdAt?: parameters["rowFilter.urls.createdAt"];
+          updatedAt?: parameters["rowFilter.urls.updatedAt"];
+          click?: parameters["rowFilter.urls.click"];
+          impression?: parameters["rowFilter.urls.impression"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.urls.id"];
+          name?: parameters["rowFilter.urls.name"];
+          createdAt?: parameters["rowFilter.urls.createdAt"];
+          updatedAt?: parameters["rowFilter.urls.updatedAt"];
+          click?: parameters["rowFilter.urls.click"];
+          impression?: parameters["rowFilter.urls.impression"];
+        };
+        body: {
+          /** urls */
+          urls?: definitions["urls"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/customers_tags": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.customers_tags.id"];
+          created_at?: parameters["rowFilter.customers_tags.created_at"];
+          tag_id?: parameters["rowFilter.customers_tags.tag_id"];
+          customer_id?: parameters["rowFilter.customers_tags.customer_id"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["customers_tags"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** customers_tags */
+          customers_tags?: definitions["customers_tags"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.customers_tags.id"];
+          created_at?: parameters["rowFilter.customers_tags.created_at"];
+          tag_id?: parameters["rowFilter.customers_tags.tag_id"];
+          customer_id?: parameters["rowFilter.customers_tags.customer_id"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.customers_tags.id"];
+          created_at?: parameters["rowFilter.customers_tags.created_at"];
+          tag_id?: parameters["rowFilter.customers_tags.tag_id"];
+          customer_id?: parameters["rowFilter.customers_tags.customer_id"];
+        };
+        body: {
+          /** customers_tags */
+          customers_tags?: definitions["customers_tags"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
 }
 
 export interface definitions {
+  messagetemplatecontent: {
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
+     */
+    id: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    inserted_at: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    updated_at: string;
+    /** Format: character varying */
+    istype: string;
+    /** Format: character varying */
+    istext: string;
+  };
   talks: {
     /**
      * Format: uuid
@@ -642,6 +1337,88 @@ export interface definitions {
      */
     reserveid: string;
   };
+  messagetemplate: {
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
+     */
+    id: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    inserted_at: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    updated_at: string;
+    /** Format: ARRAY */
+    content: unknown[];
+    /** Format: character varying */
+    name: string;
+  };
+  urls_tags: {
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
+     */
+    id: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    created_at?: string;
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Foreign Key to `urls.id`.<fk table='urls' column='id'/>
+     */
+    url_id: string;
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Foreign Key to `tags.id`.<fk table='tags' column='id'/>
+     */
+    tag_id: string;
+  };
+  autoreplymessage: {
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
+     */
+    id: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    inserted_at: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    updated_at: string;
+    /** Format: character varying */
+    trigger: string;
+    /** Format: ARRAY */
+    content: unknown[];
+  };
+  countup: {
+    /**
+     * Format: text
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     */
+    url: string;
+    /** Format: integer */
+    count?: number;
+  };
   pushmessages: {
     /**
      * Format: uuid
@@ -674,7 +1451,7 @@ export interface definitions {
      */
     istype: string;
   };
-  automessagekeyword: {
+  tags: {
     /**
      * Format: uuid
      * @description Note:
@@ -683,24 +1460,17 @@ export interface definitions {
      */
     id: string;
     /**
-     * Format: boolean
-     * @default false
-     */
-    exactmatchornot: boolean;
-    /** Format: character varying */
-    isaction?: string;
-    /**
      * Format: timestamp with time zone
-     * @default timezone(''::text, now())
+     * @default now()
      */
     inserted_at: string;
     /**
      * Format: timestamp with time zone
-     * @default timezone('utc'::text, now())
+     * @default now()
      */
     updated_at: string;
     /** Format: character varying */
-    keyword: string;
+    name: string;
   };
   customers: {
     /**
@@ -727,17 +1497,72 @@ export interface definitions {
     updated_at?: string;
     /** Format: character varying */
     username?: string;
-    /** Format: ARRAY */
-    tag?: unknown[];
     /** Format: character varying */
     displayname?: string;
-    /** Format: character varying */
+    /** Format: text */
     pictureurl?: string;
     /**
      * Format: character varying
      * @default follow
      */
     status?: string;
+  };
+  urls: {
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
+     */
+    id: string;
+    /** Format: character varying */
+    name: string;
+    /**
+     * Format: timestamp with time zone
+     * @default (now() AT TIME ZONE 'utc'::text)
+     */
+    createdAt: string;
+    /**
+     * Format: timestamp with time zone
+     * @default (now() AT TIME ZONE 'utc'::text)
+     */
+    updatedAt: string;
+    /**
+     * Format: integer
+     * @default 0
+     */
+    click?: number;
+    /**
+     * Format: integer
+     * @default 0
+     */
+    impression?: number;
+  };
+  customers_tags: {
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
+     */
+    id: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    created_at?: string;
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Foreign Key to `tags.id`.<fk table='tags' column='id'/>
+     */
+    tag_id: string;
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Foreign Key to `customers.lineid`.<fk table='customers' column='lineid'/>
+     */
+    customer_id: string;
   };
 }
 
@@ -774,6 +1599,18 @@ export interface parameters {
   offset: string;
   /** @description Limiting and Pagination */
   limit: string;
+  /** @description messagetemplatecontent */
+  "body.messagetemplatecontent": definitions["messagetemplatecontent"];
+  /** Format: uuid */
+  "rowFilter.messagetemplatecontent.id": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.messagetemplatecontent.inserted_at": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.messagetemplatecontent.updated_at": string;
+  /** Format: character varying */
+  "rowFilter.messagetemplatecontent.istype": string;
+  /** Format: character varying */
+  "rowFilter.messagetemplatecontent.istext": string;
   /** @description talks */
   "body.talks": definitions["talks"];
   /** Format: uuid */
@@ -821,6 +1658,46 @@ export interface parameters {
   "rowFilter.reserve.lineid": string;
   /** Format: uuid */
   "rowFilter.reserve.reserveid": string;
+  /** @description messagetemplate */
+  "body.messagetemplate": definitions["messagetemplate"];
+  /** Format: uuid */
+  "rowFilter.messagetemplate.id": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.messagetemplate.inserted_at": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.messagetemplate.updated_at": string;
+  /** Format: ARRAY */
+  "rowFilter.messagetemplate.content": string;
+  /** Format: character varying */
+  "rowFilter.messagetemplate.name": string;
+  /** @description urls_tags */
+  "body.urls_tags": definitions["urls_tags"];
+  /** Format: uuid */
+  "rowFilter.urls_tags.id": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.urls_tags.created_at": string;
+  /** Format: uuid */
+  "rowFilter.urls_tags.url_id": string;
+  /** Format: uuid */
+  "rowFilter.urls_tags.tag_id": string;
+  /** @description autoreplymessage */
+  "body.autoreplymessage": definitions["autoreplymessage"];
+  /** Format: uuid */
+  "rowFilter.autoreplymessage.id": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.autoreplymessage.inserted_at": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.autoreplymessage.updated_at": string;
+  /** Format: character varying */
+  "rowFilter.autoreplymessage.trigger": string;
+  /** Format: ARRAY */
+  "rowFilter.autoreplymessage.content": string;
+  /** @description countup */
+  "body.countup": definitions["countup"];
+  /** Format: text */
+  "rowFilter.countup.url": string;
+  /** Format: integer */
+  "rowFilter.countup.count": string;
   /** @description pushmessages */
   "body.pushmessages": definitions["pushmessages"];
   /** Format: uuid */
@@ -835,20 +1712,16 @@ export interface parameters {
   "rowFilter.pushmessages.touserid": string;
   /** Format: character varying */
   "rowFilter.pushmessages.istype": string;
-  /** @description automessagekeyword */
-  "body.automessagekeyword": definitions["automessagekeyword"];
+  /** @description tags */
+  "body.tags": definitions["tags"];
   /** Format: uuid */
-  "rowFilter.automessagekeyword.id": string;
-  /** Format: boolean */
-  "rowFilter.automessagekeyword.exactmatchornot": string;
-  /** Format: character varying */
-  "rowFilter.automessagekeyword.isaction": string;
+  "rowFilter.tags.id": string;
   /** Format: timestamp with time zone */
-  "rowFilter.automessagekeyword.inserted_at": string;
+  "rowFilter.tags.inserted_at": string;
   /** Format: timestamp with time zone */
-  "rowFilter.automessagekeyword.updated_at": string;
+  "rowFilter.tags.updated_at": string;
   /** Format: character varying */
-  "rowFilter.automessagekeyword.keyword": string;
+  "rowFilter.tags.name": string;
   /** @description customers */
   "body.customers": definitions["customers"];
   /** Format: character varying */
@@ -865,14 +1738,36 @@ export interface parameters {
   "rowFilter.customers.updated_at": string;
   /** Format: character varying */
   "rowFilter.customers.username": string;
-  /** Format: ARRAY */
-  "rowFilter.customers.tag": string;
   /** Format: character varying */
   "rowFilter.customers.displayname": string;
-  /** Format: character varying */
+  /** Format: text */
   "rowFilter.customers.pictureurl": string;
   /** Format: character varying */
   "rowFilter.customers.status": string;
+  /** @description urls */
+  "body.urls": definitions["urls"];
+  /** Format: uuid */
+  "rowFilter.urls.id": string;
+  /** Format: character varying */
+  "rowFilter.urls.name": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.urls.createdAt": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.urls.updatedAt": string;
+  /** Format: integer */
+  "rowFilter.urls.click": string;
+  /** Format: integer */
+  "rowFilter.urls.impression": string;
+  /** @description customers_tags */
+  "body.customers_tags": definitions["customers_tags"];
+  /** Format: uuid */
+  "rowFilter.customers_tags.id": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.customers_tags.created_at": string;
+  /** Format: uuid */
+  "rowFilter.customers_tags.tag_id": string;
+  /** Format: character varying */
+  "rowFilter.customers_tags.customer_id": string;
 }
 
 export interface operations {}
