@@ -27,7 +27,8 @@ export const CreateNewUrl = () => {
       })
       .single();
 
-    if (!url || errorUrl) return toast.error("errorUrl: " + errorUrl.message);
+    if (!url || errorUrl) return;
+    // toast.error(`errorUrl: ${errorUrl.message}`);
 
     const urlsTagsData = data.tags.map((d) => {
       return { urlId: url.id, tagId: d.tagId };
@@ -36,8 +37,8 @@ export const CreateNewUrl = () => {
       .from<definitions["urls_tags"]>("urls_tags")
       .insert(urlsTagsData);
 
-    if (!urlsTags || errorUrlsTags)
-      return toast.error("errorUrlsTags: " + errorUrlsTags.message);
+    if (!urlsTags || errorUrlsTags) return;
+    // toast.error(`errorUrlsTags: ${errorUrlsTags.message}`);
 
     setIsOpen(false);
     toast.success("Create Success!");

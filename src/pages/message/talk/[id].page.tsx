@@ -38,8 +38,7 @@ const Talk = (props: Talk) => {
   const { id } = router.query;
 
   return (
-    <Layout>
-      <h2 className="m-8 text-2xl font-bold">LINEトーク</h2>
+    <Layout header="LINEトーク">
       <div className="flex gap-8 p-8">
         <div>
           <div className="bg-yellow-200">
@@ -84,7 +83,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { data: pushmessages } = await supabase
     .from<definitions["pushmessages"]>("pushmessages")
     .select("*")
-    .eq("touserid", id);
+    .eq("toUser", id);
 
   const { data } = await supabase
     .from<definitions["customers"]>("customers")
@@ -102,30 +101,18 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const talklist = [
     ...messages.map((d) => {
       return {
-        id: d.id,
-        insertedAt: d.inserted_at,
-        updatedAt: d.updated_at,
-        messagetype: d.messagetype,
-        messageid: d.messageid,
-        messagetext: d.messagetext,
-        webhookeventid: d.webhookeventid,
-        isredelivery: d.isredelivery,
-        istimestamp: d.istimestamp,
-        replytoken: d.replytoken,
-        ismode: d.ismode,
-        isReply: d.isReply,
-        userId: d.userId,
+        ...d,
         pictureurl: data.pictureurl,
       };
     }),
     ...pushmessages.map((d) => {
       return {
         id: d.id,
-        insertedAt: d.inserted_at,
-        updatedAt: d.updated_at,
+        insertedAt: d.insertedAt,
+        updatedAt: d.updatedAt,
         message: d.message,
-        touserid: d.touserid,
-        istype: d.istype,
+        touserid: d.toUser,
+        istype: d.isType,
       };
     }),
   ];

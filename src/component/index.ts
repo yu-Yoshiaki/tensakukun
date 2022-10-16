@@ -5,7 +5,6 @@ export { Header } from "./Header";
 export { ImageFill } from "./ImageFill";
 export { Layout } from "./Layout";
 export { Pagenation } from "./Pagenation";
-export { Preview } from "./Preview";
 export { Sidemenu } from "./Sidemenu";
 export { Signin } from "./Signin";
 export { Tag } from "./Tag";

@@ -2,7 +2,6 @@ import type { Message } from "@line/bot-sdk";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
-import { Input } from "src/component/";
 import type { definitions } from "src/type/supabase";
 
 type Props = {
@@ -14,7 +13,7 @@ export const Form = (props: Props) => {
   const router = useRouter();
   const {
     register,
-    formState: { errors },
+    // formState: { errors },
     handleSubmit,
   } = useForm({ criteriaMode: "all" });
 
@@ -49,12 +48,10 @@ export const Form = (props: Props) => {
           />
         </svg>
       </button>
-      <Input
+      <input
+        type="text"
         placeholder="メッセージを入力"
-        label="メッセージ"
-        register={register}
-        errors={errors}
-        labelLeft={false}
+        {...register("メッセージ")}
       />
       <button
         type="submit"
