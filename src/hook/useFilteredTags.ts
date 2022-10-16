@@ -1,11 +1,7 @@
 import { supabase } from "src/lib/supabase";
-import { definitions } from "src/type/supabase";
 import { useState } from "react";
 import useSWR from "swr";
-
-type Tag = definitions["tags"] & {
-  customersTags: definitions["customers_tags"][];
-};
+import { Tag } from "src/type/supabaseCustom";
 
 const fetchTags = async () => {
   const { data: tags } = await supabase
@@ -18,19 +14,19 @@ export const useFilteredTags = () => {
   const { data: tags, mutate } = useSWR("filterTags", fetchTags);
   const [selectTags, setSelectTags] = useState<Tag[]>([]);
 
-  const handleSelectTags = (tag: Tag, deleteT: boolean = false) => {
+  const onSelectTags = (tag: Tag, deleteBaseTags: boolean = false) => {
     if (!tags) return;
     setSelectTags([...selectTags, tag]);
 
-    if (deleteT) {
+    if (deleteBaseTags) {
       const newTags = tags.filter((d) => d.id !== tag.id);
       mutate(newTags, { revalidate: false });
     }
   };
 
-  const handleDeleteTags = (tag: Tag, addT: boolean = false) => {
+  const onDeleteTags = (tag: Tag, addBaseTags: boolean = false) => {
     if (!tags) return;
-    if (addT) {
+    if (addBaseTags) {
       mutate([...tags, tag], { revalidate: false });
     }
     const newTagList = selectTags.filter(
@@ -38,7 +34,8 @@ export const useFilteredTags = () => {
     );
 
     setSelectTags(newTagList);
+    return newTagList;
   };
 
-  return { tags, selectTags, handleSelectTags, handleDeleteTags };
+  return { tags, selectTags, onSelectTags, onDeleteTags };
 };

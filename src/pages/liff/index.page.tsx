@@ -3,7 +3,7 @@ import { useLiff } from "src/hook/useLiff";
 
 const Index: CustomNextPage = () => {
   useLiff();
-  return <div>画面遷移中......</div>;
+  return <div>処理中......</div>;
 };
 
 export default Index;

@@ -116,17 +116,17 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.talks.id"];
-          inserted_at?: parameters["rowFilter.talks.inserted_at"];
-          updated_at?: parameters["rowFilter.talks.updated_at"];
-          istype?: parameters["rowFilter.talks.istype"];
-          messagetype?: parameters["rowFilter.talks.messagetype"];
-          messageid?: parameters["rowFilter.talks.messageid"];
-          messagetext?: parameters["rowFilter.talks.messagetext"];
-          webhookeventid?: parameters["rowFilter.talks.webhookeventid"];
-          isredelivery?: parameters["rowFilter.talks.isredelivery"];
-          istimestamp?: parameters["rowFilter.talks.istimestamp"];
-          replytoken?: parameters["rowFilter.talks.replytoken"];
-          ismode?: parameters["rowFilter.talks.ismode"];
+          insertedAt?: parameters["rowFilter.talks.insertedAt"];
+          updatedAt?: parameters["rowFilter.talks.updatedAt"];
+          isType?: parameters["rowFilter.talks.isType"];
+          messageType?: parameters["rowFilter.talks.messageType"];
+          messageId?: parameters["rowFilter.talks.messageId"];
+          messageText?: parameters["rowFilter.talks.messageText"];
+          webhookEventid?: parameters["rowFilter.talks.webhookEventid"];
+          isRedelivery?: parameters["rowFilter.talks.isRedelivery"];
+          isTimestamp?: parameters["rowFilter.talks.isTimestamp"];
+          replyToken?: parameters["rowFilter.talks.replyToken"];
+          isMode?: parameters["rowFilter.talks.isMode"];
           /** このメッセージに対して、返信したかどうか */
           isReply?: parameters["rowFilter.talks.isReply"];
           userId?: parameters["rowFilter.talks.userId"];
@@ -181,17 +181,17 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.talks.id"];
-          inserted_at?: parameters["rowFilter.talks.inserted_at"];
-          updated_at?: parameters["rowFilter.talks.updated_at"];
-          istype?: parameters["rowFilter.talks.istype"];
-          messagetype?: parameters["rowFilter.talks.messagetype"];
-          messageid?: parameters["rowFilter.talks.messageid"];
-          messagetext?: parameters["rowFilter.talks.messagetext"];
-          webhookeventid?: parameters["rowFilter.talks.webhookeventid"];
-          isredelivery?: parameters["rowFilter.talks.isredelivery"];
-          istimestamp?: parameters["rowFilter.talks.istimestamp"];
-          replytoken?: parameters["rowFilter.talks.replytoken"];
-          ismode?: parameters["rowFilter.talks.ismode"];
+          insertedAt?: parameters["rowFilter.talks.insertedAt"];
+          updatedAt?: parameters["rowFilter.talks.updatedAt"];
+          isType?: parameters["rowFilter.talks.isType"];
+          messageType?: parameters["rowFilter.talks.messageType"];
+          messageId?: parameters["rowFilter.talks.messageId"];
+          messageText?: parameters["rowFilter.talks.messageText"];
+          webhookEventid?: parameters["rowFilter.talks.webhookEventid"];
+          isRedelivery?: parameters["rowFilter.talks.isRedelivery"];
+          isTimestamp?: parameters["rowFilter.talks.isTimestamp"];
+          replyToken?: parameters["rowFilter.talks.replyToken"];
+          isMode?: parameters["rowFilter.talks.isMode"];
           /** このメッセージに対して、返信したかどうか */
           isReply?: parameters["rowFilter.talks.isReply"];
           userId?: parameters["rowFilter.talks.userId"];
@@ -210,17 +210,17 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.talks.id"];
-          inserted_at?: parameters["rowFilter.talks.inserted_at"];
-          updated_at?: parameters["rowFilter.talks.updated_at"];
-          istype?: parameters["rowFilter.talks.istype"];
-          messagetype?: parameters["rowFilter.talks.messagetype"];
-          messageid?: parameters["rowFilter.talks.messageid"];
-          messagetext?: parameters["rowFilter.talks.messagetext"];
-          webhookeventid?: parameters["rowFilter.talks.webhookeventid"];
-          isredelivery?: parameters["rowFilter.talks.isredelivery"];
-          istimestamp?: parameters["rowFilter.talks.istimestamp"];
-          replytoken?: parameters["rowFilter.talks.replytoken"];
-          ismode?: parameters["rowFilter.talks.ismode"];
+          insertedAt?: parameters["rowFilter.talks.insertedAt"];
+          updatedAt?: parameters["rowFilter.talks.updatedAt"];
+          isType?: parameters["rowFilter.talks.isType"];
+          messageType?: parameters["rowFilter.talks.messageType"];
+          messageId?: parameters["rowFilter.talks.messageId"];
+          messageText?: parameters["rowFilter.talks.messageText"];
+          webhookEventid?: parameters["rowFilter.talks.webhookEventid"];
+          isRedelivery?: parameters["rowFilter.talks.isRedelivery"];
+          isTimestamp?: parameters["rowFilter.talks.isTimestamp"];
+          replyToken?: parameters["rowFilter.talks.replyToken"];
+          isMode?: parameters["rowFilter.talks.isMode"];
           /** このメッセージに対して、返信したかどうか */
           isReply?: parameters["rowFilter.talks.isReply"];
           userId?: parameters["rowFilter.talks.userId"];
@@ -446,9 +446,9 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.urls_tags.id"];
-          created_at?: parameters["rowFilter.urls_tags.created_at"];
-          url_id?: parameters["rowFilter.urls_tags.url_id"];
-          tag_id?: parameters["rowFilter.urls_tags.tag_id"];
+          createdAt?: parameters["rowFilter.urls_tags.createdAt"];
+          urlId?: parameters["rowFilter.urls_tags.urlId"];
+          tagId?: parameters["rowFilter.urls_tags.tagId"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -500,9 +500,9 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.urls_tags.id"];
-          created_at?: parameters["rowFilter.urls_tags.created_at"];
-          url_id?: parameters["rowFilter.urls_tags.url_id"];
-          tag_id?: parameters["rowFilter.urls_tags.tag_id"];
+          createdAt?: parameters["rowFilter.urls_tags.createdAt"];
+          urlId?: parameters["rowFilter.urls_tags.urlId"];
+          tagId?: parameters["rowFilter.urls_tags.tagId"];
         };
         header: {
           /** Preference */
@@ -518,9 +518,9 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.urls_tags.id"];
-          created_at?: parameters["rowFilter.urls_tags.created_at"];
-          url_id?: parameters["rowFilter.urls_tags.url_id"];
-          tag_id?: parameters["rowFilter.urls_tags.tag_id"];
+          createdAt?: parameters["rowFilter.urls_tags.createdAt"];
+          urlId?: parameters["rowFilter.urls_tags.urlId"];
+          tagId?: parameters["rowFilter.urls_tags.tagId"];
         };
         body: {
           /** urls_tags */
@@ -731,11 +731,11 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.pushmessages.id"];
-          inserted_at?: parameters["rowFilter.pushmessages.inserted_at"];
-          updated_at?: parameters["rowFilter.pushmessages.updated_at"];
+          insertedAt?: parameters["rowFilter.pushmessages.insertedAt"];
+          updatedAt?: parameters["rowFilter.pushmessages.updatedAt"];
           message?: parameters["rowFilter.pushmessages.message"];
-          touserid?: parameters["rowFilter.pushmessages.touserid"];
-          istype?: parameters["rowFilter.pushmessages.istype"];
+          toUser?: parameters["rowFilter.pushmessages.toUser"];
+          isType?: parameters["rowFilter.pushmessages.isType"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -787,11 +787,11 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.pushmessages.id"];
-          inserted_at?: parameters["rowFilter.pushmessages.inserted_at"];
-          updated_at?: parameters["rowFilter.pushmessages.updated_at"];
+          insertedAt?: parameters["rowFilter.pushmessages.insertedAt"];
+          updatedAt?: parameters["rowFilter.pushmessages.updatedAt"];
           message?: parameters["rowFilter.pushmessages.message"];
-          touserid?: parameters["rowFilter.pushmessages.touserid"];
-          istype?: parameters["rowFilter.pushmessages.istype"];
+          toUser?: parameters["rowFilter.pushmessages.toUser"];
+          isType?: parameters["rowFilter.pushmessages.isType"];
         };
         header: {
           /** Preference */
@@ -807,11 +807,11 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.pushmessages.id"];
-          inserted_at?: parameters["rowFilter.pushmessages.inserted_at"];
-          updated_at?: parameters["rowFilter.pushmessages.updated_at"];
+          insertedAt?: parameters["rowFilter.pushmessages.insertedAt"];
+          updatedAt?: parameters["rowFilter.pushmessages.updatedAt"];
           message?: parameters["rowFilter.pushmessages.message"];
-          touserid?: parameters["rowFilter.pushmessages.touserid"];
-          istype?: parameters["rowFilter.pushmessages.istype"];
+          toUser?: parameters["rowFilter.pushmessages.toUser"];
+          isType?: parameters["rowFilter.pushmessages.isType"];
         };
         body: {
           /** pushmessages */
@@ -833,8 +833,8 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.tags.id"];
-          inserted_at?: parameters["rowFilter.tags.inserted_at"];
-          updated_at?: parameters["rowFilter.tags.updated_at"];
+          insertedAt?: parameters["rowFilter.tags.insertedAt"];
+          updatedAt?: parameters["rowFilter.tags.updatedAt"];
           name?: parameters["rowFilter.tags.name"];
           /** Filtering Columns */
           select?: parameters["select"];
@@ -887,8 +887,8 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.tags.id"];
-          inserted_at?: parameters["rowFilter.tags.inserted_at"];
-          updated_at?: parameters["rowFilter.tags.updated_at"];
+          insertedAt?: parameters["rowFilter.tags.insertedAt"];
+          updatedAt?: parameters["rowFilter.tags.updatedAt"];
           name?: parameters["rowFilter.tags.name"];
         };
         header: {
@@ -905,8 +905,8 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.tags.id"];
-          inserted_at?: parameters["rowFilter.tags.inserted_at"];
-          updated_at?: parameters["rowFilter.tags.updated_at"];
+          insertedAt?: parameters["rowFilter.tags.insertedAt"];
+          updatedAt?: parameters["rowFilter.tags.updatedAt"];
           name?: parameters["rowFilter.tags.name"];
         };
         body: {
@@ -932,8 +932,8 @@ export interface paths {
           phone?: parameters["rowFilter.customers.phone"];
           email?: parameters["rowFilter.customers.email"];
           address?: parameters["rowFilter.customers.address"];
-          inserted_at?: parameters["rowFilter.customers.inserted_at"];
-          updated_at?: parameters["rowFilter.customers.updated_at"];
+          insertedAt?: parameters["rowFilter.customers.insertedAt"];
+          updatedAt?: parameters["rowFilter.customers.updatedAt"];
           username?: parameters["rowFilter.customers.username"];
           displayname?: parameters["rowFilter.customers.displayname"];
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
@@ -992,8 +992,8 @@ export interface paths {
           phone?: parameters["rowFilter.customers.phone"];
           email?: parameters["rowFilter.customers.email"];
           address?: parameters["rowFilter.customers.address"];
-          inserted_at?: parameters["rowFilter.customers.inserted_at"];
-          updated_at?: parameters["rowFilter.customers.updated_at"];
+          insertedAt?: parameters["rowFilter.customers.insertedAt"];
+          updatedAt?: parameters["rowFilter.customers.updatedAt"];
           username?: parameters["rowFilter.customers.username"];
           displayname?: parameters["rowFilter.customers.displayname"];
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
@@ -1016,8 +1016,8 @@ export interface paths {
           phone?: parameters["rowFilter.customers.phone"];
           email?: parameters["rowFilter.customers.email"];
           address?: parameters["rowFilter.customers.address"];
-          inserted_at?: parameters["rowFilter.customers.inserted_at"];
-          updated_at?: parameters["rowFilter.customers.updated_at"];
+          insertedAt?: parameters["rowFilter.customers.insertedAt"];
+          updatedAt?: parameters["rowFilter.customers.updatedAt"];
           username?: parameters["rowFilter.customers.username"];
           displayname?: parameters["rowFilter.customers.displayname"];
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
@@ -1145,9 +1145,9 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.customers_tags.id"];
-          created_at?: parameters["rowFilter.customers_tags.created_at"];
-          tag_id?: parameters["rowFilter.customers_tags.tag_id"];
-          customer_id?: parameters["rowFilter.customers_tags.customer_id"];
+          createdAt?: parameters["rowFilter.customers_tags.createdAt"];
+          tagId?: parameters["rowFilter.customers_tags.tagId"];
+          customerId?: parameters["rowFilter.customers_tags.customerId"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -1199,9 +1199,9 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.customers_tags.id"];
-          created_at?: parameters["rowFilter.customers_tags.created_at"];
-          tag_id?: parameters["rowFilter.customers_tags.tag_id"];
-          customer_id?: parameters["rowFilter.customers_tags.customer_id"];
+          createdAt?: parameters["rowFilter.customers_tags.createdAt"];
+          tagId?: parameters["rowFilter.customers_tags.tagId"];
+          customerId?: parameters["rowFilter.customers_tags.customerId"];
         };
         header: {
           /** Preference */
@@ -1217,9 +1217,9 @@ export interface paths {
       parameters: {
         query: {
           id?: parameters["rowFilter.customers_tags.id"];
-          created_at?: parameters["rowFilter.customers_tags.created_at"];
-          tag_id?: parameters["rowFilter.customers_tags.tag_id"];
-          customer_id?: parameters["rowFilter.customers_tags.customer_id"];
+          createdAt?: parameters["rowFilter.customers_tags.createdAt"];
+          tagId?: parameters["rowFilter.customers_tags.tagId"];
+          customerId?: parameters["rowFilter.customers_tags.customerId"];
         };
         body: {
           /** customers_tags */
@@ -1274,30 +1274,30 @@ export interface definitions {
      * Format: timestamp with time zone
      * @default now()
      */
-    inserted_at: string;
+    insertedAt: string;
     /**
      * Format: timestamp with time zone
      * @default now()
      */
-    updated_at: string;
+    updatedAt: string;
     /** Format: character varying */
-    istype?: string;
+    isType?: string;
     /** Format: character varying */
-    messagetype?: string;
+    messageType?: string;
     /** Format: character varying */
-    messageid?: string;
+    messageId?: string;
     /** Format: character varying */
-    messagetext?: string;
+    messageText?: string;
     /** Format: character varying */
-    webhookeventid?: string;
+    webhookEventid?: string;
     /** Format: boolean */
-    isredelivery?: boolean;
+    isRedelivery?: boolean;
     /** Format: character varying */
-    istimestamp?: string;
+    isTimestamp?: string;
     /** Format: character varying */
-    replytoken?: string;
+    replyToken?: string;
     /** Format: character varying */
-    ismode?: string;
+    isMode?: string;
     /**
      * Format: boolean
      * @description このメッセージに対して、返信したかどうか
@@ -1372,19 +1372,19 @@ export interface definitions {
      * Format: timestamp with time zone
      * @default now()
      */
-    created_at?: string;
+    createdAt?: string;
     /**
      * Format: uuid
      * @description Note:
      * This is a Foreign Key to `urls.id`.<fk table='urls' column='id'/>
      */
-    url_id: string;
+    urlId: string;
     /**
      * Format: uuid
      * @description Note:
      * This is a Foreign Key to `tags.id`.<fk table='tags' column='id'/>
      */
-    tag_id: string;
+    tagId: string;
   };
   autoreplymessage: {
     /**
@@ -1431,12 +1431,12 @@ export interface definitions {
      * Format: timestamp with time zone
      * @default now()
      */
-    inserted_at: string;
+    insertedAt: string;
     /**
      * Format: timestamp with time zone
      * @default now()
      */
-    updated_at: string;
+    updatedAt: string;
     /** Format: character varying */
     message?: string;
     /**
@@ -1444,12 +1444,12 @@ export interface definitions {
      * @description Note:
      * This is a Foreign Key to `customers.lineid`.<fk table='customers' column='lineid'/>
      */
-    touserid: string;
+    toUser: string;
     /**
      * Format: character varying
      * @default pushmessage
      */
-    istype: string;
+    isType: string;
   };
   tags: {
     /**
@@ -1463,12 +1463,12 @@ export interface definitions {
      * Format: timestamp with time zone
      * @default now()
      */
-    inserted_at: string;
+    insertedAt: string;
     /**
      * Format: timestamp with time zone
      * @default now()
      */
-    updated_at: string;
+    updatedAt: string;
     /** Format: character varying */
     name: string;
   };
@@ -1489,12 +1489,12 @@ export interface definitions {
      * Format: timestamp with time zone
      * @default now()
      */
-    inserted_at?: string;
+    insertedAt?: string;
     /**
      * Format: timestamp with time zone
      * @default now()
      */
-    updated_at?: string;
+    updatedAt?: string;
     /** Format: character varying */
     username?: string;
     /** Format: character varying */
@@ -1550,19 +1550,19 @@ export interface definitions {
      * Format: timestamp with time zone
      * @default now()
      */
-    created_at?: string;
+    createdAt?: string;
     /**
      * Format: uuid
      * @description Note:
      * This is a Foreign Key to `tags.id`.<fk table='tags' column='id'/>
      */
-    tag_id: string;
+    tagId: string;
     /**
      * Format: character varying
      * @description Note:
      * This is a Foreign Key to `customers.lineid`.<fk table='customers' column='lineid'/>
      */
-    customer_id: string;
+    customerId: string;
   };
 }
 
@@ -1616,27 +1616,27 @@ export interface parameters {
   /** Format: uuid */
   "rowFilter.talks.id": string;
   /** Format: timestamp with time zone */
-  "rowFilter.talks.inserted_at": string;
+  "rowFilter.talks.insertedAt": string;
   /** Format: timestamp with time zone */
-  "rowFilter.talks.updated_at": string;
+  "rowFilter.talks.updatedAt": string;
   /** Format: character varying */
-  "rowFilter.talks.istype": string;
+  "rowFilter.talks.isType": string;
   /** Format: character varying */
-  "rowFilter.talks.messagetype": string;
+  "rowFilter.talks.messageType": string;
   /** Format: character varying */
-  "rowFilter.talks.messageid": string;
+  "rowFilter.talks.messageId": string;
   /** Format: character varying */
-  "rowFilter.talks.messagetext": string;
+  "rowFilter.talks.messageText": string;
   /** Format: character varying */
-  "rowFilter.talks.webhookeventid": string;
+  "rowFilter.talks.webhookEventid": string;
   /** Format: boolean */
-  "rowFilter.talks.isredelivery": string;
+  "rowFilter.talks.isRedelivery": string;
   /** Format: character varying */
-  "rowFilter.talks.istimestamp": string;
+  "rowFilter.talks.isTimestamp": string;
   /** Format: character varying */
-  "rowFilter.talks.replytoken": string;
+  "rowFilter.talks.replyToken": string;
   /** Format: character varying */
-  "rowFilter.talks.ismode": string;
+  "rowFilter.talks.isMode": string;
   /**
    * Format: boolean
    * @description このメッセージに対して、返信したかどうか
@@ -1675,11 +1675,11 @@ export interface parameters {
   /** Format: uuid */
   "rowFilter.urls_tags.id": string;
   /** Format: timestamp with time zone */
-  "rowFilter.urls_tags.created_at": string;
+  "rowFilter.urls_tags.createdAt": string;
   /** Format: uuid */
-  "rowFilter.urls_tags.url_id": string;
+  "rowFilter.urls_tags.urlId": string;
   /** Format: uuid */
-  "rowFilter.urls_tags.tag_id": string;
+  "rowFilter.urls_tags.tagId": string;
   /** @description autoreplymessage */
   "body.autoreplymessage": definitions["autoreplymessage"];
   /** Format: uuid */
@@ -1703,23 +1703,23 @@ export interface parameters {
   /** Format: uuid */
   "rowFilter.pushmessages.id": string;
   /** Format: timestamp with time zone */
-  "rowFilter.pushmessages.inserted_at": string;
+  "rowFilter.pushmessages.insertedAt": string;
   /** Format: timestamp with time zone */
-  "rowFilter.pushmessages.updated_at": string;
+  "rowFilter.pushmessages.updatedAt": string;
   /** Format: character varying */
   "rowFilter.pushmessages.message": string;
   /** Format: character varying */
-  "rowFilter.pushmessages.touserid": string;
+  "rowFilter.pushmessages.toUser": string;
   /** Format: character varying */
-  "rowFilter.pushmessages.istype": string;
+  "rowFilter.pushmessages.isType": string;
   /** @description tags */
   "body.tags": definitions["tags"];
   /** Format: uuid */
   "rowFilter.tags.id": string;
   /** Format: timestamp with time zone */
-  "rowFilter.tags.inserted_at": string;
+  "rowFilter.tags.insertedAt": string;
   /** Format: timestamp with time zone */
-  "rowFilter.tags.updated_at": string;
+  "rowFilter.tags.updatedAt": string;
   /** Format: character varying */
   "rowFilter.tags.name": string;
   /** @description customers */
@@ -1733,9 +1733,9 @@ export interface parameters {
   /** Format: character varying */
   "rowFilter.customers.address": string;
   /** Format: timestamp with time zone */
-  "rowFilter.customers.inserted_at": string;
+  "rowFilter.customers.insertedAt": string;
   /** Format: timestamp with time zone */
-  "rowFilter.customers.updated_at": string;
+  "rowFilter.customers.updatedAt": string;
   /** Format: character varying */
   "rowFilter.customers.username": string;
   /** Format: character varying */
@@ -1763,11 +1763,11 @@ export interface parameters {
   /** Format: uuid */
   "rowFilter.customers_tags.id": string;
   /** Format: timestamp with time zone */
-  "rowFilter.customers_tags.created_at": string;
+  "rowFilter.customers_tags.createdAt": string;
   /** Format: uuid */
-  "rowFilter.customers_tags.tag_id": string;
+  "rowFilter.customers_tags.tagId": string;
   /** Format: character varying */
-  "rowFilter.customers_tags.customer_id": string;
+  "rowFilter.customers_tags.customerId": string;
 }
 
 export interface operations {}

@@ -1,16 +1,18 @@
 import type { TextMessage } from "@line/bot-sdk";
 import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
-import { Layout } from "src/component";
-import { Tag } from "src/component/Tag";
+import toast from "react-hot-toast";
+import { Layout, Tag as TagComponent } from "src/component";
 import { useFilteredCustomer } from "src/hook/useFilteredCustomer";
 import { useFilteredTags } from "src/hook/useFilteredTags";
+import type { Tag } from "src/type/supabaseCustom";
 
 export type InserData = {
   title: string;
   sendDay: "now" | "select";
   messages: TextMessage[];
   sendTo: "all" | string[];
+  status: "配信待ち";
 };
 
 const CreateSegment = () => {
@@ -30,24 +32,18 @@ const CreateSegment = () => {
   });
 
   const [isOpenTagsForm, setIsOpenTagsForm] = useState(false);
-  const { tags, handleDeleteTags, handleSelectTags, selectTags } =
-    useFilteredTags();
+  const { tags, onDeleteTags, onSelectTags, selectTags } = useFilteredTags();
 
-  const {
-    filteredCustomers,
-    handleFilterCustomers,
-    count,
-    customers,
-    setCount,
-  } = useFilteredCustomer();
+  const { filteredCustomers, onFilterCustomers, count, customers, setCount } =
+    useFilteredCustomer();
 
   const [isOpenTagsList, setIsOpenTagsList] = useState(true);
 
-  const onSubmit = async (data: InserData) => {
-    console.log("Submit: ", data);
+  const onSubmit = async () => {
+    toast.success("Success.");
   };
 
-  const handleChangeIsOpenTagsForm = (e: any) => {
+  const handleIsOpenTagsForm = (e: any) => {
     if (!customers) return;
     if (e.target.value !== "all") {
       setIsOpenTagsForm(true);
@@ -56,12 +52,6 @@ const CreateSegment = () => {
       setIsOpenTagsList(true);
       setCount(customers.length);
     }
-  };
-  const handleAppendList = () => {
-    append({ type: "text", text: "" });
-  };
-  const handleRemoveList = (index: number) => {
-    remove(index);
   };
 
   const handleDesideTags = () => {
@@ -72,17 +62,71 @@ const CreateSegment = () => {
     });
     setValue("sendTo", sendTo);
   };
+
+  const AppendMessageButton = () => {
+    const handleClick = () => {
+      append({ type: "text", text: "" });
+    };
+    return (
+      <button
+        type="button"
+        onClick={handleClick}
+        className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-500 text-white"
+      >
+        +
+      </button>
+    );
+  };
+
+  const RemoveMessageButton = (props: { index: number }) => {
+    const handleClick = () => {
+      remove(props.index);
+    };
+    return (
+      <button
+        type="button"
+        onClick={handleClick}
+        className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-sm font-semibold text-white"
+      >
+        ✖︎
+      </button>
+    );
+  };
+
+  const RemoveSelectedTagsButton = (props: { tag: Tag }) => {
+    const handleClick = () => {
+      const newTags = onDeleteTags(props.tag, true);
+      if (newTags) onFilterCustomers(newTags);
+    };
+    return (
+      <button type="button" onClick={handleClick} className="text-red-500">
+        ✖︎
+      </button>
+    );
+  };
+
+  const AppendSelectedTagsButton = (props: { tag: Tag }) => {
+    const handleClick = () => {
+      onSelectTags(props.tag, true);
+      onFilterCustomers([...selectTags, props.tag]);
+    };
+    return (
+      <button type="button" onClick={handleClick}>
+        <TagComponent name={props.tag.name} />
+      </button>
+    );
+  };
+
   return (
-    <Layout>
-      <h2 className="m-8 text-2xl font-bold">メッセージ作成</h2>
-      <p className="ml-8 mb-2 w-[80%]">
-        こちらでメッセージを作成します。ターゲットを絞ってセグメント配信も可能です。
-      </p>
+    <Layout
+      header="メッセージ作成"
+      description="こちらでメッセージを作成します。ターゲットを絞ってセグメント配信も可能です。"
+    >
       <div className="flex gap-8 p-8">
         <div className="grid min-h-[80vh] gap-y-8 bg-white xl:grid-cols-2">
           <div className="h-full space-y-4 bg-sky-300 p-5">
             <p className="bg-yellow-200 p-2">
-              ※ プレビューは実際の画面と異なる場合があります。
+              ⚠ プレビューは実際の画面と異なる場合があります。
             </p>
 
             {fields.map((field, index) => {
@@ -97,24 +141,12 @@ const CreateSegment = () => {
                     className="w-32 rounded-3xl border-none bg-green-300 p-2"
                   />
                   <div>
-                    <button
-                      type="button"
-                      onClick={() => {return handleRemoveList(index)}}
-                      className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-sm font-semibold text-white"
-                    >
-                      ✖︎
-                    </button>
+                    <RemoveMessageButton index={index} />
                   </div>
                 </div>
               );
             })}
-            <button
-              type="button"
-              onClick={handleAppendList}
-              className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-500 text-white"
-            >
-              +
-            </button>
+            <AppendMessageButton />
           </div>
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -157,7 +189,7 @@ const CreateSegment = () => {
                       id="all"
                       name="drone"
                       value="all"
-                      onChange={handleChangeIsOpenTagsForm}
+                      onChange={handleIsOpenTagsForm}
                     />
                     <label htmlFor="all">全てのお客様</label>
                   </div>
@@ -168,7 +200,7 @@ const CreateSegment = () => {
                       id="filterByTag"
                       name="drone"
                       value="filterByTag"
-                      onChange={handleChangeIsOpenTagsForm}
+                      onChange={handleIsOpenTagsForm}
                     />
                     <label htmlFor="filterByTag">タグで絞り込み</label>
                   </div>
@@ -179,7 +211,7 @@ const CreateSegment = () => {
                       id="filterByName"
                       name="drone"
                       value="filterByName"
-                      onChange={handleChangeIsOpenTagsForm}
+                      onChange={handleIsOpenTagsForm}
                     />
                     <label htmlFor="filterByName">名前で絞り込み</label>
                   </div>
@@ -194,18 +226,9 @@ const CreateSegment = () => {
                       {selectTags.map((tag) => {
                         return (
                           <div key={tag.id} className="flex items-center">
-                            <Tag name={tag.name} />
+                            <TagComponent name={tag.name} />
                             {isOpenTagsList && (
-                              <button
-                                type="button"
-                                onClick={() => {
-                                  handleDeleteTags(tag, true);
-                                  handleFilterCustomers(selectTags);
-                                }}
-                                className="text-red-500"
-                              >
-                                ✖︎
-                              </button>
+                              <RemoveSelectedTagsButton tag={tag} />
                             )}
                           </div>
                         );
@@ -218,16 +241,7 @@ const CreateSegment = () => {
                       <div className="flex flex-wrap items-center gap-2 rounded-md border p-2">
                         {tags?.map((tag) => {
                           return (
-                            <button
-                              key={tag.id}
-                              type="button"
-                              onClick={() => {
-                                handleSelectTags(tag, true);
-                                handleFilterCustomers([...selectTags, tag]);
-                              }}
-                            >
-                              <Tag name={tag.name} />
-                            </button>
+                            <AppendSelectedTagsButton tag={tag} key={tag.id} />
                           );
                         })}
                       </div>

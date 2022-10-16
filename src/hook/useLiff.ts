@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 export const useLiff = () => {
   const [liff, setLiff] = useState<Liff>();
+  const [profile, setProfile] = useState();
 
   // @line/liffは、中で"window"を使用している。なので、動的インポートが必須。
   useEffect(() => {
@@ -15,6 +16,7 @@ export const useLiff = () => {
           if (!liff.isLoggedIn()) {
             liff.login();
           }
+
           setLiff(liff);
         })
         .catch((err: any) => {

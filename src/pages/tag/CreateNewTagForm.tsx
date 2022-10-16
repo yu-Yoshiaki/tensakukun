@@ -2,8 +2,7 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { CreateNewButton } from "src/component/Button/CreateNew";
-import { DeleteButton } from "src/component/Button/Delete";
+import { CreateNewButton, DeleteButton } from "src/component";
 import { useTags } from "src/hook/useTags";
 import type { definitions } from "src/type/supabase";
 
@@ -27,7 +26,7 @@ export const CreateNewTagForm = () => {
 
   useEffect(() => {
     reset();
-  }, [isOpen]);
+  }, [isOpen, reset]);
 
   const onOpenModal = () => {
     setIsOpen(true);

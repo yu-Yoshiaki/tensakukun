@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useFilteredCustomer } from "src/hook/useFilteredCustomer";
+// import { useFilteredCustomer } from "src/hook/useFilteredCustomer";
 import { supabase } from "src/lib/supabase";
 import type { definitions } from "src/type/supabase";
 
 export const SignupForm = (props: { lineid?: string }) => {
-  const { filteredCustomers } = useFilteredCustomer();
+  // const { filteredCustomers } = useFilteredCustomer();
   const router = useRouter();
 
   type Form = {
@@ -37,7 +37,7 @@ export const SignupForm = (props: { lineid?: string }) => {
 
   return (
     <form
-      className="flex flex-col justify-between p-2 py-5 text-sm "
+      className="flex h-screen flex-col justify-between p-2 py-5 text-sm"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="mb-20 space-y-3">

@@ -1,18 +1,21 @@
 import { Liff } from "@line/liff/dist/lib";
-import { useState, useEffect } from "react";
+import useSWR from "swr";
 
-export const useLiffGetProfile = (props: { liff: Liff }) => {
-  const [lineid, setLineid] = useState<string>();
+type Profile = {
+  userId: string;
+  displayName: string;
+  pictureUrl?: string;
+  statusMessage?: string;
+};
 
+export const useLiffGetProfile = (liff: Liff | undefined) => {
   const fetchLineProfile = async () => {
-    if (!props.liff) return;
-    const profile = await props.liff.getProfile();
-    setLineid(profile.userId);
+    if (!liff) return;
+    const profile = await liff.getProfile();
+    return profile;
   };
+  const { data: profile } = useSWR("liff/p", fetchLineProfile);
+  console.log("----------", profile);
 
-  useEffect(() => {
-    fetchLineProfile();
-  }, []);
-
-  return { lineid };
+  return { profile };
 };

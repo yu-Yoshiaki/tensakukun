@@ -3,8 +3,8 @@ import { Layout } from "src/component";
 
 const Root: CustomNextPage = () => {
   return (
-    <Layout>
-      <div>トップページ</div>
+    <Layout header="Top">
+      <div></div>
     </Layout>
   );
 };

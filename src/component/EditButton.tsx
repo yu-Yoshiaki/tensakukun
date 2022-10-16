@@ -1,5 +1,9 @@
 import { MouseEventHandler } from "react";
 
+/**
+ * @package
+ */
+
 type Props = {
   handleClick?: MouseEventHandler<HTMLButtonElement>;
 };
@@ -9,9 +13,9 @@ export const EditButton = (props: Props) => {
     <button
       type="button"
       onClick={props.handleClick}
-      className="px-3 py-2 flex text-sm gap-2 rounded-md font-semibold bg-gray-200 hover:bg-gray-100 justify-center items-center"
+      className="px-3 py-1 flex text-sm gap-2 rounded-md font-semibold bg-gray-200 hover:bg-gray-100 justify-center items-center"
     >
-      🪛 <span className="whitespace-nowrap">編集</span>
+      <span className="text-xl">🪛</span>編集
     </button>
   );
 };

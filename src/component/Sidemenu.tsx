@@ -35,7 +35,7 @@ const menu = [
     href: "/tag",
     color: "pink-200",
     active: true,
-    icon: "🏷",
+    icon: "🔖",
   },
   {
     text: "設定",
@@ -55,12 +55,16 @@ export const Sidemenu = () => {
     <ul className="space-y-2">
       {menu.map((data) => {
         return (
-          <li key={data.text} className="py-2 px-3 hover:bg-sky-200">
+          <li
+            key={data.text}
+            className="py-2 text-lg hover:text-xl hover:bg-gray-100"
+          >
             <Link href={data.href}>
               <a
-                className={`flex gap-3 items-center whitespace-nowrap text-lg font-bold text-gray-700`}
+                className={`flex gap-3 items-center whitespace-nowrap  font-bold text-gray-700`}
               >
-                <span className="text-sky-300">{data.icon}</span> {data.text}
+                <span className="text-sky-300 text-xl">{data.icon}</span>{" "}
+                {data.text}
               </a>
             </Link>
           </li>

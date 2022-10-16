@@ -1,36 +1,160 @@
 import axios from "axios";
 import Link from "next/link";
-import { Layout } from "src/component";
-import { DeleteButton } from "src/component/Button/Delete";
-import { EditButton } from "src/component/Button/Edit";
+import { DeleteButton, EditButton, Layout } from "src/component";
 import useSWR from "swr";
 
 const testData: {
-  name: string;
-  status: string;
+  title: string;
+  status: "配信待ち" | "配信済み" | "配信予約";
   sentAt: string;
-  to: "all" | string[];
+  sendTo: "all" | string[];
   countTo: number;
 }[] = [
   {
-    name: "新規メッセージ No.06",
+    title: "新規メッセージ No.06",
     status: "配信済み",
     sentAt: "2022/09/28",
-    to: "all",
+    sendTo: "all",
     countTo: 10,
   },
   {
-    name: "セグメントメッセージ [東京] No.03",
+    title: "セグメントメッセージ [東京] No.03",
     status: "配信予約",
     sentAt: "2022/09/30",
-    to: ["twitter", "東京"],
+    sendTo: ["twitter", "東京"],
     countTo: 5,
   },
   {
-    name: "セグメントメッセージ [東京] No.02",
+    title: "セグメントメッセージ [東京] No.02",
+    status: "配信待ち",
+    sentAt: "2022/09/30",
+    sendTo: ["20代"],
+    countTo: 3,
+  },
+  {
+    title: "新規メッセージ No.06",
+    status: "配信済み",
+    sentAt: "2022/09/28",
+    sendTo: "all",
+    countTo: 10,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.03",
     status: "配信予約",
     sentAt: "2022/09/30",
-    to: ["20代"],
+    sendTo: ["twitter", "東京"],
+    countTo: 5,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.02",
+    status: "配信待ち",
+    sentAt: "2022/09/30",
+    sendTo: ["20代"],
+    countTo: 3,
+  },
+  {
+    title: "新規メッセージ No.06",
+    status: "配信済み",
+    sentAt: "2022/09/28",
+    sendTo: "all",
+    countTo: 10,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.03",
+    status: "配信予約",
+    sentAt: "2022/09/30",
+    sendTo: ["twitter", "東京"],
+    countTo: 5,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.02",
+    status: "配信予約",
+    sentAt: "2022/09/30",
+    sendTo: ["20代"],
+    countTo: 3,
+  },
+  {
+    title: "新規メッセージ No.06",
+    status: "配信待ち",
+    sentAt: "2022/09/28",
+    sendTo: "all",
+    countTo: 10,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.03",
+    status: "配信予約",
+    sentAt: "2022/09/30",
+    sendTo: ["twitter", "東京"],
+    countTo: 5,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.02",
+    status: "配信予約",
+    sentAt: "2022/09/30",
+    sendTo: ["20代"],
+    countTo: 3,
+  },
+  {
+    title: "新規メッセージ No.06",
+    status: "配信済み",
+    sentAt: "2022/09/28",
+    sendTo: "all",
+    countTo: 10,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.03",
+    status: "配信予約",
+    sentAt: "2022/09/30",
+    sendTo: ["twitter", "東京"],
+    countTo: 5,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.02",
+    status: "配信予約",
+    sentAt: "2022/09/30",
+    sendTo: ["20代"],
+    countTo: 3,
+  },
+  {
+    title: "新規メッセージ No.06",
+    status: "配信済み",
+    sentAt: "2022/09/28",
+    sendTo: "all",
+    countTo: 10,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.03",
+    status: "配信予約",
+    sentAt: "2022/09/30",
+    sendTo: ["twitter", "東京"],
+    countTo: 5,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.02",
+    status: "配信予約",
+    sentAt: "2022/09/30",
+    sendTo: ["20代"],
+    countTo: 3,
+  },
+  {
+    title: "新規メッセージ No.06",
+    status: "配信済み",
+    sentAt: "2022/09/28",
+    sendTo: "all",
+    countTo: 10,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.03",
+    status: "配信予約",
+    sentAt: "2022/09/30",
+    sendTo: ["twitter", "東京"],
+    countTo: 5,
+  },
+  {
+    title: "セグメントメッセージ [東京] No.02",
+    status: "配信予約",
+    sentAt: "2022/09/30",
+    sendTo: ["20代"],
     countTo: 3,
   },
 ];
@@ -51,18 +175,33 @@ const Index = () => {
     fetcher
   );
 
+  const SendButton = () => {
+    const handleClick = () => {
+      return;
+    };
+
+    return (
+      <button
+        type="button"
+        onClick={handleClick}
+        className="flex items-center justify-center gap-2 rounded-md bg-green-400 px-3 py-1 text-sm font-semibold text-white hover:bg-green-300"
+      >
+        送信
+      </button>
+    );
+  };
+
   return (
-    <Layout>
-      <h2 className="m-8 text-2xl font-bold">メッセージ配信</h2>
-      <p className="ml-8 mb-2 w-[80%]">
-        友だちにテキストを配信できます。タグの絞り込みによるセグメント配信、時間予約によるステップ配信
-      </p>
-      <div className="flex gap-8 p-8">
-        <div className="w-[700px] space-y-4 rounded-md bg-white p-8 shadow-sm">
+    <Layout
+      header="メッセージ配信"
+      description="友だちにテキストを配信できます。タグの絞り込みによるセグメント配信、時間予約によるステップ配信"
+    >
+      <div className="flex gap-8 overflow-x-auto p-8">
+        <div className="space-y-4 rounded-md bg-white p-8 shadow-sm">
           <div className="flex items-center justify-between">
             <Link href={"/message/create"}>
-              <a className="flex w-[110px] items-center justify-center gap-2 rounded-md bg-gray-800 px-3 py-2 text-sm font-semibold text-white hover:bg-gray-700">
-                ✏<span className="whitespace-nowrap">新規作成</span>
+              <a className="flex w-[110px] items-center justify-center gap-2 rounded-md bg-gray-700 px-3 py-1 text-sm font-semibold text-white hover:bg-gray-700">
+                <span className="text-xl">✏</span>新規作成
               </a>
             </Link>
             <div className="flex gap-2">
@@ -73,38 +212,60 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="max-h-[500px] divide-y overflow-auto overflow-y-auto border">
+          <div className="max-h-[500px] divide-y overflow-y-auto border">
             {testData.map((data) => {
               return (
                 <div
-                  key={data.name}
-                  className="grid grid-cols-[1fr,auto,auto] items-center gap-4 whitespace-nowrap px-5 py-2 md:w-auto"
+                  key={data.title}
+                  className="grid grid-cols-[1fr,auto,auto,auto] items-center gap-4 whitespace-nowrap px-5 py-2 md:w-auto"
                 >
                   <div>
                     <div className="flex items-center gap-2 text-lg font-bold">
-                      <span className="text-4xl">✉</span> {data.name}
+                      <span className="text-4xl">✉</span> {data.title}
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-xl">🎯</span>
-                      {data.to === "all"
+                      {data.sendTo === "all"
                         ? "全てのお客様"
-                        : `絞り込み [${data.to.map((d) => {
+                        : `絞り込み [${data.sendTo.map((d) => {
                             return d;
                           })}]`}
                     </div>
+                  </div>{" "}
+                  <div className="flex items-center justify-end">
+                    <div
+                      className={`rounded-full py-1 px-3 text-[4px] text-white ${
+                        data.status === "配信済み"
+                          ? "bg-blue-500"
+                          : data.status === "配信待ち"
+                          ? "bg-green-500"
+                          : "bg-yellow-500"
+                      }`}
+                    >
+                      {data.status}
+                    </div>
                   </div>
-                  <div className="text-sm">
-                    配信数:{" "}
-                    <span className="font-semibold">{data.countTo}</span>
+                  <div className="flex flex-col gap-1">
+                    <div className="text-xs">
+                      配信数:
+                      <span className="text-sm font-semibold">
+                        {data.countTo}
+                      </span>
+                    </div>
+                    <div className="text-xs">
+                      配信日:
+                      <span className="text-sm font-semibold">
+                        {data.sentAt}
+                      </span>
+                    </div>
                   </div>
                   <div className="space-y-2 text-right">
-                    <div className="flex items-center justify-end">
-                      <div className="rounded-full bg-gray-300 py-1 px-3 text-[4px] ">
-                        {data.status}
-                      </div>
-                    </div>
-                    <div className="text-xs">配信日: {data.sentAt}</div>
-                    <div className="flex justify-end gap-2">
+                    <div className="grid grid-cols-3 place-content-end justify-end gap-2">
+                      {data.status === "配信待ち" ? (
+                        <SendButton />
+                      ) : (
+                        <div></div>
+                      )}
                       <EditButton />
                       <DeleteButton />
                     </div>

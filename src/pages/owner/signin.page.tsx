@@ -1,7 +1,7 @@
 import type { CustomNextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { Signin } from "src/component/Signin";
+import { Signin } from "src/component";
 import { useUserSession } from "src/hook/useUserSession";
 
 const Auth: CustomNextPage = () => {
