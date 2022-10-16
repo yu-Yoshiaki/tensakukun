@@ -6,7 +6,12 @@ type Props = {
   page: number;
   pagenationPath: string;
 };
-export const PageNation = (props: Props) => {
+
+/**
+ * @package
+ */
+
+export const Pagenation = (props: Props) => {
   const router = useRouter();
 
   const handleClick = (page: number) => {

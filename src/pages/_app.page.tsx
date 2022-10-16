@@ -3,22 +3,16 @@ import "../style/index.css";
 import type { CustomAppProps } from "next/app";
 import Head from "next/head";
 import { memo } from "react";
-import { Authenticated } from "src/component/LiffInit";
+import { Toaster } from "react-hot-toast";
 
 const App = (props: CustomAppProps) => {
-  const getLayout =
-    props.Component.getLayout ||
-    ((page) => {
-      return page;
-    });
-
   return (
     <>
       <Head>
-        <title>CHU-HOTEL-ONLINE</title>
+        <title>Lプラス デモ</title>
       </Head>
-      <Authenticated />
-      {getLayout(<props.Component {...props.pageProps} />)}
+      <Toaster />
+      <props.Component {...props.pageProps} />
     </>
   );
 };

@@ -1,0 +1,71 @@
+リッチメニュー作成
+
+curl -v -X POST https://api.line.me/v2/bot/richmenu -H 'Authorization: Bearer /EKrlIO9RafDabhKNOzqxdTQtmq26kOqKo4QTV5gf2IA9M7RLqu1qFqObe73ttwwG6V0HJq/XZ4gDmqr78RCPzym9DeBJjGSLBMjKmfUhNDxxWsB9xpiHlWD4e+JKXzZTc6koZU66Xy43e+ERoZLYAdB04t89/1O/w1cDnyilFU=' -H 'Content-Type: application/json' -d '{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": false,
+  "name": "Nice richmenu",
+  "chatBarText": "Tap here",
+  "areas": [
+    {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1250,
+        "height": 843
+      },
+      "action": {
+        "type": "postback",
+        "data": "action=buy&itemid=123"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1250,
+        "y": 0,
+        "width": 1250,
+        "height": 843
+      },
+      "action": {
+        "type": "postback",
+        "data": "action=buy&itemid=123"
+      }
+    },
+    {
+      "bounds": {
+        "x": 0,
+        "y": 843,
+        "width": 1250,
+        "height": 843
+      },
+      "action": {
+        "type": "postback",
+        "data": "action=buy&itemid=123"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1250,
+        "y": 843,
+        "width": 1250,
+        "height": 843
+      },
+      "action": {
+        "type": "postback",
+        "data": "action=buy&itemid=123"
+      }
+    }
+  ]
+}
+'
+
+
+リッチメニューに画像を割り当て　上を実行し、帰ってきたリッチメニューIDを使う
+
+curl -v -X POST https://api-data.line.me/v2/bot/richmenu/richmenu-795bafb50d38ed98791f0815f3c92691/content -H "Authorization: Bearer /EKrlIO9RafDabhKNOzqxdTQtmq26kOqKo4QTV5gf2IA9M7RLqu1qFqObe73ttwwG6V0HJq/XZ4gDmqr78RCPzym9DeBJjGSLBMjKmfUhNDxxWsB9xpiHlWD4e+JKXzZTc6koZU66Xy43e+ERoZLYAdB04t89/1O/w1cDnyilFU=" -H "Content-Type: image/jpeg" -T "/Users/yumotoyoshiaki/Downloads/タグ.png"
+
+リッチメニューを設定
+
+curl -v -X POST https://api.line.me/v2/bot/user/all/richmenu/richmenu-795bafb50d38ed98791f0815f3c92691 -H "Authorization: Bearer /EKrlIO9RafDabhKNOzqxdTQtmq26kOqKo4QTV5gf2IA9M7RLqu1qFqObe73ttwwG6V0HJq/XZ4gDmqr78RCPzym9DeBJjGSLBMjKmfUhNDxxWsB9xpiHlWD4e+JKXzZTc6koZU66Xy43e+ERoZLYAdB04t89/1O/w1cDnyilFU="
