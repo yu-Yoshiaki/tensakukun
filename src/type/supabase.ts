@@ -12,105 +12,6 @@ export interface paths {
       };
     };
   };
-  "/messagetemplatecontent": {
-    get: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.messagetemplatecontent.id"];
-          inserted_at?: parameters["rowFilter.messagetemplatecontent.inserted_at"];
-          updated_at?: parameters["rowFilter.messagetemplatecontent.updated_at"];
-          istype?: parameters["rowFilter.messagetemplatecontent.istype"];
-          istext?: parameters["rowFilter.messagetemplatecontent.istext"];
-          /** Filtering Columns */
-          select?: parameters["select"];
-          /** Ordering */
-          order?: parameters["order"];
-          /** Limiting and Pagination */
-          offset?: parameters["offset"];
-          /** Limiting and Pagination */
-          limit?: parameters["limit"];
-        };
-        header: {
-          /** Limiting and Pagination */
-          Range?: parameters["range"];
-          /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
-          /** Preference */
-          Prefer?: parameters["preferCount"];
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          schema: definitions["messagetemplatecontent"][];
-        };
-        /** Partial Content */
-        206: unknown;
-      };
-    };
-    post: {
-      parameters: {
-        body: {
-          /** messagetemplatecontent */
-          messagetemplatecontent?: definitions["messagetemplatecontent"];
-        };
-        query: {
-          /** Filtering Columns */
-          select?: parameters["select"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** Created */
-        201: unknown;
-      };
-    };
-    delete: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.messagetemplatecontent.id"];
-          inserted_at?: parameters["rowFilter.messagetemplatecontent.inserted_at"];
-          updated_at?: parameters["rowFilter.messagetemplatecontent.updated_at"];
-          istype?: parameters["rowFilter.messagetemplatecontent.istype"];
-          istext?: parameters["rowFilter.messagetemplatecontent.istext"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-    patch: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.messagetemplatecontent.id"];
-          inserted_at?: parameters["rowFilter.messagetemplatecontent.inserted_at"];
-          updated_at?: parameters["rowFilter.messagetemplatecontent.updated_at"];
-          istype?: parameters["rowFilter.messagetemplatecontent.istype"];
-          istext?: parameters["rowFilter.messagetemplatecontent.istext"];
-        };
-        body: {
-          /** messagetemplatecontent */
-          messagetemplatecontent?: definitions["messagetemplatecontent"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-  };
   "/talks": {
     get: {
       parameters: {
@@ -240,16 +141,24 @@ export interface paths {
       };
     };
   };
-  "/reserve": {
+  "/OwnerInfomation": {
     get: {
       parameters: {
         query: {
-          created_at?: parameters["rowFilter.reserve.created_at"];
-          date?: parameters["rowFilter.reserve.date"];
-          member?: parameters["rowFilter.reserve.member"];
-          status?: parameters["rowFilter.reserve.status"];
-          lineid?: parameters["rowFilter.reserve.lineid"];
-          reserveid?: parameters["rowFilter.reserve.reserveid"];
+          id?: parameters["rowFilter.OwnerInfomation.id"];
+          updatedAt?: parameters["rowFilter.OwnerInfomation.updatedAt"];
+          createdAt?: parameters["rowFilter.OwnerInfomation.createdAt"];
+          name?: parameters["rowFilter.OwnerInfomation.name"];
+          apiChannelId?: parameters["rowFilter.OwnerInfomation.apiChannelId"];
+          liffChannelSecret?: parameters["rowFilter.OwnerInfomation.liffChannelSecret"];
+          webhookUrl?: parameters["rowFilter.OwnerInfomation.webhookUrl"];
+          liffId?: parameters["rowFilter.OwnerInfomation.liffId"];
+          liffChannelId?: parameters["rowFilter.OwnerInfomation.liffChannelId"];
+          apiChannelSecret?: parameters["rowFilter.OwnerInfomation.apiChannelSecret"];
+          apiChannelAccessToken?: parameters["rowFilter.OwnerInfomation.apiChannelAccessToken"];
+          basicId?: parameters["rowFilter.OwnerInfomation.basicId"];
+          pictureUrl?: parameters["rowFilter.OwnerInfomation.pictureUrl"];
+          liffAccessToken?: parameters["rowFilter.OwnerInfomation.liffAccessToken"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -271,7 +180,7 @@ export interface paths {
       responses: {
         /** OK */
         200: {
-          schema: definitions["reserve"][];
+          schema: definitions["OwnerInfomation"][];
         };
         /** Partial Content */
         206: unknown;
@@ -280,8 +189,8 @@ export interface paths {
     post: {
       parameters: {
         body: {
-          /** reserve */
-          reserve?: definitions["reserve"];
+          /** OwnerInfomation */
+          OwnerInfomation?: definitions["OwnerInfomation"];
         };
         query: {
           /** Filtering Columns */
@@ -300,12 +209,20 @@ export interface paths {
     delete: {
       parameters: {
         query: {
-          created_at?: parameters["rowFilter.reserve.created_at"];
-          date?: parameters["rowFilter.reserve.date"];
-          member?: parameters["rowFilter.reserve.member"];
-          status?: parameters["rowFilter.reserve.status"];
-          lineid?: parameters["rowFilter.reserve.lineid"];
-          reserveid?: parameters["rowFilter.reserve.reserveid"];
+          id?: parameters["rowFilter.OwnerInfomation.id"];
+          updatedAt?: parameters["rowFilter.OwnerInfomation.updatedAt"];
+          createdAt?: parameters["rowFilter.OwnerInfomation.createdAt"];
+          name?: parameters["rowFilter.OwnerInfomation.name"];
+          apiChannelId?: parameters["rowFilter.OwnerInfomation.apiChannelId"];
+          liffChannelSecret?: parameters["rowFilter.OwnerInfomation.liffChannelSecret"];
+          webhookUrl?: parameters["rowFilter.OwnerInfomation.webhookUrl"];
+          liffId?: parameters["rowFilter.OwnerInfomation.liffId"];
+          liffChannelId?: parameters["rowFilter.OwnerInfomation.liffChannelId"];
+          apiChannelSecret?: parameters["rowFilter.OwnerInfomation.apiChannelSecret"];
+          apiChannelAccessToken?: parameters["rowFilter.OwnerInfomation.apiChannelAccessToken"];
+          basicId?: parameters["rowFilter.OwnerInfomation.basicId"];
+          pictureUrl?: parameters["rowFilter.OwnerInfomation.pictureUrl"];
+          liffAccessToken?: parameters["rowFilter.OwnerInfomation.liffAccessToken"];
         };
         header: {
           /** Preference */
@@ -320,115 +237,24 @@ export interface paths {
     patch: {
       parameters: {
         query: {
-          created_at?: parameters["rowFilter.reserve.created_at"];
-          date?: parameters["rowFilter.reserve.date"];
-          member?: parameters["rowFilter.reserve.member"];
-          status?: parameters["rowFilter.reserve.status"];
-          lineid?: parameters["rowFilter.reserve.lineid"];
-          reserveid?: parameters["rowFilter.reserve.reserveid"];
+          id?: parameters["rowFilter.OwnerInfomation.id"];
+          updatedAt?: parameters["rowFilter.OwnerInfomation.updatedAt"];
+          createdAt?: parameters["rowFilter.OwnerInfomation.createdAt"];
+          name?: parameters["rowFilter.OwnerInfomation.name"];
+          apiChannelId?: parameters["rowFilter.OwnerInfomation.apiChannelId"];
+          liffChannelSecret?: parameters["rowFilter.OwnerInfomation.liffChannelSecret"];
+          webhookUrl?: parameters["rowFilter.OwnerInfomation.webhookUrl"];
+          liffId?: parameters["rowFilter.OwnerInfomation.liffId"];
+          liffChannelId?: parameters["rowFilter.OwnerInfomation.liffChannelId"];
+          apiChannelSecret?: parameters["rowFilter.OwnerInfomation.apiChannelSecret"];
+          apiChannelAccessToken?: parameters["rowFilter.OwnerInfomation.apiChannelAccessToken"];
+          basicId?: parameters["rowFilter.OwnerInfomation.basicId"];
+          pictureUrl?: parameters["rowFilter.OwnerInfomation.pictureUrl"];
+          liffAccessToken?: parameters["rowFilter.OwnerInfomation.liffAccessToken"];
         };
         body: {
-          /** reserve */
-          reserve?: definitions["reserve"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-  };
-  "/messagetemplate": {
-    get: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.messagetemplate.id"];
-          inserted_at?: parameters["rowFilter.messagetemplate.inserted_at"];
-          updated_at?: parameters["rowFilter.messagetemplate.updated_at"];
-          content?: parameters["rowFilter.messagetemplate.content"];
-          name?: parameters["rowFilter.messagetemplate.name"];
-          /** Filtering Columns */
-          select?: parameters["select"];
-          /** Ordering */
-          order?: parameters["order"];
-          /** Limiting and Pagination */
-          offset?: parameters["offset"];
-          /** Limiting and Pagination */
-          limit?: parameters["limit"];
-        };
-        header: {
-          /** Limiting and Pagination */
-          Range?: parameters["range"];
-          /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
-          /** Preference */
-          Prefer?: parameters["preferCount"];
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          schema: definitions["messagetemplate"][];
-        };
-        /** Partial Content */
-        206: unknown;
-      };
-    };
-    post: {
-      parameters: {
-        body: {
-          /** messagetemplate */
-          messagetemplate?: definitions["messagetemplate"];
-        };
-        query: {
-          /** Filtering Columns */
-          select?: parameters["select"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** Created */
-        201: unknown;
-      };
-    };
-    delete: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.messagetemplate.id"];
-          inserted_at?: parameters["rowFilter.messagetemplate.inserted_at"];
-          updated_at?: parameters["rowFilter.messagetemplate.updated_at"];
-          content?: parameters["rowFilter.messagetemplate.content"];
-          name?: parameters["rowFilter.messagetemplate.name"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-    patch: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.messagetemplate.id"];
-          inserted_at?: parameters["rowFilter.messagetemplate.inserted_at"];
-          updated_at?: parameters["rowFilter.messagetemplate.updated_at"];
-          content?: parameters["rowFilter.messagetemplate.content"];
-          name?: parameters["rowFilter.messagetemplate.name"];
-        };
-        body: {
-          /** messagetemplate */
-          messagetemplate?: definitions["messagetemplate"];
+          /** OwnerInfomation */
+          OwnerInfomation?: definitions["OwnerInfomation"];
         };
         header: {
           /** Preference */
@@ -525,195 +351,6 @@ export interface paths {
         body: {
           /** urls_tags */
           urls_tags?: definitions["urls_tags"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-  };
-  "/autoreplymessage": {
-    get: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.autoreplymessage.id"];
-          inserted_at?: parameters["rowFilter.autoreplymessage.inserted_at"];
-          updated_at?: parameters["rowFilter.autoreplymessage.updated_at"];
-          trigger?: parameters["rowFilter.autoreplymessage.trigger"];
-          content?: parameters["rowFilter.autoreplymessage.content"];
-          /** Filtering Columns */
-          select?: parameters["select"];
-          /** Ordering */
-          order?: parameters["order"];
-          /** Limiting and Pagination */
-          offset?: parameters["offset"];
-          /** Limiting and Pagination */
-          limit?: parameters["limit"];
-        };
-        header: {
-          /** Limiting and Pagination */
-          Range?: parameters["range"];
-          /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
-          /** Preference */
-          Prefer?: parameters["preferCount"];
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          schema: definitions["autoreplymessage"][];
-        };
-        /** Partial Content */
-        206: unknown;
-      };
-    };
-    post: {
-      parameters: {
-        body: {
-          /** autoreplymessage */
-          autoreplymessage?: definitions["autoreplymessage"];
-        };
-        query: {
-          /** Filtering Columns */
-          select?: parameters["select"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** Created */
-        201: unknown;
-      };
-    };
-    delete: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.autoreplymessage.id"];
-          inserted_at?: parameters["rowFilter.autoreplymessage.inserted_at"];
-          updated_at?: parameters["rowFilter.autoreplymessage.updated_at"];
-          trigger?: parameters["rowFilter.autoreplymessage.trigger"];
-          content?: parameters["rowFilter.autoreplymessage.content"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-    patch: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.autoreplymessage.id"];
-          inserted_at?: parameters["rowFilter.autoreplymessage.inserted_at"];
-          updated_at?: parameters["rowFilter.autoreplymessage.updated_at"];
-          trigger?: parameters["rowFilter.autoreplymessage.trigger"];
-          content?: parameters["rowFilter.autoreplymessage.content"];
-        };
-        body: {
-          /** autoreplymessage */
-          autoreplymessage?: definitions["autoreplymessage"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-  };
-  "/countup": {
-    get: {
-      parameters: {
-        query: {
-          url?: parameters["rowFilter.countup.url"];
-          count?: parameters["rowFilter.countup.count"];
-          /** Filtering Columns */
-          select?: parameters["select"];
-          /** Ordering */
-          order?: parameters["order"];
-          /** Limiting and Pagination */
-          offset?: parameters["offset"];
-          /** Limiting and Pagination */
-          limit?: parameters["limit"];
-        };
-        header: {
-          /** Limiting and Pagination */
-          Range?: parameters["range"];
-          /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
-          /** Preference */
-          Prefer?: parameters["preferCount"];
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          schema: definitions["countup"][];
-        };
-        /** Partial Content */
-        206: unknown;
-      };
-    };
-    post: {
-      parameters: {
-        body: {
-          /** countup */
-          countup?: definitions["countup"];
-        };
-        query: {
-          /** Filtering Columns */
-          select?: parameters["select"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** Created */
-        201: unknown;
-      };
-    };
-    delete: {
-      parameters: {
-        query: {
-          url?: parameters["rowFilter.countup.url"];
-          count?: parameters["rowFilter.countup.count"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-    patch: {
-      parameters: {
-        query: {
-          url?: parameters["rowFilter.countup.url"];
-          count?: parameters["rowFilter.countup.count"];
-        };
-        body: {
-          /** countup */
-          countup?: definitions["countup"];
         };
         header: {
           /** Preference */
@@ -836,6 +473,7 @@ export interface paths {
           insertedAt?: parameters["rowFilter.tags.insertedAt"];
           updatedAt?: parameters["rowFilter.tags.updatedAt"];
           name?: parameters["rowFilter.tags.name"];
+          owner?: parameters["rowFilter.tags.owner"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -890,6 +528,7 @@ export interface paths {
           insertedAt?: parameters["rowFilter.tags.insertedAt"];
           updatedAt?: parameters["rowFilter.tags.updatedAt"];
           name?: parameters["rowFilter.tags.name"];
+          owner?: parameters["rowFilter.tags.owner"];
         };
         header: {
           /** Preference */
@@ -908,6 +547,7 @@ export interface paths {
           insertedAt?: parameters["rowFilter.tags.insertedAt"];
           updatedAt?: parameters["rowFilter.tags.updatedAt"];
           name?: parameters["rowFilter.tags.name"];
+          owner?: parameters["rowFilter.tags.owner"];
         };
         body: {
           /** tags */
@@ -938,6 +578,7 @@ export interface paths {
           displayname?: parameters["rowFilter.customers.displayname"];
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
           status?: parameters["rowFilter.customers.status"];
+          owner?: parameters["rowFilter.customers.owner"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -998,6 +639,7 @@ export interface paths {
           displayname?: parameters["rowFilter.customers.displayname"];
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
           status?: parameters["rowFilter.customers.status"];
+          owner?: parameters["rowFilter.customers.owner"];
         };
         header: {
           /** Preference */
@@ -1022,6 +664,7 @@ export interface paths {
           displayname?: parameters["rowFilter.customers.displayname"];
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
           status?: parameters["rowFilter.customers.status"];
+          owner?: parameters["rowFilter.customers.owner"];
         };
         body: {
           /** customers */
@@ -1048,6 +691,7 @@ export interface paths {
           updatedAt?: parameters["rowFilter.urls.updatedAt"];
           click?: parameters["rowFilter.urls.click"];
           impression?: parameters["rowFilter.urls.impression"];
+          owner?: parameters["rowFilter.urls.owner"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -1104,6 +748,7 @@ export interface paths {
           updatedAt?: parameters["rowFilter.urls.updatedAt"];
           click?: parameters["rowFilter.urls.click"];
           impression?: parameters["rowFilter.urls.impression"];
+          owner?: parameters["rowFilter.urls.owner"];
         };
         header: {
           /** Preference */
@@ -1124,6 +769,7 @@ export interface paths {
           updatedAt?: parameters["rowFilter.urls.updatedAt"];
           click?: parameters["rowFilter.urls.click"];
           impression?: parameters["rowFilter.urls.impression"];
+          owner?: parameters["rowFilter.urls.owner"];
         };
         body: {
           /** urls */
@@ -1239,29 +885,6 @@ export interface paths {
 }
 
 export interface definitions {
-  messagetemplatecontent: {
-    /**
-     * Format: uuid
-     * @description Note:
-     * This is a Primary Key.<pk/>
-     * @default extensions.uuid_generate_v4()
-     */
-    id: string;
-    /**
-     * Format: timestamp with time zone
-     * @default now()
-     */
-    inserted_at: string;
-    /**
-     * Format: timestamp with time zone
-     * @default now()
-     */
-    updated_at: string;
-    /** Format: character varying */
-    istype: string;
-    /** Format: character varying */
-    istext: string;
-  };
   talks: {
     /**
      * Format: uuid
@@ -1311,54 +934,45 @@ export interface definitions {
      */
     userId: string;
   };
-  reserve: {
-    /**
-     * Format: timestamp with time zone
-     * @default now()
-     */
-    created_at?: string;
-    /** Format: date */
-    date: string;
-    /** Format: integer */
-    member: number;
-    /** Format: text */
-    status: string;
-    /**
-     * Format: character varying
-     * @description Note:
-     * This is a Foreign Key to `customers.lineid`.<fk table='customers' column='lineid'/>
-     */
-    lineid: string;
+  OwnerInfomation: {
     /**
      * Format: uuid
      * @description Note:
      * This is a Primary Key.<pk/>
-     * @default extensions.uuid_generate_v4()
-     */
-    reserveid: string;
-  };
-  messagetemplate: {
-    /**
-     * Format: uuid
-     * @description Note:
-     * This is a Primary Key.<pk/>
-     * @default extensions.uuid_generate_v4()
      */
     id: string;
     /**
      * Format: timestamp with time zone
      * @default now()
      */
-    inserted_at: string;
+    updatedAt?: string;
     /**
      * Format: timestamp with time zone
      * @default now()
      */
-    updated_at: string;
-    /** Format: ARRAY */
-    content: unknown[];
-    /** Format: character varying */
-    name: string;
+    createdAt?: string;
+    /** Format: text */
+    name?: string;
+    /** Format: text */
+    apiChannelId?: string;
+    /** Format: text */
+    liffChannelSecret?: string;
+    /** Format: text */
+    webhookUrl?: string;
+    /** Format: text */
+    liffId?: string;
+    /** Format: text */
+    liffChannelId?: string;
+    /** Format: text */
+    apiChannelSecret?: string;
+    /** Format: text */
+    apiChannelAccessToken?: string;
+    /** Format: text */
+    basicId?: string;
+    /** Format: text */
+    pictureUrl?: string;
+    /** Format: text */
+    liffAccessToken?: string;
   };
   urls_tags: {
     /**
@@ -1385,39 +999,6 @@ export interface definitions {
      * This is a Foreign Key to `tags.id`.<fk table='tags' column='id'/>
      */
     tagId: string;
-  };
-  autoreplymessage: {
-    /**
-     * Format: uuid
-     * @description Note:
-     * This is a Primary Key.<pk/>
-     * @default extensions.uuid_generate_v4()
-     */
-    id: string;
-    /**
-     * Format: timestamp with time zone
-     * @default now()
-     */
-    inserted_at: string;
-    /**
-     * Format: timestamp with time zone
-     * @default now()
-     */
-    updated_at: string;
-    /** Format: character varying */
-    trigger: string;
-    /** Format: ARRAY */
-    content: unknown[];
-  };
-  countup: {
-    /**
-     * Format: text
-     * @description Note:
-     * This is a Primary Key.<pk/>
-     */
-    url: string;
-    /** Format: integer */
-    count?: number;
   };
   pushmessages: {
     /**
@@ -1471,6 +1052,8 @@ export interface definitions {
     updatedAt: string;
     /** Format: character varying */
     name: string;
+    /** Format: uuid */
+    owner: string;
   };
   customers: {
     /**
@@ -1506,6 +1089,8 @@ export interface definitions {
      * @default follow
      */
     status?: string;
+    /** Format: uuid */
+    owner: string;
   };
   urls: {
     /**
@@ -1537,6 +1122,8 @@ export interface definitions {
      * @default 0
      */
     impression?: number;
+    /** Format: uuid */
+    owner: string;
   };
   customers_tags: {
     /**
@@ -1599,18 +1186,6 @@ export interface parameters {
   offset: string;
   /** @description Limiting and Pagination */
   limit: string;
-  /** @description messagetemplatecontent */
-  "body.messagetemplatecontent": definitions["messagetemplatecontent"];
-  /** Format: uuid */
-  "rowFilter.messagetemplatecontent.id": string;
-  /** Format: timestamp with time zone */
-  "rowFilter.messagetemplatecontent.inserted_at": string;
-  /** Format: timestamp with time zone */
-  "rowFilter.messagetemplatecontent.updated_at": string;
-  /** Format: character varying */
-  "rowFilter.messagetemplatecontent.istype": string;
-  /** Format: character varying */
-  "rowFilter.messagetemplatecontent.istext": string;
   /** @description talks */
   "body.talks": definitions["talks"];
   /** Format: uuid */
@@ -1644,32 +1219,36 @@ export interface parameters {
   "rowFilter.talks.isReply": string;
   /** Format: character varying */
   "rowFilter.talks.userId": string;
-  /** @description reserve */
-  "body.reserve": definitions["reserve"];
+  /** @description OwnerInfomation */
+  "body.OwnerInfomation": definitions["OwnerInfomation"];
+  /** Format: uuid */
+  "rowFilter.OwnerInfomation.id": string;
   /** Format: timestamp with time zone */
-  "rowFilter.reserve.created_at": string;
-  /** Format: date */
-  "rowFilter.reserve.date": string;
-  /** Format: integer */
-  "rowFilter.reserve.member": string;
+  "rowFilter.OwnerInfomation.updatedAt": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.OwnerInfomation.createdAt": string;
   /** Format: text */
-  "rowFilter.reserve.status": string;
-  /** Format: character varying */
-  "rowFilter.reserve.lineid": string;
-  /** Format: uuid */
-  "rowFilter.reserve.reserveid": string;
-  /** @description messagetemplate */
-  "body.messagetemplate": definitions["messagetemplate"];
-  /** Format: uuid */
-  "rowFilter.messagetemplate.id": string;
-  /** Format: timestamp with time zone */
-  "rowFilter.messagetemplate.inserted_at": string;
-  /** Format: timestamp with time zone */
-  "rowFilter.messagetemplate.updated_at": string;
-  /** Format: ARRAY */
-  "rowFilter.messagetemplate.content": string;
-  /** Format: character varying */
-  "rowFilter.messagetemplate.name": string;
+  "rowFilter.OwnerInfomation.name": string;
+  /** Format: text */
+  "rowFilter.OwnerInfomation.apiChannelId": string;
+  /** Format: text */
+  "rowFilter.OwnerInfomation.liffChannelSecret": string;
+  /** Format: text */
+  "rowFilter.OwnerInfomation.webhookUrl": string;
+  /** Format: text */
+  "rowFilter.OwnerInfomation.liffId": string;
+  /** Format: text */
+  "rowFilter.OwnerInfomation.liffChannelId": string;
+  /** Format: text */
+  "rowFilter.OwnerInfomation.apiChannelSecret": string;
+  /** Format: text */
+  "rowFilter.OwnerInfomation.apiChannelAccessToken": string;
+  /** Format: text */
+  "rowFilter.OwnerInfomation.basicId": string;
+  /** Format: text */
+  "rowFilter.OwnerInfomation.pictureUrl": string;
+  /** Format: text */
+  "rowFilter.OwnerInfomation.liffAccessToken": string;
   /** @description urls_tags */
   "body.urls_tags": definitions["urls_tags"];
   /** Format: uuid */
@@ -1680,24 +1259,6 @@ export interface parameters {
   "rowFilter.urls_tags.urlId": string;
   /** Format: uuid */
   "rowFilter.urls_tags.tagId": string;
-  /** @description autoreplymessage */
-  "body.autoreplymessage": definitions["autoreplymessage"];
-  /** Format: uuid */
-  "rowFilter.autoreplymessage.id": string;
-  /** Format: timestamp with time zone */
-  "rowFilter.autoreplymessage.inserted_at": string;
-  /** Format: timestamp with time zone */
-  "rowFilter.autoreplymessage.updated_at": string;
-  /** Format: character varying */
-  "rowFilter.autoreplymessage.trigger": string;
-  /** Format: ARRAY */
-  "rowFilter.autoreplymessage.content": string;
-  /** @description countup */
-  "body.countup": definitions["countup"];
-  /** Format: text */
-  "rowFilter.countup.url": string;
-  /** Format: integer */
-  "rowFilter.countup.count": string;
   /** @description pushmessages */
   "body.pushmessages": definitions["pushmessages"];
   /** Format: uuid */
@@ -1722,6 +1283,8 @@ export interface parameters {
   "rowFilter.tags.updatedAt": string;
   /** Format: character varying */
   "rowFilter.tags.name": string;
+  /** Format: uuid */
+  "rowFilter.tags.owner": string;
   /** @description customers */
   "body.customers": definitions["customers"];
   /** Format: character varying */
@@ -1744,6 +1307,8 @@ export interface parameters {
   "rowFilter.customers.pictureurl": string;
   /** Format: character varying */
   "rowFilter.customers.status": string;
+  /** Format: uuid */
+  "rowFilter.customers.owner": string;
   /** @description urls */
   "body.urls": definitions["urls"];
   /** Format: uuid */
@@ -1758,6 +1323,8 @@ export interface parameters {
   "rowFilter.urls.click": string;
   /** Format: integer */
   "rowFilter.urls.impression": string;
+  /** Format: uuid */
+  "rowFilter.urls.owner": string;
   /** @description customers_tags */
   "body.customers_tags": definitions["customers_tags"];
   /** Format: uuid */

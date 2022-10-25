@@ -3,8 +3,9 @@ import { definitions } from "src/type/supabase";
 import { Customer } from "src/type/supabaseCustom";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
+import { useUserSession } from "src/hook/useUserSession";
 
-const fetchCustomers = async () => {
+const fetchCustomers = async (id: string) => {
   const { data } = await supabase
     .from<Customer>("customers")
     .select("*, customersTags:customers_tags(*, tags(*))");
@@ -13,22 +14,13 @@ const fetchCustomers = async () => {
 };
 
 export const useFilteredCustomer = () => {
-  const { data: customers } = useSWR<Customer[] | null>(
-    "filterCustomers",
-    fetchCustomers
-  );
+  const { session } = useUserSession();
+  const { data: customers } = useSWR("filterCustomers", fetchCustomers);
 
   const [count, setCount] = useState(0);
   const [filteredCustomers, setFilteredCustomers] = useState<Customer[] | null>(
     null
   );
-
-  useEffect(() => {
-    if (customers) {
-      setCount(customers.length);
-      setFilteredCustomers(customers);
-    }
-  }, [customers]);
 
   const onFilterCustomers = (filterTags: definitions["tags"][]) => {
     if (!customers) return;
@@ -41,6 +33,13 @@ export const useFilteredCustomer = () => {
     setCount(newCustomers.length);
     setFilteredCustomers(newCustomers);
   };
+
+  useEffect(() => {
+    if (customers) {
+      setCount(customers.length);
+      setFilteredCustomers(customers);
+    }
+  }, [customers]);
 
   return {
     customers,

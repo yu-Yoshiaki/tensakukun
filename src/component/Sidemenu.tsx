@@ -18,7 +18,7 @@ const menu = [
   // { text: "登録情報", href: "/", color: "bg-green-200", active: false },
   {
     text: "流入経路",
-    href: "/owner/inflow",
+    href: "/inflow",
     color: "yellow-200",
     active: true,
     icon: "🚪",
@@ -32,10 +32,17 @@ const menu = [
   },
   {
     text: "タグ管理",
-    href: "/tag",
+    href: "/tags",
     color: "pink-200",
     active: true,
     icon: "🔖",
+  },
+  {
+    text: "分析",
+    href: "/",
+    color: "pink-200",
+    active: true,
+    icon: "📊",
   },
   {
     text: "設定",
