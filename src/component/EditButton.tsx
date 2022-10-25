@@ -13,7 +13,7 @@ export const EditButton = (props: Props) => {
     <button
       type="button"
       onClick={props.handleClick}
-      className="px-3 py-1 flex text-sm gap-2 rounded-md font-semibold bg-gray-200 hover:bg-gray-100 justify-center items-center"
+      className="text-center py-1 flex text-sm gap-2 rounded-md font-semibold bg-gray-200 hover:bg-gray-100 justify-center items-center w-[100px]"
     >
       <span className="text-xl">🪛</span>編集
     </button>

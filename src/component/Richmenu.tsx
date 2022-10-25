@@ -1,9 +1,8 @@
 import { Action, Area, RichMenu } from "@line/bot-sdk";
 import axios from "axios";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import Image from "next/image";
-import { CreateNewButton } from "src/component/CreateNewButton";
 import toast from "react-hot-toast";
 type Props = {
   editMode: boolean;

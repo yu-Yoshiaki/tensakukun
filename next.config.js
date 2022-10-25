@@ -8,7 +8,11 @@ const nextConfig = {
   reactStrictMode: false,
   poweredByHeader: false,
   images: {
-    domains: ["sprofile.line-scdn.net", "vpxyovqhreblordyqpdo.supabase.co"],
+    domains: [
+      "sprofile.line-scdn.net",
+      "vpxyovqhreblordyqpdo.supabase.co",
+      "profile.line-scdn.net",
+    ],
   },
 };
 

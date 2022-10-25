@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 export const useLiff = () => {
   const [liff, setLiff] = useState<Liff>();
   const [profile, setProfile] = useState();
-
+  const liffId = process.env.NEXT_PUBLIC_LIFF_ID as string;
   // @line/liffは、中で"window"を使用している。なので、動的インポートが必須。
   useEffect(() => {
     import("@line/liff").then((liff: any) => {
       liff
-        .init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID as string })
+        .init({ liffId })
         .then(() => {
           // LIFFブラウザからのアクセスの場合、liff.init()　→ 自動でログイン
           // LIFFブラウザ以外のアクセスの場合、liff.init() → 明示的にログイン
@@ -20,7 +20,7 @@ export const useLiff = () => {
           setLiff(liff);
         })
         .catch((err: any) => {
-          alert(`エラー: ${err.message}`);
+          console.log(`エラー: ${err.message}`);
         });
     });
   }, []);
