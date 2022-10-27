@@ -1,6 +1,6 @@
 module.exports = {
   mode: "jit",
-  content: ["./pages/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: ["./pages/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}"],
   theme: {
     extend: {
       animation: {
