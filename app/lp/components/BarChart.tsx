@@ -6,35 +6,34 @@ import {
   Legend,
   Bar,
   BarChart,
+  ResponsiveContainer,
 } from "recharts";
 
-export const BarChartComponent = () => {
+export const BarChartComponent = (props: {
+  data: { name: string; men: number; wom: number }[];
+}) => {
   return (
-    <BarChart
-      className="bg-white"
-      width={500}
-      height={250}
-      data={[
-        { name: "大阪", mens: 150, wemen: 100 },
-        { name: "東京", mens: 140, wemen: 200 },
-        { name: "名古屋", mens: 90, wemen: 90 },
-        { name: "北海道", mens: 30, wemen: 40 },
-        { name: "沖縄", mens: 12, wemen: 15 },
-      ]}
-      margin={{
-        top: 20,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey={"name"} />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="mens" fill="#8884d8" />
-      <Bar dataKey="wemen" fill="pink" />
-    </BarChart>
+    <ResponsiveContainer width="90%" height="90%">
+      <BarChart
+        className="bg-gray-100"
+        width={480}
+        height={280}
+        data={props.data}
+        margin={{
+          top: 20,
+          right: 20,
+          left: 20,
+          bottom: 0,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey={"name"} />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="men" stackId={"a"} fill="#8884d8" />
+        <Bar dataKey="wom" stackId={"a"} fill="pink" />
+      </BarChart>
+    </ResponsiveContainer>
   );
 };
