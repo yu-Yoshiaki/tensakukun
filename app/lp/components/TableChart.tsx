@@ -235,7 +235,7 @@ export const TableChart = () => {
             })}
           </table>
         </div>
-      </div>{" "}
+      </div>
       <h3 className="text-4xl font-bold">円グラフ</h3>
       <PieChartComponent data={data} />
     </div>

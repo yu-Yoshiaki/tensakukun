@@ -9,6 +9,7 @@ import { Center } from "app/lp/components/Center";
 import { Card } from "app/lp/components/Card";
 import { PieChartComponent } from "app/lp/components/PieChart";
 import { BarChartComponent } from "app/lp/components/BarChart";
+import { useState } from "react";
 
 const opts = {
   height: "250",
@@ -17,16 +18,57 @@ const opts = {
     autoplay: 1,
   },
 };
+const opts2 = {
+  height: "250",
+  width: "300",
+  playerVars: {
+    autoplay: 1,
+  },
+};
 
 export const LpPage = () => {
+  const [isMeneOpen, setIsMenuOpen] = useState(false);
+  const handleMenuOpen = () => {
+    setIsMenuOpen(!isMeneOpen);
+  };
   return (
     <div className="bg-gray-100 text-gray-800 leading-relaxed tracking-wider">
       <Head>
         <title>Lプラス | LINEマーケティングをパワーアップ</title>
       </Head>
       <div className="grid-cols-[250px,auto] md:grid">
-        <Header />
-        <main className="h-screen overflow-y-scroll py-20">
+        <div>
+          <div className="hidden md:block">
+            <Header />
+          </div>
+          <div className="md:hidden flex items-center justify-end p-3">
+            <button
+              onClick={handleMenuOpen}
+              className="p-2 text-white bg-black"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+            {isMeneOpen && (
+              <div className="fixed top-0 left-0 z-10">
+                <Header />
+              </div>
+            )}
+          </div>
+        </div>
+        <main className="h-screen overflow-y-scroll md:py-20">
           <Center>
             <div id="top" className="relative h-[50vh] w-full">
               <Image
@@ -39,10 +81,10 @@ export const LpPage = () => {
           </Center>
           <Section
             title="🧰 LINE公式アカウントをより便利にする拡張ツール"
-            titleTextSize="text-5xl"
+            titleTextSize="text-2xl md:text-5xl"
           >
             <Center>
-              <p className="text-xl">
+              <p className="text-lg md:text-xl">
                 <span className="font-semibold">顧客の詳細管理</span>、
                 <span className="font-semibold">細かなセグメント配信</span>、
                 <span className="font-semibold">分析</span>
@@ -53,11 +95,14 @@ export const LpPage = () => {
           </Section>
           <Section title="タグ機能で詳細な顧客管理">
             <Center>
-              <div className="grid grid-cols-2 gap-8">
+              <div className="md:grid grid-cols-2 gap-8">
                 <p className="text-xl flex items-center">
                   詳細な顧客情報を得ることでパーソナライズなサービスが可能。顧客満足度の向上を図ることができます。
                 </p>
                 <YouTube videoId="zCoZ4VkJ-gg" opts={opts} />
+                <div className="md:hidden">
+                  <YouTube videoId="zCoZ4VkJ-gg" opts={opts2} />
+                </div>
               </div>
             </Center>
           </Section>
@@ -65,11 +110,11 @@ export const LpPage = () => {
             <Section title="📈分析機能でサービス改善">
               <Center>
                 <div className="flex flex-col gap-10 items-center">
-                  <p className="text-xl flex items-center">
+                  <p className="text-lg md:text-xl flex items-center">
                     多様なレイアウトからお好みのを選んで分析が可能です。
                   </p>
-                  <div className="grid grid-cols-2 gap-10">
-                    <div className="bg-gray-100 rounded-md">
+                  <div className="md:grid grid-cols-2 gap-10 space-y-10">
+                    <div className="bg-gray-100 rounded-md flex items-center justify-center">
                       <PieChartComponent
                         data={[
                           { name: "Twitter", value: 240 },
@@ -94,52 +139,50 @@ export const LpPage = () => {
                       />
                     </div>
                   </div>
-                  <div>
-                    <table className="w-[700px] border-white ">
-                      <tr className="text-center text-gray-700 h-10 border-b border-white">
-                        <th className="w-[200px] bg-gray-50"></th>
-                        <th className="w-[200px] bg-green-200">全体</th>
-                        <th className="w-[200px] bg-blue-200">男性</th>
-                        <th className="w-[200px] bg-red-200">女性</th>
-                      </tr>
-                      <tr className="text-gray-700 text-center h-10 whitespace-nowrap border-b border-white">
-                        <th className="bg-gray-50 ">Twitter</th>
-                        <td className="bg-green-200">240</td>
-                        <td className="bg-blue-200">100</td>
-                        <td className="bg-red-200">140</td>
-                      </tr>
-                      <tr className="bg-gray-50 text-center h-10 text-gray-700 whitespace-nowrap border-b border-white">
-                        <th className="bg-gray-50 ">FaceBook</th>
-                        <td className="bg-green-200">110</td>
-                        <td className="bg-blue-200">70</td>
-                        <td className="bg-red-200">40</td>
-                      </tr>
-                      <tr className="bg-green-200 text-gray-700 text-center h-10 whitespace-nowrap border-b border-white">
-                        <th className="bg-gray-50 ">Instagram</th>
-                        <td className="bg-green-200">300</td>
-                        <td className="bg-blue-200">100</td>
-                        <td className="bg-red-200">200</td>
-                      </tr>
-                      <tr className="bg-gray-50 text-center h-10 text-gray-700 whitespace-nowrap border-b border-white">
-                        <th className="bg-gray-50 ">TicToc</th>
-                        <td className="bg-green-200">280</td>
-                        <td className="bg-blue-200">130</td>
-                        <td className="bg-red-200">150</td>
-                      </tr>
-                      <tr className="bg-green-200 text-gray-700 text-center h-10 whitespace-nowrap border-b border-white">
-                        <th className="bg-gray-50 ">WEBサイト</th>
-                        <td className="bg-green-200">90</td>
-                        <td className="bg-blue-200">80</td>
-                        <td className="bg-red-200">10</td>
-                      </tr>
-                      <tr className="bg-gray-50 text-center h-10 text-gray-700 whitespace-nowrap border-b border-white">
-                        <th className="bg-gray-50 ">店舗</th>
-                        <td className="bg-green-200">70</td>
-                        <td className="bg-blue-200">20</td>
-                        <td className="bg-red-200">50</td>
-                      </tr>
-                    </table>
-                  </div>
+                  <table className="max-w-[700px] border-white overflow-hidden">
+                    <tr className="text-center text-gray-700 h-10 border-b border-white">
+                      <th className="w-[200px] bg-gray-50"></th>
+                      <th className="w-[200px] bg-green-200">全体</th>
+                      <th className="w-[200px] bg-blue-200">男性</th>
+                      <th className="w-[200px] bg-red-200">女性</th>
+                    </tr>
+                    <tr className="text-gray-700 text-center h-10 whitespace-nowrap border-b border-white">
+                      <th className="bg-gray-50 ">Twitter</th>
+                      <td className="bg-green-200">240</td>
+                      <td className="bg-blue-200">100</td>
+                      <td className="bg-red-200">140</td>
+                    </tr>
+                    <tr className="bg-gray-50 text-center h-10 text-gray-700 whitespace-nowrap border-b border-white">
+                      <th className="bg-gray-50 ">FaceBook</th>
+                      <td className="bg-green-200">110</td>
+                      <td className="bg-blue-200">70</td>
+                      <td className="bg-red-200">40</td>
+                    </tr>
+                    <tr className="bg-green-200 text-gray-700 text-center h-10 whitespace-nowrap border-b border-white">
+                      <th className="bg-gray-50 ">Instagram</th>
+                      <td className="bg-green-200">300</td>
+                      <td className="bg-blue-200">100</td>
+                      <td className="bg-red-200">200</td>
+                    </tr>
+                    <tr className="bg-gray-50 text-center h-10 text-gray-700 whitespace-nowrap border-b border-white">
+                      <th className="bg-gray-50 ">TicToc</th>
+                      <td className="bg-green-200">280</td>
+                      <td className="bg-blue-200">130</td>
+                      <td className="bg-red-200">150</td>
+                    </tr>
+                    <tr className="bg-green-200 text-gray-700 text-center h-10 whitespace-nowrap border-b border-white">
+                      <th className="bg-gray-50 ">WEBサイト</th>
+                      <td className="bg-green-200">90</td>
+                      <td className="bg-blue-200">80</td>
+                      <td className="bg-red-200">10</td>
+                    </tr>
+                    <tr className="bg-gray-50 text-center h-10 text-gray-700 whitespace-nowrap border-b border-white">
+                      <th className="bg-gray-50 ">店舗</th>
+                      <td className="bg-green-200">70</td>
+                      <td className="bg-blue-200">20</td>
+                      <td className="bg-red-200">50</td>
+                    </tr>
+                  </table>
                 </div>
               </Center>
             </Section>
@@ -147,14 +190,14 @@ export const LpPage = () => {
           <Section title="🔧使い方">
             <div className="space-y-20">
               <Center>
-                <p className="text-xl w-[700px] text-center">
+                <p className="text-lg md:text-xl md:w-[700px] text-center">
                   連携も設定もカンタン。
                   <br />
                 </p>
               </Center>
               <Center>
-                <div className="grid grid-cols-[180px,50px,180px,50px,180px,50px,180px] gap-4">
-                  <div className="space-y-4 flex flex-col">
+                <div className="grid md:grid-cols-[180px,50px,180px,50px,180px,50px,180px] gap-4">
+                  <div className="space-y-4 flex flex-col md:items-start items-center">
                     <div
                       id="top"
                       className="relative h-[90px] w-[180px] shadow-md"
@@ -171,10 +214,10 @@ export const LpPage = () => {
                       LINEアカウントの作成。プランを選定。
                     </p>
                   </div>
-                  <p className="flex items-center justify-center text-2xl">
-                    ▶︎
+                  <p className="flex items-center justify-center text-2xl ">
+                    <span className="rotate-90 md:rotate-0">▶︎</span>
                   </p>
-                  <div className="space-y-4 flex flex-col">
+                  <div className="space-y-4 flex flex-col md:items-start items-center">
                     <div
                       id="top"
                       className="relative h-[90px] w-[180px] shadow-md"
@@ -192,9 +235,9 @@ export const LpPage = () => {
                     </p>
                   </div>
                   <p className="flex items-center justify-center text-2xl">
-                    ▶︎
+                    <span className="rotate-90 md:rotate-0">▶︎</span>
                   </p>
-                  <div className="space-y-4 flex flex-col">
+                  <div className="space-y-4 flex flex-col md:items-start items-center">
                     <div
                       id="top"
                       className="relative h-[90px] w-[180px] shadow-md"
@@ -212,9 +255,9 @@ export const LpPage = () => {
                     </p>
                   </div>
                   <p className="flex items-center justify-center text-2xl">
-                    ▶︎
+                    <span className="rotate-90 md:rotate-0">▶︎</span>
                   </p>
-                  <div className="space-y-4 flex flex-col">
+                  <div className="space-y-4 flex flex-col md:items-start items-center">
                     <div
                       id="top"
                       className="relative h-[90px] w-[180px] shadow-md"
@@ -237,7 +280,7 @@ export const LpPage = () => {
           </Section>
           <Section title="💡特徴">
             <Center>
-              <div className="grid grid-cols-2 gap-12">
+              <div className="grid md:grid-cols-2 gap-12">
                 <Card
                   img="/トップ画.png"
                   header="見やすい美しいデザイン"

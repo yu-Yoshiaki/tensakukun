@@ -1,20 +1,19 @@
-import { PieChart, Pie, Cell, LabelList, Tooltip } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  LabelList,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 export const PieChartComponent = (props: {
   data: { name: string; value: number }[];
 }) => {
-  const sum = (d: { name: string; value: number }[]) => {
-    let all = 0;
-    d.map((d) => {
-      all = all + d.value;
-    });
-    return all;
-  };
-
   return (
-    <PieChart width={500} height={300} className="font-bold text-red-700">
+    <PieChart width={390} height={280} className="font-bold text-red-700">
       <Pie
         data={props.data}
         dataKey="value"
