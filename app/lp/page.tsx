@@ -301,6 +301,12 @@ export const LpPage = () => {
                 data-formrun-form="@arelease-labo-1667108571"
                 data-formrun-redirect="true"
               ></div>
+              <iframe
+                src="https://form.run/embed/@arelease-labo-1667108571?embed=direct"
+                frameBorder="0"
+                width={"100%"}
+                height={1000}
+              ></iframe>
             </Center>
           </Section>
           <Section title="Vision">
