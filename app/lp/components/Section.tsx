@@ -7,7 +7,7 @@ export const Section = (props: {
   children: ReactNode;
 }) => {
   return (
-    <section className="px-5 py-20 md:p-20 border-t border-gray-200 flex flex-col ">
+    <section className="px-5 py-20 md:p-20 border-b border-gray-200 flex flex-col ">
       <Center>
         <h3
           className={`leading-relaxed tracking-wider font-bold pb-14 text-center ${

@@ -46,6 +46,13 @@ export const Header = () => {
           })}
         </ul>
       </div>
+      <script src="https://sdk.form.run/js/v2/embed.js"></script>
+      <div
+        className="formrun-embed"
+        data-formrun-form="@arelease-labo-1667108571"
+        data-formrun-redirect="true"
+      ></div>
+
       <div className="flex flex-col items-start gap-2">
         <button className="font-semibold">困りごと 🤔</button>
         <button className="font-semibold">利用規約</button>
