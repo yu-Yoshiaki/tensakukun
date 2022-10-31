@@ -84,6 +84,7 @@ export const LpPage = () => {
           <Section
             title="🧰 LINE公式アカウントをより便利にする拡張ツール"
             titleTextSize="text-2xl md:text-5xl"
+            id="top"
           >
             <Center>
               <p className="text-lg md:text-xl">
@@ -95,7 +96,7 @@ export const LpPage = () => {
               </p>
             </Center>
           </Section>
-          <Section title="タグ機能で詳細な顧客管理">
+          <Section title="タグ機能で詳細な顧客管理" id="tag">
             <Center>
               <div className="md:grid grid-cols-2 gap-8">
                 <p className="text-xl flex items-center">
@@ -111,7 +112,7 @@ export const LpPage = () => {
             </Center>
           </Section>
           <div className="bg-gray-800 text-white">
-            <Section title="📈分析機能でサービス改善">
+            <Section title="📈分析機能でサービス改善" id="chart">
               <Center>
                 <div className="flex flex-col gap-10 items-center">
                   <p className="text-lg md:text-xl flex items-center">
@@ -191,7 +192,7 @@ export const LpPage = () => {
               </Center>
             </Section>
           </div>
-          <Section title="🔧使い方">
+          <Section title="🔧使い方" id="use">
             <div className="space-y-20">
               <Center>
                 <p className="text-lg md:text-xl md:w-[700px] text-center">
@@ -272,13 +273,13 @@ export const LpPage = () => {
               </Center>
             </div>
           </Section>
-          <Section title="💡特徴">
+          <Section title="💡特徴" id="feature">
             <Center>
               <div className="grid md:grid-cols-3 gap-12">
                 <Card
                   img="/operate.png"
                   header="スムーズな操作"
-                  body="Lプラスの設計思想は「シンプルに。美しく。」です。ただ情報量を減らすのではなく、次に行うべきアクションを提示することで、ノンストレスな操作を可能にします。"
+                  body="私たちの設計思想は「シンプルに。美しく。」です。ただ情報量を減らすのではなく、次に行うべきアクションを提示することで、ノンストレスな操作を可能にします。"
                 />
                 <Card
                   img="/design.png"
@@ -288,12 +289,12 @@ export const LpPage = () => {
                 <Card
                   img="/geek.png"
                   header="すばやい開発力"
-                  body="弊社のサービスは数名のエンジニアで開発されています。すばやい意思決定のもと、高速な機能改善を実現。"
+                  body="私たちのサービスは数名のエンジニアで開発されています。すばやい意思決定のもと、高速な機能改善を実現。"
                 />
               </div>
             </Center>
           </Section>
-          <Section title="お問合せ">
+          <Section title="お問合せ" id="contact">
             <Center>
               <iframe
                 src="https://form.run/embed/@arelease-labo-1667108571?embed=direct"
@@ -303,15 +304,11 @@ export const LpPage = () => {
               ></iframe>
             </Center>
           </Section>
-          <Section title="Vision">
+          <Section title="Vision" id="vision">
             <Center>
-              <div className="text-center">
-                <p>
-                  <span className="font-bold">
-                    システムの力で誰もが自己実現できる手助けを。
-                  </span>
-                </p>
-              </div>
+              <p className="font-bold">
+                システムの力で誰もが自己実現できる手助けを。
+              </p>
             </Center>
           </Section>
         </main>

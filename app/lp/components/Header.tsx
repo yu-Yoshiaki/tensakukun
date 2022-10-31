@@ -7,16 +7,27 @@ const menu = [
   },
   {
     text: "タグ機能",
-    href: "#tags",
-  },
-
-  {
-    text: "流入経路",
-    href: "#inflow",
+    href: "#tag",
   },
   {
-    text: "メッセージ配信",
-    href: "#message",
+    text: "分析機能",
+    href: "#chart",
+  },
+  {
+    text: "使い方",
+    href: "#use",
+  },
+  {
+    text: "特徴",
+    href: "#feature",
+  },
+  {
+    text: "お問合せ",
+    href: "#contact",
+  },
+  {
+    text: "vision",
+    href: "#vision",
   },
 ];
 export const Header = () => {
