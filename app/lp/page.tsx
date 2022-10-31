@@ -293,6 +293,16 @@ export const LpPage = () => {
               </div>
             </Center>
           </Section>
+          <Section title="お問合せ">
+            <Center>
+              <script src="https://sdk.form.run/js/v2/embed.js"></script>
+              <div
+                className="formrun-embed"
+                data-formrun-form="@arelease-labo-1667108571"
+                data-formrun-redirect="true"
+              ></div>
+            </Center>
+          </Section>
           <Section title="Vision">
             <Center>
               <div className="text-center">
