@@ -68,14 +68,16 @@ export const LpPage = () => {
             )}
           </div>
         </div>
-        <main className="h-screen overflow-y-scroll md:py-20">
+        <main className="h-screen overflow-y-scroll md:pt-20">
           <Center>
-            <div id="top" className="relative h-[50vh] w-full">
+            <div id="top" className="md:w-[700px]">
               <Image
                 src={"/トップ画.png"}
                 alt=""
-                layout="fill"
-                objectFit="contain"
+                // layout="fill"
+                // objectFit="contain"
+                width={1280}
+                height={670}
               />
             </div>
           </Center>
@@ -99,14 +101,16 @@ export const LpPage = () => {
                 <p className="text-xl flex items-center">
                   詳細な顧客情報を得ることでパーソナライズなサービスが可能。顧客満足度の向上を図ることができます。
                 </p>
-                <YouTube videoId="zCoZ4VkJ-gg" opts={opts} />
+                <div className="hidden md:block">
+                  <YouTube videoId="zCoZ4VkJ-gg" opts={opts} />
+                </div>
                 <div className="md:hidden">
                   <YouTube videoId="zCoZ4VkJ-gg" opts={opts2} />
                 </div>
               </div>
             </Center>
           </Section>
-          <div className="bg-black text-white">
+          <div className="bg-gray-800 text-white">
             <Section title="📈分析機能でサービス改善">
               <Center>
                 <div className="flex flex-col gap-10 items-center">
@@ -198,15 +202,14 @@ export const LpPage = () => {
               <Center>
                 <div className="grid md:grid-cols-[180px,50px,180px,50px,180px,50px,180px] gap-4">
                   <div className="space-y-4 flex flex-col md:items-start items-center">
-                    <div
-                      id="top"
-                      className="relative h-[90px] w-[180px] shadow-md"
-                    >
+                    <div className="shadow-md">
                       <Image
-                        src={"/トップ画.png"}
+                        src={"/createLineAccount.png"}
                         alt=""
-                        layout="fill"
-                        objectFit="cover"
+                        // layout="fill"
+                        // objectFit="cover"
+                        width={1280}
+                        height={700}
                       />
                     </div>
                     <p className="font-bold text-xl">1. 立ち上げ</p>
@@ -218,15 +221,12 @@ export const LpPage = () => {
                     <span className="rotate-90 md:rotate-0">▶︎</span>
                   </p>
                   <div className="space-y-4 flex flex-col md:items-start items-center">
-                    <div
-                      id="top"
-                      className="relative h-[90px] w-[180px] shadow-md"
-                    >
+                    <div className="shadow-md">
                       <Image
-                        src={"/トップ画.png"}
+                        src={"/connectLplus.png"}
                         alt=""
-                        layout="fill"
-                        objectFit="cover"
+                        width={1280}
+                        height={700}
                       />
                     </div>
                     <p className="font-bold text-xl">2. 連携</p>
@@ -238,15 +238,12 @@ export const LpPage = () => {
                     <span className="rotate-90 md:rotate-0">▶︎</span>
                   </p>
                   <div className="space-y-4 flex flex-col md:items-start items-center">
-                    <div
-                      id="top"
-                      className="relative h-[90px] w-[180px] shadow-md"
-                    >
+                    <div className="shadow-md">
                       <Image
-                        src={"/トップ画.png"}
+                        src={"/operateAccount.png"}
                         alt=""
-                        layout="fill"
-                        objectFit="cover"
+                        width={1280}
+                        height={700}
                       />
                     </div>
                     <p className="font-bold text-xl">3. 運営</p>
@@ -258,18 +255,15 @@ export const LpPage = () => {
                     <span className="rotate-90 md:rotate-0">▶︎</span>
                   </p>
                   <div className="space-y-4 flex flex-col md:items-start items-center">
-                    <div
-                      id="top"
-                      className="relative h-[90px] w-[180px] shadow-md"
-                    >
+                    <div className="shadow-md">
                       <Image
-                        src={"/トップ画.png"}
+                        src={"/chart.png"}
                         alt=""
-                        layout="fill"
-                        objectFit="cover"
+                        width={1280}
+                        height={700}
                       />
                     </div>
-                    <p className="font-bold text-xl">4. 分析</p>
+                    <p className="font-bold text-xl">4. 改善</p>
                     <p className="text-sm">
                       分析機能を利用し、サービス向上をしましょう。
                     </p>
@@ -280,21 +274,21 @@ export const LpPage = () => {
           </Section>
           <Section title="💡特徴">
             <Center>
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid md:grid-cols-3 gap-12">
                 <Card
-                  img="/トップ画.png"
-                  header="見やすい美しいデザイン"
-                  body="ゲストサイドの使いやすさだけでなく、ホスト画面の使いやすさにも徹底して拘っています。パソコンに不慣れな方でも直感的に操作できるよう、オブジェクト指向UIデザインという手法でUIを構築しており、多くの施設様からお褒めの言葉をいただいております。"
+                  img="/operate.png"
+                  header="スムーズな操作"
+                  body="Lプラスの設計思想は「シンプルに。美しく。」です。ただ情報量を減らすのではなく、次に行うべきアクションを提示することで、ノンストレスな操作を可能にします。"
                 />
                 <Card
-                  img="/トップ画.png"
-                  header="見やすい美しいデザイン"
-                  body="ゲストサイドの使いやすさだけでなく、ホスト画面の使いやすさにも徹底して拘っています。パソコンに不慣れな方でも直感的に操作できるよう、オブジェクト指向UIデザインという手法でUIを構築しており、多くの施設様からお褒めの言葉をいただいております。"
+                  img="/design.png"
+                  header="見やすいデザイン"
+                  body="一目でわかる様に派手な装飾は排除。パソコンに不慣れな方でも直感的に操作できるよう、徹底的に拘っています。"
                 />
                 <Card
-                  img="/トップ画.png"
-                  header="見やすい美しいデザイン"
-                  body="ゲストサイドの使いやすさだけでなく、ホスト画面の使いやすさにも徹底して拘っています。パソコンに不慣れな方でも直感的に操作できるよう、オブジェクト指向UIデザインという手法でUIを構築しており、多くの施設様からお褒めの言葉をいただいております。"
+                  img="/geek.png"
+                  header="すばやい開発力"
+                  body="弊社のサービスは数名のエンジニアで開発されています。すばやい意思決定のもと、高速な機能改善を実現。"
                 />
               </div>
             </Center>
@@ -304,16 +298,9 @@ export const LpPage = () => {
               <div className="text-center">
                 <p>
                   <span className="font-bold">
-                    「感動したお客様が、次のお客様を呼んでくれる」
+                    システムの力で誰もが自己実現できる手助けを。
                   </span>
-                  <br />
-                  システムの力でミスを減らし、
-                  お客様に最大限満足していただける体験を
-                  心を込めて丁寧に作っていきます。
                 </p>
-                <div className="text-center font-bold text-gray-700 sm:text-2xl lg:text-3xl p-20">
-                  <span className="text-6xl">L</span>プラス
-                </div>
               </div>
             </Center>
           </Section>
