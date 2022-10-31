@@ -295,12 +295,6 @@ export const LpPage = () => {
           </Section>
           <Section title="お問合せ">
             <Center>
-              <script src="https://sdk.form.run/js/v2/embed.js"></script>
-              <div
-                className="formrun-embed"
-                data-formrun-form="@arelease-labo-1667108571"
-                data-formrun-redirect="true"
-              ></div>
               <iframe
                 src="https://form.run/embed/@arelease-labo-1667108571?embed=direct"
                 frameBorder="0"
