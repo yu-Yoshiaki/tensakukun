@@ -185,7 +185,7 @@ export const LpPage = () => {
                         height={700}
                       />
                     </div>
-                    <p className="font-bold text-xl">1. 立ち上げ</p>
+                    <p className="font-bold md:text-xl">1. 立ち上げ</p>
                     <p className="text-sm">
                       LINEアカウントの作成。プランを選定。
                     </p>
@@ -202,7 +202,7 @@ export const LpPage = () => {
                         height={700}
                       />
                     </div>
-                    <p className="font-bold text-xl">2. 連携</p>
+                    <p className="font-bold md:text-xl">2. 連携</p>
                     <p className="text-sm">
                       {process.env.NEXT_PUBLIC_PROJECT_NAME}
                       にLINEアカウントを連携します。連携が確認できしだい利用可能です。
@@ -220,7 +220,7 @@ export const LpPage = () => {
                         height={700}
                       />
                     </div>
-                    <p className="font-bold text-xl">3. 運営</p>
+                    <p className="font-bold md:text-xl">3. 運営</p>
                     <p className="text-sm">
                       実際にアカウントを運営し、情報や知見を収集します。
                     </p>
@@ -237,7 +237,7 @@ export const LpPage = () => {
                         height={700}
                       />
                     </div>
-                    <p className="font-bold text-xl">4. 改善</p>
+                    <p className="font-bold md:text-xl">4. 改善</p>
                     <p className="text-sm">
                       分析機能を利用し、サービス向上をしましょう。
                     </p>
