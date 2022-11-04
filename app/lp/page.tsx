@@ -87,11 +87,13 @@ export const LpPage = () => {
               <p className="md:text-lg">
                 ブランド力向上やマーケティングにおいて、顧客情報の収集はマストです。
                 <br />
-                Lプラスでは、お客様の行動を収集し、集めた情報に則ったマーケティングが可能。
+                {process.env.NEXT_PUBLIC_PROJECT_NAME}
+                では、お客様の行動を収集し、集めた情報に則ったマーケティングが可能。
                 <br />
                 結果として顧客満足度をあげ、ブランド価値を高めることに繋がります。
                 <br />
-                Lプラスは、そのための機能が詰まったマーケティングツールです。
+                {process.env.NEXT_PUBLIC_PROJECT_NAME}
+                は、そのための機能が詰まったマーケティングツールです。
               </p>
             </Center>
           </Section>
@@ -202,7 +204,8 @@ export const LpPage = () => {
                     </div>
                     <p className="font-bold text-xl">2. 連携</p>
                     <p className="text-sm">
-                      LプラスにLINEアカウントを連携します。連携が確認できしだい利用可能です。
+                      {process.env.NEXT_PUBLIC_PROJECT_NAME}
+                      にLINEアカウントを連携します。連携が確認できしだい利用可能です。
                     </p>
                   </div>
                   <p className="flex items-center justify-center text-2xl">
