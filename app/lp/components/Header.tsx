@@ -35,7 +35,7 @@ export const Header = () => {
     <header className="flex h-screen w-[250px] flex-col gap-40 border-r bg-white px-4 py-5 md:justify-between md:gap-0">
       <div className="space-y-4">
         <h1 className="text-center font-bold text-gray-700 sm:text-2xl lg:text-3xl">
-          <span className="text-6xl">L</span>プラス
+          {process.env.NEXT_PUBLIC_PROJECT_NAME}
         </h1>
 
         <ul className="space-y-2">
@@ -62,7 +62,7 @@ export const Header = () => {
         <button className="font-semibold">利用規約</button>
 
         <p className="text-xs font-semibold text-gray-500">
-          Created by Lプラス
+          Created by {process.env.NEXT_PUBLIC_PROJECT_NAME}
         </p>
       </div>
     </header>
