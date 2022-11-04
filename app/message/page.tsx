@@ -4,6 +4,7 @@ import { Layout } from "app/components";
 import useSWR from "swr";
 import { EditButton } from "app/components/buttons/EditButton";
 import { DeleteButton } from "app/components/buttons/DeleteButton";
+import { Seo } from "app/components/Seo";
 
 const testData: {
   title: string;
@@ -120,6 +121,11 @@ export const Page = () => {
       header="メッセージ配信"
       description="友だちにテキストを配信できます。タグの絞り込みによるセグメント配信、時間予約によるステップ配信"
     >
+      <Seo
+        title="メッセージ配信"
+        description="友だちにテキストを配信できます。タグの絞り込みによるセグメント配信、時間予約によるステップ配信"
+      />
+
       <div className="flex gap-8 overflow-x-auto p-8">
         <div className="space-y-4 rounded-md bg-white p-8 shadow-sm w-full">
           <div className="flex items-center justify-between">

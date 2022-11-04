@@ -7,6 +7,7 @@ import { Tag as TagComponent } from "app/tags/Tag";
 import { useFilteredCustomer } from "app/customer/useFilteredCustomer";
 import { useFilteredTags } from "app/tags/useFilteredTags";
 import type { Tag } from "app/types/supabaseCustom";
+import { Seo } from "app/components/Seo";
 
 export type InserData = {
   title: string;
@@ -123,6 +124,10 @@ export const CreatePage = () => {
       header="メッセージ作成"
       description="こちらでメッセージを作成します。ターゲットを絞ってセグメント配信も可能です。"
     >
+      <Seo
+        title="メッセージ作成"
+        description="こちらでメッセージを作成します。ターゲットを絞ってセグメント配信も可能です。"
+      />
       <div className="flex gap-8 p-8">
         <div className="grid min-h-[80vh] gap-y-8 bg-white xl:grid-cols-2">
           <div className="h-full space-y-4 bg-sky-300 p-5">
