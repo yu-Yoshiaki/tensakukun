@@ -4,6 +4,7 @@ import { supabase } from "app/libs/supabase";
 import { definitions } from "app/types/supabase";
 import useSWR from "swr";
 import Image from "next/image";
+import { Seo } from "app/components/Seo";
 
 const supabaseQuery =
   supabase.from<definitions["OwnerInfomation"]>("OwnerInfomation");
@@ -21,6 +22,7 @@ export const Setting = () => {
   const { data: ownerInfo } = useSWR("OwnerInfomation", fetchInfo);
   return (
     <Layout header="設定">
+      <Seo title="設定" />
       <div className="flex pl-8 py-8">
         <div className="w-[700px] flex flex-col divide-y rounded-md bg-white p-4">
           <div className="relative w-24 h-24 mb-6">

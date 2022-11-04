@@ -5,6 +5,7 @@ import { TagsNotData } from "app/tags/TagsNotData";
 import { DeleteButton } from "app/components/buttons/DeleteButton";
 import { EditButton } from "app/components/buttons/EditButton";
 import { useTags } from "app/tags/useTags";
+import { Seo } from "app/components/Seo";
 
 export const TagsPage = () => {
   const { tags } = useTags();
@@ -13,6 +14,10 @@ export const TagsPage = () => {
       header="タグ一覧"
       description="こちらでタグを作成、編集、閲覧が可能です。お客様情報に直接付与したり、アンケートの返答による付与、URLに組み込むことでアクションしたお客様へタグを付与できます。"
     >
+      <Seo
+        title="タグ一覧"
+        description="こちらでタグを作成、編集、閲覧が可能です。お客様情報に直接付与したり、アンケートの返答による付与、URLに組み込むことでアクションしたお客様へタグを付与できます。"
+      />
       <div className="flex gap-8 overflow-x-auto p-8">
         <div className="flex flex-col justify-between space-y-2 bg-white p-8">
           <TagForm />
