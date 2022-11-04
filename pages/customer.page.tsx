@@ -1,7 +1,7 @@
 import { Page } from "app/customer/page";
 
-const customerpage = () => {
+const customer = () => {
   return <Page />;
 };
 
-export default customerpage;
+export default customer;

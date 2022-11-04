@@ -7,7 +7,7 @@ import { CreateNewButton } from "app/components";
 import { useUserSession } from "app/auth/useUserSession";
 import type { definitions } from "app/types/supabase";
 import { useTags } from "app/tags/useTags";
-import { DeleteButton } from "app/components/buttons/DeleteButton";
+import { Modal } from "app/components/Modal";
 
 export const TagForm = () => {
   const { session } = useUserSession();
@@ -43,46 +43,59 @@ export const TagForm = () => {
   };
 
   return (
-    <div className="max-h-[400px] space-y-2">
-      <div className="flex space-x-2">
-        {isOpen ? (
-          <DeleteButton handleClick={onCloseModal} />
-        ) : (
-          <CreateNewButton handleClick={onOpenModal} />
-        )}
-      </div>
+    <div className="space-y-4">
+      <CreateNewButton handleClick={onOpenModal} />
+
       {isOpen && (
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="grid grid-cols-[195px,auto,auto] items-center gap-4 whitespace-nowrap px-5 py-2 md:w-auto border"
-        >
-          <div className="flex items-center gap-1 text-lg font-bold">
-            {errors && errors.name?.message}
-            <label htmlFor="name" className="text-4xl">
-              🔖
-            </label>
+        <Modal>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="w-[550px] space-y-8 rounded-md border p-10 bg-white"
+          >
+            <div className="flex justify-between items-center">
+              <div className="font-bold text-2xl">タグ作成</div>
+              <button onClick={onCloseModal}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-8 h-8 hover:text-gray-400"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div className="space-y-1">
+              <label htmlFor="name" className="font-semibold text-sm">
+                作成するタグの名前
+              </label>
+              <div className="flex items-center border p-2 rounded-md">
+                <span className="text-xl font-semibold ">#</span>
+                <input
+                  id="name"
+                  type="text"
+                  {...register("name", { required: true })}
+                  className="border-none focus:ring-0 font-semibold text-md pl-1"
+                />
+              </div>
+            </div>
 
-            <input
-              id="name"
-              type="text"
-              {...register("name", { required: true })}
-              capture
-              className="w-[150px] border-gray-300 h-8 text-lg font-bold pl-1"
-            />
-          </div>
-          <div className="text-xs ">
-            作成日:
-            <span className="text-sm font-semibold">
-              {dayjs().format("YYYY/MM/DD")}
-            </span>
-          </div>
-
-          <input
-            type="submit"
-            value={"登録"}
-            className="rounded-md bg-green-400 py-2 px-4 text-center text-sm font-semibold text-white hover:cursor-pointer"
-          />
-        </form>
+            <div className="flex justify-end">
+              <button
+                type="submit"
+                className="flex items-center gap-2 rounded-md bg-black text-white px-16 pl-20 py-2 text-lg font-semibold hover:bg-gray-700"
+              >
+                登録 🎉
+              </button>
+            </div>
+          </form>
+        </Modal>
       )}
     </div>
   );

@@ -27,13 +27,13 @@ export const TagsPage = () => {
                     key={data.id}
                     className="grid grid-cols-[1fr,auto,auto] items-center gap-4 whitespace-nowrap px-5 py-3"
                   >
-                    <div className="flex items-center gap-2 overflow-x-auto text-lg font-bold">
-                      <span className="text-4xl">🔖</span>
+                    <div className="flex items-center overflow-x-auto text-lg font-bold">
+                      <span className="text-md">#</span>
                       <p className="w-[200px]">{data.name}</p>
                     </div>
                     <div className="flex flex-col gap-1">
                       <div className="text-xs">
-                        配信日:
+                        作成日:
                         <span className="text-sm font-semibold">
                           {insertedAt}
                         </span>

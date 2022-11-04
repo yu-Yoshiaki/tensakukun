@@ -6,7 +6,6 @@ import Link from "next/link";
 
 export const Page = () => {
   const { filteredCustomers, onFilterCustomers } = useFilteredCustomer();
-
   return (
     <Layout header="LINE友達一覧">
       <div>
@@ -14,7 +13,7 @@ export const Page = () => {
           <Filter handleFilterCustomers={onFilterCustomers} />
         </div>
         <div className="flex flex-col-reverse gap-8 overflow-auto p-8 md:flex-row">
-          <div className="flex w-[600px] flex-col bg-white">
+          <div className="flex w-full flex-col bg-white">
             <div>
               <div className="p-4">
                 ユーザー数
@@ -31,10 +30,11 @@ export const Page = () => {
                       customersTags,
                       lineid,
                       status,
+                      inflows,
                     }) => {
                       return (
                         <div key={lineid} className="h-[90px] bg-white px-4">
-                          <div className="grid grid-cols-[auto,1fr,auto] gap-3 py-3 ">
+                          <div className="grid grid-cols-[auto,1fr,auto,50px] gap-3 py-3 ">
                             <div className="flex items-center justify-center">
                               {pictureurl ? (
                                 <ImageFill
@@ -80,6 +80,17 @@ export const Page = () => {
                                   return <Tag key={tags.id} name={tags.name} />;
                                 })}
                               </div>
+                            </div>
+
+                            <div className="whitespace-nowrap ">
+                              {inflows && (
+                                <div className="flex items-center gap-1">
+                                  <p className="text-sm">登録経路:</p>
+                                  <p className="text-lg font-semibold">
+                                    {inflows?.name}
+                                  </p>
+                                </div>
+                              )}
                             </div>
 
                             <div className="flex items-center justify-center">

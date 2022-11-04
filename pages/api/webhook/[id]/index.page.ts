@@ -1,8 +1,6 @@
 import { BotPage } from "app/api/webhook/page";
-import type { NextApiRequest, NextApiResponse } from "next";
 
-const index = async (req: NextApiRequest, res: NextApiResponse) => {
-  await BotPage(req, res);
+const Bot = () => {
+  return BotPage;
 };
-
-export default index;
+export default Bot;

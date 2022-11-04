@@ -1,7 +1,7 @@
 import { Page } from "app/message/page";
 
-const messagepage = () => {
+const index = () => {
   return <Page />;
 };
 
-export default messagepage;
+export default index;

@@ -1,8 +1,16 @@
 import axios from "axios";
 import { useCallback, useEffect } from "react";
-import { useLiff } from "app/liff/useLiff";
 import { Loading } from "app/components/layouts/Loading";
 import { useRouter } from "next/router";
+import useSWR from "swr";
+import { Liff } from "@line/liff/dist/lib";
+import dynamic from "next/dynamic";
+
+const LiffInitComponent = dynamic(
+  () =>
+    import("../LiffInitComponent").then((module) => module.LiffInitComponent),
+  { ssr: false }
+);
 
 /* 
 「友達追加」する際、ここを経由させる。
@@ -17,35 +25,37 @@ todo: {
 */
 
 export const InflowRoutePage = () => {
-  const { liff } = useLiff();
   const router = useRouter();
-  const { param } = router.query;
-
+  const { urlId } = router.query;
+  const { data: liff } = useSWR<Liff | null>("liff", null, {
+    fallbackData: null,
+  });
   const createUserInfomation = useCallback(async () => {
-    if (!param || !liff) return;
-    const token = liff?.getAccessToken();
+    if (!urlId || !liff) return;
+    const token = liff.getAccessToken();
     if (token) {
-      const { data } = await axios.post<{ status: string; data: string }>(
-        `/api/attendInflowToUser`,
-        {
-          id: param,
-          token,
-        }
-      );
-
-      if (data) {
-        window.location.href = `https://line.me/R/ti/p/${data.data}`;
-      }
+      // const { data } = await axios.post<{ status: string; data: string }>(
+      //   `/api/attendInflowToUser`,
+      //   {
+      //     urlId,
+      //     token,
+      //   }
+      // );
+      // if (data) {
+      //   window.location.href = `https://line.me/R/ti/p/${data.data}`;
+      // }
     }
-  }, [liff, param]);
+  }, [liff, urlId]);
 
   useEffect(() => {
     createUserInfomation();
   }, [liff, createUserInfomation]);
 
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-200">
-      <Loading />
-    </div>
+    <LiffInitComponent>
+      <div className="flex h-screen items-center justify-center bg-gray-200">
+        <Loading />
+      </div>
+    </LiffInitComponent>
   );
 };

@@ -1,7 +1,7 @@
 import { AnalyticsPage } from "app/analytics/page";
 
-const analyticspage = () => {
+const index = () => {
   return <AnalyticsPage />;
 };
 
-export default analyticspage;
+export default index;

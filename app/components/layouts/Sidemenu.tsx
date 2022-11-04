@@ -17,8 +17,8 @@ const menu = [
   // { text: "分析", href: "/", color: "bg-sky-200", active: false },
   // { text: "登録情報", href: "/", color: "bg-green-200", active: false },
   {
-    text: "流入経路",
-    href: "/inflow",
+    text: "URL",
+    href: "/url",
     color: "yellow-200",
     active: true,
     icon: "🚪",
