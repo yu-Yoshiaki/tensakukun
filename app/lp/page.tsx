@@ -8,6 +8,7 @@ import { Header } from "./components/Header";
 import { Center } from "app/lp/components/Center";
 import { Card } from "app/lp/components/Card";
 import { useState } from "react";
+import { Seo } from "app/components/Seo";
 
 const opts = {
   height: "250",
@@ -31,9 +32,7 @@ export const LpPage = () => {
   };
   return (
     <div className="bg-gray-100 text-gray-800 leading-relaxed tracking-wider">
-      <Head>
-        <title>Lプラス | LINEマーケティングをパワーアップ</title>
-      </Head>
+      <Seo />
       <div className="grid-cols-[250px,auto] md:grid">
         <div>
           <div className="hidden md:block">

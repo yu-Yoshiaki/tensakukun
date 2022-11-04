@@ -1,4 +1,5 @@
 import { Layout } from "app/components";
+import { Seo } from "app/components/Seo";
 
 const Section = (props: {
   title: string;
@@ -34,6 +35,7 @@ const Section = (props: {
 export const PolicyPage = () => {
   return (
     <Layout header="利用規約">
+      <Seo title="利用規約" />
       <div className="m-8 flex flex-col gap-4 rounded-lg bg-white p-8 md:w-[900px]">
         <h3>
           このLプラス利用規約（以下「本規約」といいます）は、

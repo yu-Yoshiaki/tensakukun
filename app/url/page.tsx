@@ -5,7 +5,7 @@ import { UrlForm } from "app/url/UrlForm";
 import { supabase } from "app/libs/supabase";
 import type { definitions } from "app/types/supabase";
 import useSWR from "swr";
-
+import { Seo } from "app/components/Seo";
 import { QRCode } from "../components/QRCode";
 import { EditButton, DeleteButton } from "app/components/buttons";
 import { Tag } from "app/tags/Tag";
@@ -49,6 +49,10 @@ export const UrlPage = () => {
       header="URL一覧"
       description="ここではタグを付与したオリジナルURLを発行でき、URLリンクやQRコードをブログやSNSなど媒体ごとに、どこから友だち追加されたのかを特定できます。"
     >
+      <Seo
+        title="URL一覧"
+        description="ここではタグを付与したオリジナルURLを発行でき、URLリンクやQRコードをブログやSNSなど媒体ごとに、どこから友だち追加されたのかを特定できます。"
+      />
       <div className="flex gap-8 overflow-auto p-8">
         <div className="flex flex-col justify-between space-y-2 bg-white p-8 w-full">
           <UrlForm />

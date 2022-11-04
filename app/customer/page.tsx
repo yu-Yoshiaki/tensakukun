@@ -1,5 +1,6 @@
 import { ImageFill, Layout } from "app/components";
 import { Filter } from "app/components/Filter";
+import { Seo } from "app/components/Seo";
 import { useFilteredCustomer } from "app/customer/useFilteredCustomer";
 import { Tag } from "app/tags/Tag";
 import Link from "next/link";
@@ -8,6 +9,7 @@ export const Page = () => {
   const { filteredCustomers, onFilterCustomers } = useFilteredCustomer();
   return (
     <Layout header="LINE友達一覧">
+      <Seo title="LINE友達一覧" />
       <div>
         <div className="mb-8 flex justify-center md:hidden">
           <Filter handleFilterCustomers={onFilterCustomers} />
