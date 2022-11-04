@@ -7,6 +7,7 @@ const qs = require("qs");
 type AxiosReturn = {
   //eslint-disable-next-line
   access_token: string;
+  expires_in: number;
 };
 
 export const createAccessToken = async (

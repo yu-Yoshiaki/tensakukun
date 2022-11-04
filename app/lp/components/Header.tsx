@@ -22,12 +22,12 @@ const menu = [
     href: "#feature",
   },
   {
-    text: "お問合せ",
-    href: "#contact",
+    text: "ご利用方法",
+    href: "#how",
   },
   {
-    text: "vision",
-    href: "#vision",
+    text: "お問合せ",
+    href: "#contact",
   },
 ];
 export const Header = () => {

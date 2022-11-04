@@ -7,8 +7,6 @@ import { Section } from "app/lp/components/Section";
 import { Header } from "./components/Header";
 import { Center } from "app/lp/components/Center";
 import { Card } from "app/lp/components/Card";
-import { PieChartComponent } from "app/lp/components/PieChart";
-import { BarChartComponent } from "app/lp/components/BarChart";
 import { useState } from "react";
 
 const opts = {
@@ -19,8 +17,8 @@ const opts = {
   },
 };
 const opts2 = {
-  height: "250",
-  width: "300",
+  height: "200",
+  width: "350",
   playerVars: {
     autoplay: 1,
   },
@@ -87,20 +85,24 @@ export const LpPage = () => {
             id="top"
           >
             <Center>
-              <p className="text-lg md:text-xl">
-                <span className="font-semibold">顧客の詳細管理</span>、
-                <span className="font-semibold">細かなセグメント配信</span>、
-                <span className="font-semibold">分析</span>
+              <p className="md:text-lg">
+                ブランド力向上やマーケティングにおいて、顧客情報の収集はマストです。
                 <br />
-                機能で細かなニーズをすくい上げ、顧客満足度をあげることが可能になります。
+                Lプラスでは、お客様の行動を収集し、集めた情報に則ったマーケティングが可能。
+                <br />
+                結果として顧客満足度をあげ、ブランド価値を高めることに繋がります。
+                <br />
+                Lプラスは、そのための機能が詰まったマーケティングツールです。
               </p>
             </Center>
           </Section>
           <Section title="タグ機能で詳細な顧客管理" id="tag">
             <Center>
               <div className="md:grid grid-cols-2 gap-8">
-                <p className="text-xl flex items-center">
-                  詳細な顧客情報を得ることでパーソナライズなサービスが可能。顧客満足度の向上を図ることができます。
+                <p className="md:text-xl flex items-center">
+                  リンククリック、リッチメニュー、メッセージ配信など。お客様のアクション毎に多彩なタグを付与できます。
+                  <br />{" "}
+                  付与したタグをもとに次に行うべきアクションが可視化します。
                 </p>
                 <div className="hidden md:block">
                   <YouTube videoId="zCoZ4VkJ-gg" opts={opts} />
@@ -111,83 +113,52 @@ export const LpPage = () => {
               </div>
             </Center>
           </Section>
+          <Section title="友だち追加経路がわかるURL機能" id="tag">
+            <Center>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="p-1 rounded-md bg-gray-700 flex items-center justify-center">
+                  <Image src={"/url.png"} alt="" width={440} height={260} />
+                </div>
+                <p className="md:text-xl flex items-center">
+                  経路別に友だち追加URLを自由に発行できます。
+                  <br />
+                  どこからの経路が多いのか、高CVRはどこかなど。
+                  <br />
+                  さまざまな用途でご利用いただけます。
+                </p>
+              </div>
+            </Center>
+          </Section>
           <div className="bg-gray-800 text-white">
             <Section title="📈分析機能でサービス改善" id="chart">
               <Center>
-                <div className="flex flex-col gap-10 items-center">
-                  <p className="text-lg md:text-xl flex items-center">
+                <div className="space-y-10 ">
+                  <p className="md:text-xl flex items-center justify-center">
                     多様なレイアウトからお好みのを選んで分析が可能です。
                   </p>
-                  <div className="md:grid grid-cols-2 gap-10 space-y-10">
-                    <div className="bg-gray-100 rounded-md flex items-center justify-center">
-                      <PieChartComponent
-                        data={[
-                          { name: "Twitter", value: 240 },
-                          { name: "FaceBook", value: 110 },
-                          { name: "Instagram", value: 300 },
-                          { name: "TicToc", value: 280 },
-                          { name: "WEBサイト", value: 90 },
-                          { name: "店舗", value: 70 },
-                        ]}
-                      />
-                    </div>
-                    <div className="bg-gray-100 rounded-md flex items-center justify-center">
-                      <BarChartComponent
-                        data={[
-                          { name: "Twitter", men: 100, wom: 140 },
-                          { name: "FaceBook", men: 70, wom: 40 },
-                          { name: "Instagram", men: 100, wom: 200 },
-                          { name: "TicToc", men: 130, wom: 150 },
-                          { name: "WEBサイト", men: 80, wom: 10 },
-                          { name: "店舗", men: 20, wom: 70 },
-                        ]}
-                      />
-                    </div>
+                  <div className="grid md:grid-cols-2 gap-2 md:px-20">
+                    <Image
+                      src={"/pie.png"}
+                      alt=""
+                      width={200}
+                      height={300}
+                      objectFit="contain"
+                    />
+                    <Image
+                      src={"/bar.png"}
+                      alt=""
+                      width={200}
+                      height={300}
+                      objectFit="contain"
+                    />
+                    <Image
+                      src={"/table.png"}
+                      alt=""
+                      width={800}
+                      height={400}
+                      objectFit="contain"
+                    />
                   </div>
-                  <table className="max-w-[700px] border-white overflow-hidden">
-                    <tr className="text-center text-gray-700 h-10 border-b border-white">
-                      <th className="w-[200px] bg-gray-50"></th>
-                      <th className="w-[200px] bg-green-200">全体</th>
-                      <th className="w-[200px] bg-blue-200">男性</th>
-                      <th className="w-[200px] bg-red-200">女性</th>
-                    </tr>
-                    <tr className="text-gray-700 text-center h-10 whitespace-nowrap border-b border-white">
-                      <th className="bg-gray-50 ">Twitter</th>
-                      <td className="bg-green-200">240</td>
-                      <td className="bg-blue-200">100</td>
-                      <td className="bg-red-200">140</td>
-                    </tr>
-                    <tr className="bg-gray-50 text-center h-10 text-gray-700 whitespace-nowrap border-b border-white">
-                      <th className="bg-gray-50 ">FaceBook</th>
-                      <td className="bg-green-200">110</td>
-                      <td className="bg-blue-200">70</td>
-                      <td className="bg-red-200">40</td>
-                    </tr>
-                    <tr className="bg-green-200 text-gray-700 text-center h-10 whitespace-nowrap border-b border-white">
-                      <th className="bg-gray-50 ">Instagram</th>
-                      <td className="bg-green-200">300</td>
-                      <td className="bg-blue-200">100</td>
-                      <td className="bg-red-200">200</td>
-                    </tr>
-                    <tr className="bg-gray-50 text-center h-10 text-gray-700 whitespace-nowrap border-b border-white">
-                      <th className="bg-gray-50 ">TicToc</th>
-                      <td className="bg-green-200">280</td>
-                      <td className="bg-blue-200">130</td>
-                      <td className="bg-red-200">150</td>
-                    </tr>
-                    <tr className="bg-green-200 text-gray-700 text-center h-10 whitespace-nowrap border-b border-white">
-                      <th className="bg-gray-50 ">WEBサイト</th>
-                      <td className="bg-green-200">90</td>
-                      <td className="bg-blue-200">80</td>
-                      <td className="bg-red-200">10</td>
-                    </tr>
-                    <tr className="bg-gray-50 text-center h-10 text-gray-700 whitespace-nowrap border-b border-white">
-                      <th className="bg-gray-50 ">店舗</th>
-                      <td className="bg-green-200">70</td>
-                      <td className="bg-blue-200">20</td>
-                      <td className="bg-red-200">50</td>
-                    </tr>
-                  </table>
                 </div>
               </Center>
             </Section>
@@ -195,7 +166,7 @@ export const LpPage = () => {
           <Section title="🔧使い方" id="use">
             <div className="space-y-20">
               <Center>
-                <p className="text-lg md:text-xl md:w-[700px] text-center">
+                <p className="md:text-xl md:w-[700px] text-center">
                   連携も設定もカンタン。
                   <br />
                 </p>
@@ -293,8 +264,15 @@ export const LpPage = () => {
                 />
               </div>
             </Center>
+          </Section>{" "}
+          <Section title="ご利用方法" id="how">
+            <Center>
+              <p className="font-bold">
+                下記フォームよりご連絡ください。後日、私たちからご連絡いたします。
+              </p>
+            </Center>
           </Section>
-          <Section title="お問合せ" id="contact">
+          <Section title="" id="contact">
             <Center>
               <iframe
                 src="https://form.run/embed/@arelease-labo-1667108571?embed=direct"
@@ -302,13 +280,6 @@ export const LpPage = () => {
                 width={"100%"}
                 height={1000}
               ></iframe>
-            </Center>
-          </Section>
-          <Section title="Vision" id="vision">
-            <Center>
-              <p className="font-bold">
-                システムの力で誰もが自己実現できる手助けを。
-              </p>
             </Center>
           </Section>
         </main>

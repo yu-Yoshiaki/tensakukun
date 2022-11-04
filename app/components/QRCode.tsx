@@ -9,7 +9,7 @@ export const QRCode = (props: { url: string }) => {
 
   return (
     <div>
-      <button onClick={handleOpenQRCode}>
+      <button onClick={handleOpenQRCode} className="flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

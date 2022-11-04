@@ -1,7 +1,7 @@
 import { CreatePage } from "app/message/create/page";
 
-const createpage = () => {
+const create = () => {
   return <CreatePage />;
 };
 
-export default createpage;
+export default create;

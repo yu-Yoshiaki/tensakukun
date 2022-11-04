@@ -23,6 +23,8 @@ export const Signin = () => {
   const handleLogin = async ({ email }: Form) => {
     setIsLoading(true);
     const { error } = await supabase.auth.signIn({ email });
+    console.log("eeee", error);
+
     if (error) {
       toast.error(error.message);
     } else {
@@ -42,6 +44,10 @@ export const Signin = () => {
           確認リンクを添付した認証メールが配信されます。
           <br />
           そちらのリンクからページに遷移してください。
+          <br />
+          <span className="bg-yellow-100">
+            ※ ユーザー作成もこちらから行えます。
+          </span>
         </p>
       </div>
       <form

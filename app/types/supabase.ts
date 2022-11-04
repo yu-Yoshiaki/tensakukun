@@ -159,6 +159,7 @@ export interface paths {
           basicId?: parameters["rowFilter.OwnerInfomation.basicId"];
           pictureUrl?: parameters["rowFilter.OwnerInfomation.pictureUrl"];
           liffAccessToken?: parameters["rowFilter.OwnerInfomation.liffAccessToken"];
+          firstLogin?: parameters["rowFilter.OwnerInfomation.firstLogin"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -223,6 +224,7 @@ export interface paths {
           basicId?: parameters["rowFilter.OwnerInfomation.basicId"];
           pictureUrl?: parameters["rowFilter.OwnerInfomation.pictureUrl"];
           liffAccessToken?: parameters["rowFilter.OwnerInfomation.liffAccessToken"];
+          firstLogin?: parameters["rowFilter.OwnerInfomation.firstLogin"];
         };
         header: {
           /** Preference */
@@ -251,6 +253,7 @@ export interface paths {
           basicId?: parameters["rowFilter.OwnerInfomation.basicId"];
           pictureUrl?: parameters["rowFilter.OwnerInfomation.pictureUrl"];
           liffAccessToken?: parameters["rowFilter.OwnerInfomation.liffAccessToken"];
+          firstLogin?: parameters["rowFilter.OwnerInfomation.firstLogin"];
         };
         body: {
           /** OwnerInfomation */
@@ -579,6 +582,7 @@ export interface paths {
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
           status?: parameters["rowFilter.customers.status"];
           owner?: parameters["rowFilter.customers.owner"];
+          inflow?: parameters["rowFilter.customers.inflow"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -640,6 +644,7 @@ export interface paths {
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
           status?: parameters["rowFilter.customers.status"];
           owner?: parameters["rowFilter.customers.owner"];
+          inflow?: parameters["rowFilter.customers.inflow"];
         };
         header: {
           /** Preference */
@@ -665,10 +670,116 @@ export interface paths {
           pictureurl?: parameters["rowFilter.customers.pictureurl"];
           status?: parameters["rowFilter.customers.status"];
           owner?: parameters["rowFilter.customers.owner"];
+          inflow?: parameters["rowFilter.customers.inflow"];
         };
         body: {
           /** customers */
           customers?: definitions["customers"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+  };
+  "/urls_cutomers": {
+    get: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.urls_cutomers.id"];
+          created_at?: parameters["rowFilter.urls_cutomers.created_at"];
+          customerId?: parameters["rowFilter.urls_cutomers.customerId"];
+          urlId?: parameters["rowFilter.urls_cutomers.urlId"];
+          clicks?: parameters["rowFilter.urls_cutomers.clicks"];
+          owner?: parameters["rowFilter.urls_cutomers.owner"];
+          updateAt?: parameters["rowFilter.urls_cutomers.updateAt"];
+          /** Filtering Columns */
+          select?: parameters["select"];
+          /** Ordering */
+          order?: parameters["order"];
+          /** Limiting and Pagination */
+          offset?: parameters["offset"];
+          /** Limiting and Pagination */
+          limit?: parameters["limit"];
+        };
+        header: {
+          /** Limiting and Pagination */
+          Range?: parameters["range"];
+          /** Limiting and Pagination */
+          "Range-Unit"?: parameters["rangeUnit"];
+          /** Preference */
+          Prefer?: parameters["preferCount"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: {
+          schema: definitions["urls_cutomers"][];
+        };
+        /** Partial Content */
+        206: unknown;
+      };
+    };
+    post: {
+      parameters: {
+        body: {
+          /** urls_cutomers */
+          urls_cutomers?: definitions["urls_cutomers"];
+        };
+        query: {
+          /** Filtering Columns */
+          select?: parameters["select"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** Created */
+        201: unknown;
+      };
+    };
+    delete: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.urls_cutomers.id"];
+          created_at?: parameters["rowFilter.urls_cutomers.created_at"];
+          customerId?: parameters["rowFilter.urls_cutomers.customerId"];
+          urlId?: parameters["rowFilter.urls_cutomers.urlId"];
+          clicks?: parameters["rowFilter.urls_cutomers.clicks"];
+          owner?: parameters["rowFilter.urls_cutomers.owner"];
+          updateAt?: parameters["rowFilter.urls_cutomers.updateAt"];
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferReturn"];
+        };
+      };
+      responses: {
+        /** No Content */
+        204: never;
+      };
+    };
+    patch: {
+      parameters: {
+        query: {
+          id?: parameters["rowFilter.urls_cutomers.id"];
+          created_at?: parameters["rowFilter.urls_cutomers.created_at"];
+          customerId?: parameters["rowFilter.urls_cutomers.customerId"];
+          urlId?: parameters["rowFilter.urls_cutomers.urlId"];
+          clicks?: parameters["rowFilter.urls_cutomers.clicks"];
+          owner?: parameters["rowFilter.urls_cutomers.owner"];
+          updateAt?: parameters["rowFilter.urls_cutomers.updateAt"];
+        };
+        body: {
+          /** urls_cutomers */
+          urls_cutomers?: definitions["urls_cutomers"];
         };
         header: {
           /** Preference */
@@ -689,7 +800,7 @@ export interface paths {
           name?: parameters["rowFilter.urls.name"];
           createdAt?: parameters["rowFilter.urls.createdAt"];
           updatedAt?: parameters["rowFilter.urls.updatedAt"];
-          click?: parameters["rowFilter.urls.click"];
+          clicks?: parameters["rowFilter.urls.clicks"];
           impression?: parameters["rowFilter.urls.impression"];
           owner?: parameters["rowFilter.urls.owner"];
           /** Filtering Columns */
@@ -746,7 +857,7 @@ export interface paths {
           name?: parameters["rowFilter.urls.name"];
           createdAt?: parameters["rowFilter.urls.createdAt"];
           updatedAt?: parameters["rowFilter.urls.updatedAt"];
-          click?: parameters["rowFilter.urls.click"];
+          clicks?: parameters["rowFilter.urls.clicks"];
           impression?: parameters["rowFilter.urls.impression"];
           owner?: parameters["rowFilter.urls.owner"];
         };
@@ -767,7 +878,7 @@ export interface paths {
           name?: parameters["rowFilter.urls.name"];
           createdAt?: parameters["rowFilter.urls.createdAt"];
           updatedAt?: parameters["rowFilter.urls.updatedAt"];
-          click?: parameters["rowFilter.urls.click"];
+          clicks?: parameters["rowFilter.urls.clicks"];
           impression?: parameters["rowFilter.urls.impression"];
           owner?: parameters["rowFilter.urls.owner"];
         };
@@ -882,6 +993,63 @@ export interface paths {
       };
     };
   };
+  "/rpc/planet": {
+    post: {
+      parameters: {
+        body: {
+          args: { [key: string]: unknown };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/countupurlsclicks": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            id: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
+  "/rpc/add_planet": {
+    post: {
+      parameters: {
+        body: {
+          args: {
+            /** Format: text */
+            name: string;
+          };
+        };
+        header: {
+          /** Preference */
+          Prefer?: parameters["preferParams"];
+        };
+      };
+      responses: {
+        /** OK */
+        200: unknown;
+      };
+    };
+  };
 }
 
 export interface definitions {
@@ -973,6 +1141,11 @@ export interface definitions {
     pictureUrl?: string;
     /** Format: text */
     liffAccessToken?: string;
+    /**
+     * Format: boolean
+     * @default true
+     */
+    firstLogin: boolean;
   };
   urls_tags: {
     /**
@@ -1091,6 +1264,50 @@ export interface definitions {
     status?: string;
     /** Format: uuid */
     owner: string;
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Foreign Key to `tags.id`.<fk table='tags' column='id'/>
+     */
+    inflow?: string;
+  };
+  urls_cutomers: {
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Primary Key.<pk/>
+     * @default extensions.uuid_generate_v4()
+     */
+    id: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    created_at?: string;
+    /**
+     * Format: character varying
+     * @description Note:
+     * This is a Foreign Key to `customers.lineid`.<fk table='customers' column='lineid'/>
+     */
+    customerId: string;
+    /**
+     * Format: uuid
+     * @description Note:
+     * This is a Foreign Key to `urls.id`.<fk table='urls' column='id'/>
+     */
+    urlId: string;
+    /**
+     * Format: integer
+     * @default 0
+     */
+    clicks: number;
+    /** Format: uuid */
+    owner: string;
+    /**
+     * Format: timestamp with time zone
+     * @default now()
+     */
+    updateAt: string;
   };
   urls: {
     /**
@@ -1116,7 +1333,7 @@ export interface definitions {
      * Format: integer
      * @default 0
      */
-    click?: number;
+    clicks?: number;
     /**
      * Format: integer
      * @default 0
@@ -1249,6 +1466,8 @@ export interface parameters {
   "rowFilter.OwnerInfomation.pictureUrl": string;
   /** Format: text */
   "rowFilter.OwnerInfomation.liffAccessToken": string;
+  /** Format: boolean */
+  "rowFilter.OwnerInfomation.firstLogin": string;
   /** @description urls_tags */
   "body.urls_tags": definitions["urls_tags"];
   /** Format: uuid */
@@ -1309,6 +1528,24 @@ export interface parameters {
   "rowFilter.customers.status": string;
   /** Format: uuid */
   "rowFilter.customers.owner": string;
+  /** Format: uuid */
+  "rowFilter.customers.inflow": string;
+  /** @description urls_cutomers */
+  "body.urls_cutomers": definitions["urls_cutomers"];
+  /** Format: uuid */
+  "rowFilter.urls_cutomers.id": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.urls_cutomers.created_at": string;
+  /** Format: character varying */
+  "rowFilter.urls_cutomers.customerId": string;
+  /** Format: uuid */
+  "rowFilter.urls_cutomers.urlId": string;
+  /** Format: integer */
+  "rowFilter.urls_cutomers.clicks": string;
+  /** Format: uuid */
+  "rowFilter.urls_cutomers.owner": string;
+  /** Format: timestamp with time zone */
+  "rowFilter.urls_cutomers.updateAt": string;
   /** @description urls */
   "body.urls": definitions["urls"];
   /** Format: uuid */
@@ -1320,7 +1557,7 @@ export interface parameters {
   /** Format: timestamp with time zone */
   "rowFilter.urls.updatedAt": string;
   /** Format: integer */
-  "rowFilter.urls.click": string;
+  "rowFilter.urls.clicks": string;
   /** Format: integer */
   "rowFilter.urls.impression": string;
   /** Format: uuid */

@@ -7,8 +7,9 @@ type Props = {
 };
 export const Tag = (props: Props) => {
   return (
-    <div className="rounded-md text-sm text-center whitespace-nowrap font-semibold flex items-center gap-1">
-      <span className="text-lg">🔖</span> {props.name}
+    <div className="rounded-xl text-sm text-center whitespace-nowrap font-semibold flex items-center bg-blue-50 py-1 px-2">
+      <span className="text-xs">#</span>
+      <span className="text-sm">{props.name}</span>
     </div>
   );
 };

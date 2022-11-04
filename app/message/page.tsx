@@ -121,7 +121,7 @@ export const Page = () => {
       description="友だちにテキストを配信できます。タグの絞り込みによるセグメント配信、時間予約によるステップ配信"
     >
       <div className="flex gap-8 overflow-x-auto p-8">
-        <div className="space-y-4 rounded-md bg-white p-8 shadow-sm">
+        <div className="space-y-4 rounded-md bg-white p-8 shadow-sm w-full">
           <div className="flex items-center justify-between">
             <Link href={"/message/create"}>
               <a className="flex w-[110px] items-center justify-center gap-2 rounded-md bg-gray-700 px-3 py-1 text-sm font-semibold text-white hover:bg-gray-700">
