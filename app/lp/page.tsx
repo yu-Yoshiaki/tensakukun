@@ -17,8 +17,8 @@ const opts = {
   },
 };
 const opts2 = {
-  height: "250",
-  width: "300",
+  height: "200",
+  width: "350",
   playerVars: {
     autoplay: 1,
   },

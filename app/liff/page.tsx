@@ -1,17 +1,15 @@
 import { Loading } from "app/components/layouts/Loading";
-import dynamic from "next/dynamic";
+import { useLiff } from "app/liff/useLiff";
+import { useRouter } from "next/router";
 
-const LiffInitComponent = dynamic(
-  () =>
-    import("./LiffInitComponent").then((module) => module.LiffInitComponent),
-  { ssr: false }
-);
 export const LiffPage = () => {
+  const router = useRouter();
+  const { liffId } = router.query;
+  useLiff(liffId as string);
+
   return (
-    <LiffInitComponent>
-      <div className="flex h-screen items-center justify-center bg-gray-200">
-        <Loading />
-      </div>
-    </LiffInitComponent>
+    <div className="flex h-screen items-center justify-center bg-gray-200">
+      <Loading />
+    </div>
   );
 };
