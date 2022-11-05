@@ -7,7 +7,24 @@ import { useState } from "react";
 import { Seo } from "app/components/Seo";
 import dynamic from "next/dynamic";
 
-const Test = dynamic<{}>(() => import("./Test").then((module) => module.Test));
+const TagSection = dynamic<{}>(() =>
+  import("./components/TagSection").then((module) => module.TagSection)
+);
+const UrlSection = dynamic<{}>(() =>
+  import("./components/UrlSection").then((module) => module.UrlSection)
+);
+const Analytics = dynamic<{}>(() =>
+  import("./components/Analytics").then((module) => module.Analytics)
+);
+const UseSection = dynamic<{}>(() =>
+  import("./components/UseSection").then((module) => module.UseSection)
+);
+const Test = dynamic<{}>(() =>
+  import("./components/Test").then((module) => module.Test)
+);
+const Contact = dynamic<{}>(() =>
+  import("./components/Contact").then((module) => module.Contact)
+);
 
 export const LpPage = () => {
   const [isMeneOpen, setIsMenuOpen] = useState(false);
@@ -81,8 +98,12 @@ export const LpPage = () => {
               </p>
             </Center>
           </Section>
-
+          <TagSection />
+          <UrlSection />
+          <Analytics />
+          <UseSection />
           <Test />
+          <Contact />
         </main>
       </div>
     </div>
