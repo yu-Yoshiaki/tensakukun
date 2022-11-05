@@ -28,6 +28,7 @@ export const Seo = (props: Props) => {
       </title>
       <meta name="viewport" content="width=device-width,initial-scale=1.0" />
       <head prefix="og: https://ogp.me/ns#" />
+      <meta name="description" content={baseData.description} />
       <meta property="og:url" content={props.url ?? baseData.url} />
       <meta property="og:type" content={props.type ?? baseData.type} />
       <meta property="og:title" content={baseData.title} />

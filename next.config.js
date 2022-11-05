@@ -12,6 +12,7 @@ const nextConfig = {
       "sprofile.line-scdn.net",
       "vpxyovqhreblordyqpdo.supabase.co",
       "profile.line-scdn.net",
+      "img.youtube.com",
     ],
   },
 };
