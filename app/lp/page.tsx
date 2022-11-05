@@ -1,30 +1,13 @@
 import Image from "next/image";
-import YouTube from "react-youtube";
 
 import { Section } from "app/lp/components/Section";
 import { Header } from "./components/Header";
 import { Center } from "app/lp/components/Center";
 import { useState } from "react";
 import { Seo } from "app/components/Seo";
-import { GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 
 const Test = dynamic<{}>(() => import("./Test").then((module) => module.Test));
-
-const opts = {
-  height: "250",
-  width: "450",
-  playerVars: {
-    autoplay: 1,
-  },
-};
-const opts2 = {
-  height: "200",
-  width: "350",
-  playerVars: {
-    autoplay: 1,
-  },
-};
 
 export const LpPage = () => {
   const [isMeneOpen, setIsMenuOpen] = useState(false);
@@ -98,50 +81,10 @@ export const LpPage = () => {
               </p>
             </Center>
           </Section>
-          <Section title="タグ機能で詳細な顧客管理" id="tag">
-            <Center>
-              <div className="md:grid grid-cols-2 gap-8">
-                <p className="md:text-xl flex items-center">
-                  リンククリック、リッチメニュー、メッセージ配信など。お客様のアクション毎に多彩なタグを付与できます。
-                  <br />{" "}
-                  付与したタグをもとに次に行うべきアクションが可視化します。
-                </p>
-                <div className="hidden md:block">
-                  <YouTube videoId="zCoZ4VkJ-gg" opts={opts} />
-                </div>
-                <div className="md:hidden">
-                  <YouTube videoId="zCoZ4VkJ-gg" opts={opts2} />
-                </div>
-              </div>
-            </Center>
-          </Section>
-          <Section title="友だち追加経路がわかるURL機能" id="tag">
-            <Center>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="p-1 rounded-md bg-gray-700 flex items-center justify-center">
-                  <Image src={"/url.png"} alt="" width={440} height={260} />
-                </div>
-                <p className="md:text-xl flex items-center">
-                  経路別に友だち追加URLを自由に発行できます。
-                  <br />
-                  どこからの経路が多いのか、高CVRはどこかなど。
-                  <br />
-                  さまざまな用途でご利用いただけます。
-                </p>
-              </div>
-            </Center>
-          </Section>
+
           <Test />
         </main>
       </div>
     </div>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      ssg: "ssg",
-    },
-  };
 };
