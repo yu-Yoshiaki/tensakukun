@@ -1,5 +1,3 @@
-// import dynamic from "next/dynamic";
-import Head from "next/head";
 import Image from "next/image";
 import YouTube from "react-youtube";
 
@@ -9,6 +7,7 @@ import { Center } from "app/lp/components/Center";
 import { Card } from "app/lp/components/Card";
 import { useState } from "react";
 import { Seo } from "app/components/Seo";
+import { GetStaticProps } from "next";
 
 const opts = {
   height: "250",
@@ -288,4 +287,12 @@ export const LpPage = () => {
       </div>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      ssg: "ssg",
+    },
+  };
 };
