@@ -15,14 +15,13 @@ export const UseSection = () => {
         <Center>
           <div className="grid md:grid-cols-[180px,50px,180px,50px,180px,50px,180px] gap-4">
             <div className="space-y-4 flex flex-col md:items-start items-center">
-              <div className="shadow-md">
+              <div className="shadow-md w-full">
                 <Image
                   src={"/createLineAccount.png"}
                   alt=""
-                  // layout="fill"
-                  // objectFit="cover"
-                  width={1280}
-                  height={700}
+                  layout="responsive"
+                  width={213}
+                  height={116}
                 />
               </div>
               <p className="font-bold md:text-xl">1. 立ち上げ</p>
@@ -32,12 +31,13 @@ export const UseSection = () => {
               <span className="rotate-90 md:rotate-0">▶︎</span>
             </p>
             <div className="space-y-4 flex flex-col md:items-start items-center">
-              <div className="shadow-md">
+              <div className="shadow-md w-full">
                 <Image
                   src={"/connectLplus.png"}
                   alt=""
-                  width={1280}
-                  height={700}
+                  layout="responsive"
+                  width={213}
+                  height={116}
                 />
               </div>
               <p className="font-bold md:text-xl">2. 連携</p>
@@ -50,12 +50,13 @@ export const UseSection = () => {
               <span className="rotate-90 md:rotate-0">▶︎</span>
             </p>
             <div className="space-y-4 flex flex-col md:items-start items-center">
-              <div className="shadow-md">
+              <div className="shadow-md w-full">
                 <Image
                   src={"/operateAccount.png"}
                   alt=""
-                  width={1280}
-                  height={700}
+                  layout="responsive"
+                  width={213}
+                  height={116}
                 />
               </div>
               <p className="font-bold md:text-xl">3. 運営</p>
@@ -67,8 +68,14 @@ export const UseSection = () => {
               <span className="rotate-90 md:rotate-0">▶︎</span>
             </p>
             <div className="space-y-4 flex flex-col md:items-start items-center">
-              <div className="shadow-md">
-                <Image src={"/chart.png"} alt="" width={1280} height={700} />
+              <div className="shadow-md w-full">
+                <Image
+                  src={"/chart.png"}
+                  alt=""
+                  layout="responsive"
+                  width={213}
+                  height={116}
+                />
               </div>
               <p className="font-bold md:text-xl">4. 改善</p>
               <p className="text-sm">

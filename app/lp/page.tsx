@@ -7,23 +7,29 @@ import { useState } from "react";
 import { Seo } from "app/components/Seo";
 import dynamic from "next/dynamic";
 
-const TagSection = dynamic<{}>(() =>
-  import("./components/TagSection").then((module) => module.TagSection)
+const TagSection = dynamic<{}>(
+  () => import("./components/TagSection").then((module) => module.TagSection),
+  { ssr: false }
 );
-const UrlSection = dynamic<{}>(() =>
-  import("./components/UrlSection").then((module) => module.UrlSection)
+const UrlSection = dynamic<{}>(
+  () => import("./components/UrlSection").then((module) => module.UrlSection),
+  { ssr: false }
 );
-const Analytics = dynamic<{}>(() =>
-  import("./components/Analytics").then((module) => module.Analytics)
+const Analytics = dynamic<{}>(
+  () => import("./components/Analytics").then((module) => module.Analytics),
+  { ssr: false }
 );
-const UseSection = dynamic<{}>(() =>
-  import("./components/UseSection").then((module) => module.UseSection)
+const UseSection = dynamic<{}>(
+  () => import("./components/UseSection").then((module) => module.UseSection),
+  { ssr: false }
 );
-const Test = dynamic<{}>(() =>
-  import("./components/Test").then((module) => module.Test)
+const Test = dynamic<{}>(
+  () => import("./components/Test").then((module) => module.Test),
+  { ssr: false }
 );
-const Contact = dynamic<{}>(() =>
-  import("./components/Contact").then((module) => module.Contact)
+const Contact = dynamic<{}>(
+  () => import("./components/Contact").then((module) => module.Contact),
+  { ssr: false }
 );
 
 export const LpPage = () => {
@@ -69,12 +75,11 @@ export const LpPage = () => {
         </div>
         <main className="h-screen overflow-y-scroll md:pt-20">
           <Center>
-            <div id="top" className="md:w-[700px]">
+            <div id="top" className="w-full max-w-[700px]">
               <Image
                 src={"/トップ画.png"}
                 alt=""
-                // layout="fill"
-                // objectFit="contain"
+                layout="responsive"
                 width={1280}
                 height={670}
               />

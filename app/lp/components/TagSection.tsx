@@ -41,22 +41,28 @@ export const TagSection = () => {
               height={size().height}
             ></iframe>
           ) : (
-            <div className="relative">
-              <Image
-                width={size().width}
-                height={size().height}
-                objectFit="cover"
-                src={`https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`}
-                alt="サムネイル"
-              />
-              <div className="absolute flex items-center top-0 bottom-0 justify-center left-0 right-0">
+            <div className="relative bg-blue-300">
+              <div className="w-full">
                 <Image
-                  src={`/youtube.png`}
-                  onClick={() => setMovieStart(true)}
+                  width={size().width}
+                  height={size().height}
+                  layout="responsive"
+                  src={`https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`}
                   alt="サムネイル"
-                  width={80}
-                  height={70}
                 />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-[90px] bg-white">
+                  <Image
+                    src={`/youtube.png`}
+                    onClick={() => setMovieStart(true)}
+                    alt="サムネイル"
+                    layout="responsive"
+                    objectFit="cover"
+                    width={8}
+                    height={7}
+                  />
+                </div>
               </div>
             </div>
           )}
