@@ -1,4 +1,3 @@
-import { useUserSession } from "app/auth/useUserSession";
 import { Layout } from "app/components";
 import { Seo } from "app/components/Seo";
 import { Header } from "app/lp/components/Header";
