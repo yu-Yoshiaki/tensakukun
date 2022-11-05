@@ -7,9 +7,9 @@ import { useState } from "react";
 import { Seo } from "app/components/Seo";
 import dynamic from "next/dynamic";
 
-const TagSection = dynamic<{}>(() =>
-  import("./components/TagSection").then((module) => module.TagSection)
-);
+// const TagSection = dynamic<{}>(() =>
+//   import("./components/TagSection").then((module) => module.TagSection)
+// );
 const UrlSection = dynamic<{}>(() =>
   import("./components/UrlSection").then((module) => module.UrlSection)
 );
@@ -98,7 +98,7 @@ export const LpPage = () => {
               </p>
             </Center>
           </Section>
-          <TagSection />
+          {/* <TagSection /> */}
           <UrlSection />
           <Analytics />
           <UseSection />
