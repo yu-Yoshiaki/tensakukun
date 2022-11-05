@@ -43,6 +43,7 @@ export const LpPage = () => {
             <button
               onClick={handleMenuOpen}
               className="p-2 text-white bg-black"
+              id="menu"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

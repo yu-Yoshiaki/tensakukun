@@ -8,6 +8,7 @@ export const Contact = () => {
         <iframe
           src="https://form.run/embed/@arelease-labo-1667108571?embed=direct"
           frameBorder="0"
+          title="contactform"
           width={"100%"}
           height={1000}
         ></iframe>
