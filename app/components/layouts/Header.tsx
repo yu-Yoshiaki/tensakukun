@@ -25,7 +25,9 @@ export const Header = () => {
     <header className="flex bg-white px-4 py-5 flex-col gap-40 md:gap-0 md:justify-between h-screen w-[250px]">
       <div>
         <h1 className="text-center pt-5 pb-10 font-bold sm:text-2xl lg:text-3xl text-gray-700">
-          {process.env.NEXT_PUBLIC_PROJECT_NAME}
+          <h1 className="text-center font-bold text-gray-700 sm:text-2xl lg:text-3xl">
+            <span className="text-6xl">L</span>プラス
+          </h1>
         </h1>
         <Sidemenu />
       </div>
