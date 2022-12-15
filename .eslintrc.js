@@ -99,7 +99,7 @@ module.exports = {
       },
     },
     {
-      files: ["src/type/**/*.d.ts"],
+      files: ["src/types/**/*.d.ts"],
       rules: {
         "@typescript-eslint/naming-convention": [
           "error",

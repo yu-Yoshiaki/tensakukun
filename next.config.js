@@ -4,7 +4,7 @@
 const nextConfig = {
   i18n: { locales: ["ja"], defaultLocale: "ja" },
   future: { strictPostcssConfiguration: true },
-  pageExtensions: ["page.tsx", "page.ts"],
+  // pageExtensions: ["page.tsx", "page.ts"],
   reactStrictMode: false,
   poweredByHeader: false,
   images: {
