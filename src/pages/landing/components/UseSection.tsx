@@ -1,21 +1,21 @@
-import { Center } from "src/lp/components/Center";
-import { Section } from "src/lp/components/Section";
 import Image from "next/image";
+import { Center } from "src/pages/landing/components/Center";
+import { Section } from "src/pages/landing/components/Section";
 
 export const UseSection = () => {
   return (
     <Section title="🔧使い方" id="use">
       <div className="space-y-20">
         <Center>
-          <p className="md:text-xl md:w-[700px] text-center">
+          <p className="text-center md:w-[700px] md:text-xl">
             連携も設定もカンタン。
             <br />
           </p>
         </Center>
         <Center>
-          <div className="grid md:grid-cols-[180px,50px,180px,50px,180px,50px,180px] gap-4">
-            <div className="space-y-4 flex flex-col md:items-start items-center">
-              <div className="shadow-md w-full">
+          <div className="grid gap-4 md:grid-cols-[180px,50px,180px,50px,180px,50px,180px]">
+            <div className="flex flex-col items-center space-y-4 md:items-start">
+              <div className="w-full shadow-md">
                 <Image
                   src={"/createLineAccount.png"}
                   alt=""
@@ -30,8 +30,8 @@ export const UseSection = () => {
             <p className="flex items-center justify-center text-2xl ">
               <span className="rotate-90 md:rotate-0">▶︎</span>
             </p>
-            <div className="space-y-4 flex flex-col md:items-start items-center">
-              <div className="shadow-md w-full">
+            <div className="flex flex-col items-center space-y-4 md:items-start">
+              <div className="w-full shadow-md">
                 <Image
                   src={"/connectLplus.png"}
                   alt=""
@@ -49,8 +49,8 @@ export const UseSection = () => {
             <p className="flex items-center justify-center text-2xl">
               <span className="rotate-90 md:rotate-0">▶︎</span>
             </p>
-            <div className="space-y-4 flex flex-col md:items-start items-center">
-              <div className="shadow-md w-full">
+            <div className="flex flex-col items-center space-y-4 md:items-start">
+              <div className="w-full shadow-md">
                 <Image
                   src={"/operateAccount.png"}
                   alt=""
@@ -67,8 +67,8 @@ export const UseSection = () => {
             <p className="flex items-center justify-center text-2xl">
               <span className="rotate-90 md:rotate-0">▶︎</span>
             </p>
-            <div className="space-y-4 flex flex-col md:items-start items-center">
-              <div className="shadow-md w-full">
+            <div className="flex flex-col items-center space-y-4 md:items-start">
+              <div className="w-full shadow-md">
                 <Image
                   src={"/chart.png"}
                   alt=""

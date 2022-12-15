@@ -1,5 +1,5 @@
-import { Layout } from "src/components";
 import type { CustomNextPage } from "next";
+import { Layout } from "src/components";
 
 const ErrorPage: CustomNextPage = () => {
   return (

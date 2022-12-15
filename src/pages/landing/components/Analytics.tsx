@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Center } from "src/lp/components/Center";
 import { Section } from "src/lp/components/Section";
-import Image from "next/image";
 
 export const Analytics = () => {
   return (
@@ -8,10 +8,10 @@ export const Analytics = () => {
       <Section title="📈分析機能でサービス改善" id="chart">
         <Center>
           <div className="space-y-10 ">
-            <p className="md:text-xl flex items-center justify-center">
+            <p className="flex items-center justify-center md:text-xl">
               多様なレイアウトからお好みのを選んで分析が可能です。
             </p>
-            <div className="grid md:grid-cols-2 gap-2 md:px-20">
+            <div className="grid gap-2 md:grid-cols-2 md:px-20">
               <Image
                 src={"/pie.png"}
                 alt=""

@@ -1,8 +1,8 @@
-import { useWindowSize } from "src/hooks/useWindowSize";
-import { Center } from "src/lp/components/Center";
-import { Section } from "src/lp/components/Section";
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
+import { useWindowSize } from "src/hooks/useWindowSize";
+import { Center } from "src/pages/landing/components/Center";
+import { Section } from "src/pages/landing/components/Section";
 
 export const TagSection = () => {
   const [isMovieStart, setMovieStart] = useState(false);
@@ -21,12 +21,15 @@ export const TagSection = () => {
       };
     }
   };
+  const handleStart = () => {
+    return setMovieStart(true);
+  };
 
   return (
     <Section title="タグ機能で詳細な顧客管理" id="tag">
       <Center>
-        <div className="md:grid grid-cols-2 gap-8">
-          <p className="md:text-xl flex items-center">
+        <div className="grid-cols-2 gap-8 md:grid">
+          <p className="flex items-center md:text-xl">
             リンククリック、リッチメニュー、メッセージ配信など。お客様のアクション毎に多彩なタグを付与できます。
             <br /> 付与したタグをもとに次に行うべきアクションが可視化します。
           </p>
@@ -55,7 +58,7 @@ export const TagSection = () => {
                 <div className="w-[90px] bg-white">
                   <Image
                     src={`/youtube.png`}
-                    onClick={() => setMovieStart(true)}
+                    onClick={handleStart}
                     alt="サムネイル"
                     layout="responsive"
                     objectFit="cover"

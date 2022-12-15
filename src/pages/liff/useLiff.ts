@@ -1,5 +1,7 @@
-import liff, { Liff } from "@line/liff/dist/lib";
+import type { Liff } from "@line/liff/dist/lib";
+import liff from "@line/liff/dist/lib";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 // フロントでのみ使用可能。
 // useEffectや、dynamic importのssr回避
@@ -18,7 +20,7 @@ export const useLiff = (liffId: string) => {
       setLiffClient(liff);
     })
     .catch((err: any) => {
-      console.log(`エラー: ${err.message}`);
+      toast.error(`エラー: ${err.message}`);
     });
 
   return { liffClient };

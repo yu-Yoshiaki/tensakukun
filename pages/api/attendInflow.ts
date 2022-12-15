@@ -1,10 +1,10 @@
+import type { NextApiRequest, NextApiResponse } from "next";
 import { countupClicks } from "src/libs/countupClicks";
 import { getUrlsTags } from "src/libs/getUrlsTags";
 import { getUserProfileByAccessToken } from "src/libs/getUserProfileByAccessToken";
 import { supabaseServer } from "src/libs/supabaseServer";
 import { verifyAccessToken } from "src/libs/verifyAccessToken";
 import type { definitions } from "src/types/supabase";
-import type { NextApiRequest, NextApiResponse } from "next";
 /* 
  ① URLのクリック数を +1
  ② 顧客情報をLINEから取得（アクセストークン使用）

@@ -1,11 +1,12 @@
-import { supabase } from "src/libs/supabase";
-import { definitions } from "src/types/supabase";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import useSWR from "swr";
-import { SettingSecond } from "./SettingSecond";
-import { SettingFirst } from "./SettingFirst";
+import { supabase } from "src/libs/supabase";
 import { useUserSession } from "src/pages/auth/useUserSession";
+import type { definitions } from "src/types/supabase";
+import useSWR from "swr";
+
+import { SettingFirst } from "./SettingFirst";
+import { SettingSecond } from "./SettingSecond";
 
 const fetcher = async () => {
   const { data } = await supabase
@@ -27,7 +28,7 @@ export const Setting = () => {
     if (!data) {
       push("/setting");
     }
-  }, [session, data]);
+  }, [session, data, push]);
 
   return (
     <div>{data && !data.firstLogin ? <SettingSecond /> : <SettingFirst />}</div>

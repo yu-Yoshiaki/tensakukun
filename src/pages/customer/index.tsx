@@ -1,9 +1,9 @@
+import Link from "next/link";
 import { ImageFill, Layout } from "src/components";
 import { Filter } from "src/components/Filter";
 import { Seo } from "src/components/Seo";
 import { useFilteredCustomer } from "src/pages/customer/useFilteredCustomer";
 import { Tag } from "src/pages/tags/Tag";
-import Link from "next/link";
 
 export const Customer = () => {
   const { filteredCustomers, onFilterCustomers } = useFilteredCustomer();

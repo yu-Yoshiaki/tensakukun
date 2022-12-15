@@ -1,6 +1,6 @@
+import { useRouter } from "next/router";
 import { Loading } from "src/components/layouts/Loading";
 import { useLiff } from "src/pages/liff/useLiff";
-import { useRouter } from "next/router";
 
 export const Liff = () => {
   const router = useRouter();

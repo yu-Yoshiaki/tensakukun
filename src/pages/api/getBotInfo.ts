@@ -1,4 +1,4 @@
-import { Client } from "@line/bot-sdk";
+import type { Client } from "@line/bot-sdk";
 
 export const getLineBotInfo = async (client: Client) => {
   if (!client) return;

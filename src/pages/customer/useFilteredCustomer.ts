@@ -1,8 +1,9 @@
-import { supabase } from "src/libs/supabase";
-import { definitions } from "src/types/supabase";
-import { Customer } from "./types/Customer";
 import { useEffect, useState } from "react";
+import { supabase } from "src/libs/supabase";
+import type { definitions } from "src/types/supabase";
 import useSWR from "swr";
+
+import type { Customer } from "./types/Customer";
 
 const fetchCustomers = async () => {
   const { data } = await supabase
@@ -25,7 +26,9 @@ export const useFilteredCustomer = () => {
     if (!customers) return;
     const newCustomers = customers.filter(({ customersTags }) => {
       const haveTag = customersTags.filter(({ tags }) => {
-        return filterTags.some((key) => key.id === tags.id);
+        return filterTags.some((key) => {
+          return key.id === tags.id;
+        });
       });
       return haveTag.length === filterTags.length;
     });

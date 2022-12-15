@@ -1,5 +1,5 @@
-import { configClient } from "src/libs/configClient";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { configClient } from "src/libs/configClient";
 
 const linkToUser = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {

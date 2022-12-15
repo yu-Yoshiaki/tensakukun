@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import type { MouseEventHandler } from "react";
 
 /**
  * @package
@@ -13,7 +13,7 @@ export const EditButton = (props: Props) => {
     <button
       type="button"
       onClick={props.handleClick}
-      className="text-center py-1 flex text-sm gap-2 rounded-md font-semibold bg-gray-200 hover:bg-gray-100 justify-center items-center w-[100px]"
+      className="flex w-[100px] items-center justify-center gap-2 rounded-md bg-gray-200 py-1 text-center text-sm font-semibold hover:bg-gray-100"
     >
       <span className="text-xl">🪛</span>編集
     </button>

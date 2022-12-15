@@ -32,9 +32,8 @@ export const Tags = () => {
                     key={data.id}
                     className="grid grid-cols-[1fr,auto,auto] items-center gap-4 whitespace-nowrap px-5 py-3"
                   >
-                    <div className="flex items-center overflow-x-auto text-lg font-bold">
-                      <span className="text-md">#</span>
-                      <p className="w-[200px]">{data.name}</p>
+                    <div className="flex items-center overflow-x-auto font-bold">
+                      #<p className="w-[200px] text-lg">{data.name}</p>
                     </div>
                     <div className="flex flex-col gap-1">
                       <div className="text-xs">

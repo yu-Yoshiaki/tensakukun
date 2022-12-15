@@ -166,16 +166,16 @@ export const Demographic = () => {
       <h3 className="text-xl font-bold">
         友だちの属性別、統計情報（{date}時点）
       </h3>
-      <div className="p-4 bg-yellow-50 font-semibold text-sm">
+      <div className="bg-yellow-50 p-4 text-sm font-semibold">
         ⚠ 統計情報を表示するには20人以上のターゲットリーチが必要です。
       </div>
       <div>
         {!testDate.available && (
-          <div className="p-1 bg-white">データがありません。</div>
+          <div className="bg-white p-1">データがありません。</div>
         )}
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <div className="p-5 bg-white rounded-lg">
+        <div className="rounded-lg bg-white p-5">
           <h4>年齢比率</h4>
           <PieChart width={500} height={300}>
             <Pie
@@ -199,16 +199,20 @@ export const Demographic = () => {
               }}
             >
               <LabelList
-                dataKey={(d: any) => d.percentage + "%"}
+                dataKey={(d: any) => {
+                  return d.percentage + "%";
+                }}
                 position="inside"
               />
-              {testDate.ages.map((age, index) => (
-                <Cell key={`cell-${index}`} fill={colors[index].value} />
-              ))}
+              {testDate.ages.map((age, index) => {
+                return (
+                  <Cell key={`cell-${index}`} fill={colors[index].value} />
+                );
+              })}
             </Pie>
           </PieChart>
         </div>
-        <div className="p-5 bg-white rounded-lg">
+        <div className="rounded-lg bg-white p-5">
           <h4>性別</h4>
           <PieChart width={500} height={300}>
             <Pie
@@ -224,18 +228,24 @@ export const Demographic = () => {
               endAngle={450}
               labelLine
               legendType={"triangle"}
-              label={(d: any) => d.gender}
+              label={(d: any) => {
+                return d.gender;
+              }}
             >
               <LabelList
-                dataKey={(d: any) => d.percentage + "%"}
+                dataKey={(d: any) => {
+                  return d.percentage + "%";
+                }}
                 position="inside"
               />
-              {testDate.ages.map((age, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={["gray", "#0ea5e9", "#ef4444"][index]}
-                />
-              ))}
+              {testDate.ages.map((age, index) => {
+                return (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={["gray", "#0ea5e9", "#ef4444"][index]}
+                  />
+                );
+              })}
             </Pie>
           </PieChart>
         </div>

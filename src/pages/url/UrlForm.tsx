@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { CreateNewButton } from "src/components";
-import { useUserSession } from "src/pages/auth/useUserSession";
-import { supabase } from "src/libs/supabase";
-import type { definitions } from "src/types/supabase";
 import { Modal } from "src/components/Modal";
+import { supabase } from "src/libs/supabase";
+import { useUserSession } from "src/pages/auth/useUserSession";
+import type { definitions } from "src/types/supabase";
 
 type InserData = {
   name: string;
@@ -35,10 +35,10 @@ export const UrlForm = () => {
     }
   };
 
-  const onOpenCreateNewUrl = () => {
+  const handleOpenCreateNewUrl = () => {
     setIsOpen(true);
   };
-  const onCloseCreateNewUrl = () => {
+  const handleCloseCreateNewUrl = () => {
     setIsOpen(false);
   };
 
@@ -48,24 +48,24 @@ export const UrlForm = () => {
 
   return (
     <div className="space-y-4">
-      <CreateNewButton handleClick={onOpenCreateNewUrl} />
+      <CreateNewButton onClick={handleOpenCreateNewUrl} />
 
       {isOpen && (
         <Modal>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-[550px] space-y-8 rounded-md border p-10 bg-white"
+            className="w-[550px] space-y-8 rounded-md border bg-white p-10"
           >
-            <div className="flex justify-between items-center">
-              <div className="font-bold text-2xl">URL作成</div>
-              <button onClick={onCloseCreateNewUrl}>
+            <div className="flex items-center justify-between">
+              <div className="text-2xl font-bold">URL作成</div>
+              <button onClick={handleCloseCreateNewUrl}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-8 h-8 hover:text-gray-400"
+                  className="h-8 w-8 hover:text-gray-400"
                 >
                   <path
                     strokeLinecap="round"
@@ -76,19 +76,19 @@ export const UrlForm = () => {
               </button>
             </div>
             <div className="space-y-1 ">
-              <label htmlFor="name" className="font-semibold text-sm">
+              <label htmlFor="name" className="text-sm font-semibold">
                 作成するURLの名前
                 <span className="font-thin">
                   （友だち追加経路として表示されます。）
                 </span>
               </label>
-              <div className="flex gap-2 items-center border p-2 rounded-md">
+              <div className="flex items-center gap-2 rounded-md border p-2">
                 <span className="text-xl">📎</span>
                 <input
                   id="name"
                   type="text"
                   {...register("name", { required: true })}
-                  className="border-none focus:ring-0 font-semibold text-md"
+                  className="border-none font-semibold focus:ring-0"
                 />
               </div>
             </div>
@@ -96,7 +96,7 @@ export const UrlForm = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="flex items-center gap-2 rounded-md bg-black text-white px-16 pl-20 py-2 text-lg font-semibold hover:bg-gray-700"
+                className="flex items-center gap-2 rounded-md bg-black px-16 py-2 pl-20 text-lg font-semibold text-white hover:bg-gray-700"
               >
                 登録 🎉
               </button>

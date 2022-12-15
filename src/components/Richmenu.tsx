@@ -1,9 +1,10 @@
-import { Action, Area, RichMenu } from "@line/bot-sdk";
+import type { Action, Area, RichMenu } from "@line/bot-sdk";
 import axios from "axios";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
-import Image from "next/image";
 import toast from "react-hot-toast";
+
 type Props = {
   editMode: boolean;
 };
@@ -16,7 +17,7 @@ export const Richmenu = (props: Props) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
     reset,
     control,
     setValue,
@@ -190,7 +191,7 @@ export const Richmenu = (props: Props) => {
   });
 
   return (
-    <div className="bg-gray-300 p-10 border rounded-md w-[600px]">
+    <div className="w-[600px] rounded-md border bg-gray-300 p-10">
       <h3>リッチメニュー作成</h3>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="flex flex-col justify-between">
@@ -198,7 +199,7 @@ export const Richmenu = (props: Props) => {
           <input
             type="text"
             {...register("name")}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 "
+            className="block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
           />
         </div>
         <div className="flex flex-col justify-between">
@@ -206,15 +207,15 @@ export const Richmenu = (props: Props) => {
           <input
             type="text"
             {...register("chatBarText")}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block p-2.5 "
+            className="block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
           />
         </div>
-        <div className="flex gap-4 items-center">
+        <div className="flex items-center gap-4">
           <label htmlFor="selected">selected</label>
           <input
             type="text"
             {...register("selected")}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-20 p-2.5 "
+            className="block w-20 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
           />
         </div>
 
@@ -228,7 +229,7 @@ export const Richmenu = (props: Props) => {
           <div>
             <label
               htmlFor="photo"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-20 p-2.5 "
+              className="block w-20 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
             >
               変更する
               <input
@@ -242,13 +243,13 @@ export const Richmenu = (props: Props) => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <label htmlFor="menuTemplate">テンプレート選択</label>
           <select
             name="menuTemplate"
             id="menuTemplate"
             onChange={handleSetMenuTemplate}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-36 p-2.5 "
+            className="block w-36 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
           >
             <option value=""></option>
             <option value="2*3">縦2 ✖︎ 横3</option>
@@ -264,7 +265,7 @@ export const Richmenu = (props: Props) => {
               <input
                 type="number"
                 {...register("size.width")}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-20 p-2.5 "
+                className="block w-20 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
               />
             </div>
             <div className="flex items-center gap-4">
@@ -272,7 +273,7 @@ export const Richmenu = (props: Props) => {
               <input
                 type="number"
                 {...register("size.height")}
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-20 p-2.5 "
+                className="block w-20 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
               />
             </div>
           </div>
@@ -283,7 +284,7 @@ export const Richmenu = (props: Props) => {
             return (
               <div
                 key={field.id}
-                className="rounded-md border mb-5 p-5 bg-red-200"
+                className="mb-5 rounded-md border bg-red-200 p-5"
               >
                 {!isHide && (
                   <div>
@@ -296,7 +297,7 @@ export const Richmenu = (props: Props) => {
                         <input
                           type="number"
                           {...register(`areas.${index}.bounds.x`)}
-                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-20 p-2.5 "
+                          className="block w-20 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
                         />
                       </div>
                       <div className="flex items-center space-x-4">
@@ -305,7 +306,7 @@ export const Richmenu = (props: Props) => {
                         </label>
                         <input
                           type="number"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-20 p-2.5 "
+                          className="block w-20 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
                           {...register(`areas.${index}.bounds.width`)}
                         />
                       </div>
@@ -317,7 +318,7 @@ export const Richmenu = (props: Props) => {
                         </label>
                         <input
                           type="number"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-20 p-2.5 "
+                          className="block w-20 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
                           {...register(`areas.${index}.bounds.y`)}
                         />
                       </div>
@@ -328,7 +329,7 @@ export const Richmenu = (props: Props) => {
                         </label>
                         <input
                           type="number"
-                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-20 p-2.5 "
+                          className="block w-20 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
                           {...register(`areas.${index}.bounds.height`)}
                         />
                       </div>
@@ -343,7 +344,7 @@ export const Richmenu = (props: Props) => {
                     <input
                       type="text"
                       {...register(`areas.${index}.action.type`)}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-32 p-2.5 "
+                      className="block w-32 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
                     />
                   </div>
                   <div>
@@ -353,7 +354,7 @@ export const Richmenu = (props: Props) => {
                     <input
                       type="text"
                       {...register(`areas.${index}.action.text`)}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-200 focus:border-red-200 block w-full p-2.5 "
+                      className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-red-200 focus:ring-red-200 "
                     />
                   </div>
                 </div>

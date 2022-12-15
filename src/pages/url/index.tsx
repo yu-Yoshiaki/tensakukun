@@ -1,14 +1,14 @@
 import toast from "react-hot-toast";
 import { Layout } from "src/components";
-import { InflowNotData } from "src/pages/url/UrlNotData";
-import { UrlForm } from "src/pages/url/UrlForm";
+import { DeleteButton, EditButton } from "src/components/buttons";
+import { QRCode } from "src/components/QRCode";
+import { Seo } from "src/components/Seo";
 import { supabase } from "src/libs/supabase";
+import { Tag } from "src/pages/tags/Tag";
+import { UrlForm } from "src/pages/url/UrlForm";
+import { InflowNotData } from "src/pages/url/UrlNotData";
 import type { definitions } from "src/types/supabase";
 import useSWR from "swr";
-import { Seo } from "src/components/Seo";
-import { QRCode } from "src/components/QRCode";
-import { EditButton, DeleteButton } from "src/components/buttons";
-import { Tag } from "src/pages/tags/Tag";
 
 const fetchInflows = async () => {
   const { data } = await supabase
@@ -34,7 +34,7 @@ const Copy = (props: { value: string }) => {
   return (
     <button
       onClick={handleCopy}
-      className="py-1 px-2 rounded-md border-sky-300 border hover:bg-sky-300 hover:text-white"
+      className="rounded-md border border-sky-300 py-1 px-2 hover:bg-sky-300 hover:text-white"
     >
       📋Copy
     </button>
@@ -54,7 +54,7 @@ export const Url = () => {
         description="ここではタグを付与したオリジナルURLを発行でき、URLリンクやQRコードをブログやSNSなど媒体ごとに、どこから友だち追加されたのかを特定できます。"
       />
       <div className="flex gap-8 overflow-auto p-8">
-        <div className="flex flex-col justify-between space-y-2 bg-white p-8 w-full">
+        <div className="flex w-full flex-col justify-between space-y-2 bg-white p-8">
           <UrlForm />
 
           {inflows ? (
@@ -65,8 +65,8 @@ export const Url = () => {
                     key={id}
                     className="grid w-full grid-cols-[1fr,auto,auto] grid-rows-2 gap-x-10 gap-y-2  p-3"
                   >
-                    <div className="flex gap-2 items-center">
-                      <h3 className="h-6 text-lg font-bold flex items-center gap-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="flex h-6 items-center gap-1 text-lg font-bold">
                         <span className="text-2xl">📎</span> {name}
                       </h3>
                       <div className="flex gap-1">
@@ -77,7 +77,7 @@ export const Url = () => {
                     </div>
 
                     <div className="row-start-2 flex items-center gap-2">
-                      <div className="hidden-scrollbar overflow-auto border text-sm font-semibold max-w-[550px]">
+                      <div className="hidden-scrollbar max-w-[550px] overflow-auto border text-sm font-semibold">
                         https://liff.line.me/{ownerInfo?.liffId}/{id}
                       </div>
 

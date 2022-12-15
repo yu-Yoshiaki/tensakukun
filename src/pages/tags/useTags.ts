@@ -1,14 +1,14 @@
 import { supabase } from "src/libs/supabase";
-import { definitions } from "src/types/supabase";
+import type { definitions } from "src/types/supabase";
 import useSWR from "swr";
 
-type Tags_Customers = definitions["tags"] & {
+type TagsCustomers = definitions["tags"] & {
   customersTags: definitions["customers_tags"][];
 };
 export const useTags = () => {
   const fetchTags = async () => {
     const { data: tags } = await supabase
-      .from<Tags_Customers>("tags")
+      .from<TagsCustomers>("tags")
       .select("*,customersTags:customers_tags(*)")
       .order("insertedAt", { ascending: false });
     return tags;

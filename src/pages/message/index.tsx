@@ -1,10 +1,10 @@
 import axios from "axios";
 import Link from "next/link";
 import { Layout } from "src/components";
-import useSWR from "swr";
-import { EditButton } from "src/components/buttons/EditButton";
 import { DeleteButton } from "src/components/buttons/DeleteButton";
+import { EditButton } from "src/components/buttons/EditButton";
 import { Seo } from "src/components/Seo";
+import useSWR from "swr";
 
 const testData: {
   title: string;
@@ -127,7 +127,7 @@ export const Message = () => {
       />
 
       <div className="flex gap-8 overflow-x-auto p-8">
-        <div className="space-y-4 rounded-md bg-white p-8 shadow-sm w-full">
+        <div className="w-full space-y-4 rounded-md bg-white p-8 shadow-sm">
           <div className="flex items-center justify-between">
             <Link href={"/message/create"}>
               <a className="flex w-[110px] items-center justify-center gap-2 rounded-md bg-gray-700 px-3 py-1 text-sm font-semibold text-white hover:bg-gray-700">

@@ -1,5 +1,6 @@
 import type { WebhookEvent } from "@line/bot-sdk";
 import type { NextApiRequest, NextApiResponse } from "next";
+
 import { followAction } from "./follow";
 import { messageAction } from "./message";
 

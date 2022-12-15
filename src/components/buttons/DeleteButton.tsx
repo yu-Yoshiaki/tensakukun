@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import type { MouseEventHandler } from "react";
 
 /**
  * @package
@@ -13,7 +13,7 @@ export const DeleteButton = (props: Props) => {
     <button
       type="button"
       onClick={props.handleClick}
-      className="px-3 py-1 flex text-sm gap-2 rounded-md font-semibold bg-red-200 hover:bg-red-100 justify-center items-center w-[100px]"
+      className="flex w-[100px] items-center justify-center gap-2 rounded-md bg-red-200 px-3 py-1 text-sm font-semibold hover:bg-red-100"
     >
       <span className="text-lg">🗑</span>削除
     </button>

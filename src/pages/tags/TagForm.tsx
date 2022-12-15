@@ -1,13 +1,12 @@
-import dayjs from "dayjs";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { CreateNewButton } from "src/components";
-import { useUserSession } from "src/auth/useUserSession";
-import type { definitions } from "src/types/supabase";
-import { useTags } from "src/tags/useTags";
 import { Modal } from "src/components/Modal";
+import { useUserSession } from "src/pages/auth/useUserSession";
+import { useTags } from "src/pages/tags/useTags";
+import type { definitions } from "src/types/supabase";
 
 export const TagForm = () => {
   const { session } = useUserSession();
@@ -17,7 +16,7 @@ export const TagForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
     reset,
   } = useForm<definitions["tags"]>();
 
@@ -35,33 +34,34 @@ export const TagForm = () => {
     reset();
   }, [isOpen, reset]);
 
-  const onOpenModal = () => {
+  const handleOpenModal = () => {
     setIsOpen(true);
   };
-  const onCloseModal = () => {
+
+  const handleCloseModal = () => {
     setIsOpen(false);
   };
 
   return (
     <div className="space-y-4">
-      <CreateNewButton handleClick={onOpenModal} />
+      <CreateNewButton onClick={handleOpenModal} />
 
       {isOpen && (
         <Modal>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-[550px] space-y-8 rounded-md border p-10 bg-white"
+            className="w-[550px] space-y-8 rounded-md border bg-white p-10"
           >
-            <div className="flex justify-between items-center">
-              <div className="font-bold text-2xl">タグ作成</div>
-              <button onClick={onCloseModal}>
+            <div className="flex items-center justify-between">
+              <div className="text-2xl font-bold">タグ作成</div>
+              <button onClick={handleCloseModal}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-8 h-8 hover:text-gray-400"
+                  className="h-8 w-8 hover:text-gray-400"
                 >
                   <path
                     strokeLinecap="round"
@@ -72,16 +72,16 @@ export const TagForm = () => {
               </button>
             </div>
             <div className="space-y-1">
-              <label htmlFor="name" className="font-semibold text-sm">
+              <label htmlFor="name" className="text-sm font-semibold">
                 作成するタグの名前
               </label>
-              <div className="flex items-center border p-2 rounded-md">
+              <div className="flex items-center rounded-md border p-2">
                 <span className="text-xl font-semibold ">#</span>
                 <input
                   id="name"
                   type="text"
                   {...register("name", { required: true })}
-                  className="border-none focus:ring-0 font-semibold text-md pl-1"
+                  className="border-none pl-1 font-semibold focus:ring-0"
                 />
               </div>
             </div>
@@ -89,7 +89,7 @@ export const TagForm = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="flex items-center gap-2 rounded-md bg-black text-white px-16 pl-20 py-2 text-lg font-semibold hover:bg-gray-700"
+                className="flex items-center gap-2 rounded-md bg-black px-16 py-2 pl-20 text-lg font-semibold text-white hover:bg-gray-700"
               >
                 登録 🎉
               </button>

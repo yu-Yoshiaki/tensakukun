@@ -33,11 +33,11 @@ export const Signin = () => {
   };
 
   return (
-    <div className="bg-white rounded-md p-8 space-y-8 w-[500px]">
-      <h2 className="text-2xl font-bold flex items-center justify-center">
+    <div className="w-[500px] space-y-8 rounded-md bg-white p-8">
+      <h2 className="flex items-center justify-center text-2xl font-bold">
         ログイン
       </h2>
-      <div className="flex flex-wrap p-5 rounded-md border border-gray-300">
+      <div className="flex flex-wrap rounded-md border border-gray-300 p-5">
         <p>
           確認リンクを添付した認証メールが配信されます。
           <br />
@@ -50,7 +50,7 @@ export const Signin = () => {
       </div>
       <form
         onSubmit={handleSubmit(handleLogin)}
-        className="flex flex-col justify-between h-[400px] gap-8"
+        className="flex h-[400px] flex-col justify-between gap-8"
       >
         <div className="grid grid-cols-2">
           <label>

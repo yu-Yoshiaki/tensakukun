@@ -1,6 +1,6 @@
 import type { Message } from "@line/bot-sdk";
-import { configClient } from "src/libs/configClient";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { configClient } from "src/libs/configClient";
 
 type Body = { users: string[]; messages: Message[] };
 

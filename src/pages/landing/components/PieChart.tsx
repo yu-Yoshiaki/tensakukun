@@ -1,11 +1,4 @@
-import {
-  PieChart,
-  Pie,
-  Cell,
-  LabelList,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { Cell, LabelList, Pie, PieChart, Tooltip } from "recharts";
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -28,7 +21,9 @@ export const PieChartComponent = (props: {
         className="font-bold text-red-700"
       >
         <LabelList
-          dataKey={(d: any) => `${d.name}`}
+          dataKey={(d: any) => {
+            return `${d.name}`;
+          }}
           position="inside"
           fill="black"
           className="font-bold text-black"
@@ -37,9 +32,9 @@ export const PieChartComponent = (props: {
           fontWeight={"bold"}
           fontStyle={30}
         />
-        {props.data?.map((_, index) => (
-          <Cell key={index} fill={colors[index % colors.length]} />
-        ))}
+        {props.data?.map((_, index) => {
+          return <Cell key={index} fill={colors[index % colors.length]} />;
+        })}
       </Pie>
       <Tooltip />
     </PieChart>

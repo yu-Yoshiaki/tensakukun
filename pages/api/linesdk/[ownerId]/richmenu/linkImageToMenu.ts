@@ -1,6 +1,6 @@
-import { configClient } from "src/libs/configClient";
 import fs from "fs";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { configClient } from "src/libs/configClient";
 
 type Body = { menuId: string; image: any };
 

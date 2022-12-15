@@ -1,12 +1,12 @@
 import dynamic from "next/dynamic";
-import { Layout } from "src/components";
-import { SWRConfig } from "swr";
-import { NumberOfFriends } from "./NumberOfFriends";
-import { Seo } from "src/components/Seo";
-import { useUserSession } from "src/pages/auth/useUserSession";
-
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { Layout } from "src/components";
+import { Seo } from "src/components/Seo";
+import { useUserSession } from "src/pages/auth/useUserSession";
+import { SWRConfig } from "swr";
+
+import { NumberOfFriends } from "./NumberOfFriends";
 
 const Demographic = dynamic(
   async () => {
@@ -24,7 +24,7 @@ export const Analytics = () => {
     if (!session) {
       push("/auth");
     }
-  }, [session]);
+  }, [session, push]);
 
   return (
     <Layout header="分析">

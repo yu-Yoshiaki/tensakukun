@@ -1,3 +1,4 @@
+import type { NextApiRequest, NextApiResponse } from "next";
 import { createAccessToken } from "src/libs/createAccessToken";
 import type { LiffAppData } from "src/libs/createLiffApp";
 import { createLiffApp } from "src/libs/createLiffApp";
@@ -6,7 +7,6 @@ import { setWebhookUrl } from "src/libs/setWebhookUrl";
 import { supabaseServer } from "src/libs/supabaseServer";
 import { updateLiffApp } from "src/libs/updateLiffApp";
 import type { definitions } from "src/types/supabase";
-import type { NextApiRequest, NextApiResponse } from "next";
 
 const createConfig = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
@@ -66,19 +66,14 @@ const createConfig = async (req: NextApiRequest, res: NextApiResponse) => {
         firstLogin: false,
       };
 
-      console.log(ownerInfo);
-
-      const { data, error } = await supabaseServer
+      const { error } = await supabaseServer
         .from<definitions["owner_infomation"]>("owner_infomation")
         .insert(ownerInfo);
-      console.log("success", data);
       if (error) {
         throw new Error(`Supabase Insert Error: ${error.message}`);
       }
       res.status(200).json("success");
     } catch (error: any) {
-      console.log(error);
-
       res.status(500).json(error.message);
     }
   }

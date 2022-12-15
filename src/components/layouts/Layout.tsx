@@ -1,6 +1,8 @@
-import { ReactNode, useState } from "react";
+import type { ReactNode } from "react";
+import { useState } from "react";
 import { Signin } from "src/pages/auth/Signin";
 import { useUserSession } from "src/pages/auth/useUserSession";
+
 import { Header } from "./Header";
 
 /**
@@ -24,25 +26,25 @@ export const Layout = (props: Props) => {
   return (
     <div className="bg-gray-100 text-gray-700 ">
       {session ? (
-        <div className="md:grid grid-cols-[250px,auto]">
+        <div className="grid-cols-[250px,auto] md:grid">
           {isOpen ? (
             <div className="fixed z-10 border-r md:block">
               <Header />
             </div>
           ) : (
-            <div className="bg-white border-r hidden md:block">
+            <div className="hidden border-r bg-white md:block">
               <Header />
             </div>
           )}
           <main className="h-screen overflow-y-scroll">
-            <div className="flex justify-between items-center m-8 md:mb-2">
+            <div className="m-8 flex items-center justify-between md:mb-2">
               <h2 className="text-2xl font-bold">{props.header}</h2>
               <div className="block md:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="w-5 h-5"
+                  className="h-5 w-5"
                   onClick={handleOpen}
                 >
                   <path
@@ -53,14 +55,14 @@ export const Layout = (props: Props) => {
                 </svg>
               </div>
             </div>
-            <p className="px-8 md:px-0 md:ml-8 md:w-[80%] min-h-[50px]">
+            <p className="min-h-[50px] px-8 md:ml-8 md:w-[80%] md:px-0">
               {props.description}
             </p>
             <div>{props.children}</div>
           </main>
         </div>
       ) : (
-        <main className="flex items-center justify-center h-screen">
+        <main className="flex h-screen items-center justify-center">
           <Signin />
         </main>
       )}

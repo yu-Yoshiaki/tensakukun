@@ -1,6 +1,6 @@
+import type { NextApiRequest, NextApiResponse } from "next";
 import { supabaseServer } from "src/libs/supabaseServer";
 import type { definitions } from "src/types/supabase";
-import type { NextApiRequest, NextApiResponse } from "next";
 
 /*
 　Supabase RLSの制限を回避する時に使用する。（流入経路URLのクリック数更新など）

@@ -3,11 +3,11 @@ import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Layout } from "src/components";
-import { Tag as TagComponent } from "src/pages/tags/Tag";
+import { Seo } from "src/components/Seo";
 import { useFilteredCustomer } from "src/pages/customer/useFilteredCustomer";
+import { Tag as TagComponent } from "src/pages/tags/Tag";
 import { useFilteredTags } from "src/pages/tags/useFilteredTags";
 import type { Tag } from "src/types/supabaseCustom";
-import { Seo } from "src/components/Seo";
 
 export type InserData = {
   title: string;

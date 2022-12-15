@@ -64,13 +64,13 @@ export const Sidemenu = () => {
         return (
           <li
             key={data.text}
-            className="py-2 text-lg hover:text-xl hover:bg-gray-100"
+            className="py-2 text-lg hover:bg-gray-100 hover:text-xl"
           >
             <Link href={data.href}>
               <a
-                className={`flex gap-3 items-center whitespace-nowrap  font-bold text-gray-700`}
+                className={`flex items-center gap-3 whitespace-nowrap  font-bold text-gray-700`}
               >
-                <span className="text-sky-300 text-xl">{data.icon}</span>{" "}
+                <span className="text-xl text-sky-300">{data.icon}</span>{" "}
                 {data.text}
               </a>
             </Link>

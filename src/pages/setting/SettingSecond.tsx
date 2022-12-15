@@ -1,10 +1,10 @@
+import Image from "next/image";
 import toast from "react-hot-toast";
 import { Layout } from "src/components";
-import { supabase } from "src/libs/supabase";
-import { definitions } from "src/types/supabase";
-import useSWR from "swr";
-import Image from "next/image";
 import { Seo } from "src/components/Seo";
+import { supabase } from "src/libs/supabase";
+import type { definitions } from "src/types/supabase";
+import useSWR from "swr";
 
 const supabaseQuery =
   supabase.from<definitions["owner_infomation"]>("owner_infomation");
@@ -20,12 +20,17 @@ const fetchInfo = async () => {
 
 export const SettingSecond = () => {
   const { data: ownerInfo } = useSWR("OwnerInfomation", fetchInfo);
+
+  const handleAlert = () => {
+    toast.success("コピーしました。");
+  };
+
   return (
     <Layout header="設定">
       <Seo title="設定" />
-      <div className="flex pl-8 py-8">
-        <div className="w-[700px] flex flex-col divide-y rounded-md bg-white p-4">
-          <div className="relative w-24 h-24 mb-6">
+      <div className="flex py-8 pl-8">
+        <div className="flex w-[700px] flex-col divide-y rounded-md bg-white p-4">
+          <div className="relative mb-6 h-24 w-24">
             {ownerInfo?.pictureUrl ? (
               <Image
                 src={ownerInfo.pictureUrl}
@@ -35,14 +40,14 @@ export const SettingSecond = () => {
                 className="rounded-xl"
               />
             ) : (
-              <div className="w-full h-full bg-gray-200 rounded-xl flex items-center justify-center">
+              <div className="flex h-full w-full items-center justify-center rounded-xl bg-gray-200">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -53,53 +58,47 @@ export const SettingSecond = () => {
               </div>
             )}
           </div>
-          <div className="flex gap-4 whitespace-nowrap items-center py-6">
+          <div className="flex items-center gap-4 whitespace-nowrap py-6">
             <p>{"チャネル名"}</p>
-            <p className="rounded-md font-semibold border-gray-300">
+            <p className="rounded-md border-gray-300 font-semibold">
               {ownerInfo?.name}
             </p>
           </div>
-          <div className="flex gap-4 whitespace-nowrap items-center py-6">
+          <div className="flex items-center gap-4 whitespace-nowrap py-6">
             <p>{"ボットのベーシックID"}</p>
-            <p className="rounded-md font-semibold border-gray-300 p-2">
+            <p className="rounded-md border-gray-300 p-2 font-semibold">
               {ownerInfo?.basicId}
             </p>
           </div>
-          <div className="flex gap-4 whitespace-nowrap items-center py-6">
+          <div className="flex items-center gap-4 whitespace-nowrap py-6">
             <p>{"Webhook URL"}</p>
-            <p className="rounded-md font-semibold border-gray-300 p-2 overflow-x-auto">
+            <p className="overflow-x-auto rounded-md border-gray-300 p-2 font-semibold">
               {ownerInfo?.webhookUrl}
             </p>
           </div>
-          <div className="flex gap-4 whitespace-nowrap items-center py-6">
+          <div className="flex items-center gap-4 whitespace-nowrap py-6">
             <p>{"友達追加URL"}</p>
-            <p className="rounded-md font-semibold border-gray-300 p-2">
+            <p className="rounded-md border-gray-300 p-2 font-semibold">
               https://line.me/R/ti/p/{ownerInfo?.basicId}
             </p>
-            <button
-              onClick={() => {
-                toast.success("コピーしました。");
-              }}
-            >
-              📑
-            </button>
+            <button onClick={handleAlert}>📑</button>
           </div>
-          <div className="flex gap-4 whitespace-nowrap items-center py-6">
+          <div className="flex items-center gap-4 whitespace-nowrap py-6">
             <p>{"apiChannelId"}</p>
-            <p className="rounded-md font-semibold border-gray-300 p-2">
+            <p className="rounded-md border-gray-300 p-2 font-semibold">
               {ownerInfo?.apiChannelId}
             </p>
           </div>
 
-          <div className="flex gap-4 whitespace-nowrap items-center py-6">
+          <div className="flex items-center gap-4 whitespace-nowrap py-6">
             <p>{"apiChannelSecret"}</p>
-            <p className="rounded-md font-semibold border-gray-300 p-2">
+            <p className="rounded-md border-gray-300 p-2 font-semibold">
               {ownerInfo?.apiChannelSecret}
             </p>
           </div>
-          <div className="flex gap-4 whitespace-nowrap items-center py-6">
+          <div className="flex items-center gap-4 whitespace-nowrap py-6">
             <p>{"LIFF ID"}</p>
-            <p className="rounded-md font-semibold border-gray-300 p-2">
+            <p className="rounded-md border-gray-300 p-2 font-semibold">
               {ownerInfo?.liffId}
             </p>
           </div>

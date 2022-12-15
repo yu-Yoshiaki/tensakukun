@@ -1,48 +1,47 @@
-import React, { PureComponent } from "react";
 import {
+  PolarAngleAxis,
+  PolarGrid,
+  PolarRadiusAxis,
   Radar,
   RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
 
 const data = [
   {
     subject: "Twitter",
-    A: 180,
-    B: 180,
+    a: 180,
+    b: 180,
     fullMark: 1000,
   },
   {
     subject: "FaceBook",
-    A: 266,
-    B: 100,
+    a: 266,
+    b: 100,
     fullMark: 1000,
   },
   {
     subject: "Instagram",
-    A: 186,
-    B: 230,
+    a: 186,
+    b: 230,
     fullMark: 1000,
   },
   {
     subject: "TicTok",
-    A: 110,
-    B: 240,
+    a: 110,
+    b: 240,
     fullMark: 1000,
   },
   {
     subject: "ホームページ",
-    A: 140,
-    B: 150,
+    a: 140,
+    b: 150,
     fullMark: 1000,
   },
   {
     subject: "プロモーションA",
-    A: 300,
-    B: 70,
+    a: 300,
+    b: 70,
     fullMark: 1000,
   },
 ];
@@ -56,14 +55,14 @@ export const RaderChartComponent = () => {
         <PolarRadiusAxis />
         <Radar
           name="女性流入経路"
-          dataKey="B"
+          dataKey="b"
           stroke="#8884d8"
           fill="pink"
           fillOpacity={0.7}
         />
         <Radar
           name="男性流入経路"
-          dataKey="A"
+          dataKey="a"
           stroke="#8884d8"
           fill="#8884d8"
           fillOpacity={0.7}

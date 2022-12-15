@@ -1,13 +1,13 @@
-import { Card } from "src/lp/components/Card";
-import { Center } from "src/lp/components/Center";
-import { Section } from "src/lp/components/Section";
+import { Center } from "src/pages/landing/components/Center";
+import { Section } from "src/pages/landing/components/Section";
+import { Card } from "src/pages/landing/components/Card";
 
 export const Test = () => {
   return (
     <div>
       <Section title="💡特徴" id="feature">
         <Center>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid gap-12 md:grid-cols-3">
             <Card
               img="/operate.png"
               header="スムーズな操作"

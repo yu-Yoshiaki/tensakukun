@@ -1,7 +1,7 @@
+import type { NextApiRequest, NextApiResponse } from "next";
 import { getFriends } from "src/libs/getFriends";
 import { supabaseServer } from "src/libs/supabaseServer";
 import type { definitions } from "src/types/supabase";
-import type { NextApiRequest, NextApiResponse } from "next";
 
 const GetFriends = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "GET") {

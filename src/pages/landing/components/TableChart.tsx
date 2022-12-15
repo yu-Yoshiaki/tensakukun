@@ -1,6 +1,6 @@
-import { PieChartComponent } from "src/lp/components/PieChart";
-import { Tag } from "src/tags/Tag";
-import { Dispatch, SetStateAction, useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import { useState } from "react";
+import { PieChartComponent } from "src/pages/landing/components/PieChart";
 
 const tags = [
   { id: 1, name: "instagram" },
@@ -96,10 +96,14 @@ const Add = (props: {
   >;
 }) => {
   const [isSelect, setIsSelect] = useState(false);
-  const hanelSetRow = () => {
+  const handleSetRow = () => {
     if (isSelect) {
       setIsSelect(false);
-      props.set(props.data.filter((d) => d.id !== props.tag.id));
+      props.set(
+        props.data.filter((d) => {
+          return d.id !== props.tag.id;
+        })
+      );
     } else {
       setIsSelect(true);
       props.set([...props.data, props.tag]);
@@ -108,10 +112,10 @@ const Add = (props: {
 
   return (
     <button
-      onClick={hanelSetRow}
+      onClick={handleSetRow}
       className={`${
         isSelect ? "bg-yellow-300" : "bg-blue-50"
-      } rounded-xl text-sm text-center whitespace-nowrap font-semibold flex items-center py-1 px-2`}
+      } flex items-center whitespace-nowrap rounded-xl py-1 px-2 text-center text-sm font-semibold`}
     >
       <span className="text-xs">#</span>
       <span className="text-sm">{props.tag.name}</span>
@@ -125,9 +129,11 @@ export const TableChart = () => {
   const data = row.map(({ id, name }) => {
     return {
       name,
-      value: customersTags.filter((cusTag) =>
-        cusTag.tags.some((num) => num === id)
-      ).length,
+      value: customersTags.filter((cusTag) => {
+        return cusTag.tags.some((num) => {
+          return num === id;
+        });
+      }).length,
     };
   });
   const data2: { name: string; value: number }[] = [];
@@ -151,41 +157,44 @@ export const TableChart = () => {
   };
 
   return (
-    <div className="px-20 space-y-4">
+    <div className="space-y-4 px-20">
       <div className="space-y-4">
-        <div className="grid grid-cols-2 gap-4 w-full">
+        <div className="grid w-full grid-cols-2 gap-4">
           <div className="space-y-2">
-            <div className="bg-white p-2 rounded-md flex items-center justify-center">
+            <div className="flex items-center justify-center rounded-md bg-white p-2">
               行を追加する
             </div>
-            <div className="bg-white p-2 rounded-md flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 rounded-md bg-white p-2">
               {tags.map((t) => {
-                return <Add set={setRow} tag={t} data={row} />;
+                return <Add key={t.id} set={setRow} tag={t} data={row} />;
               })}
             </div>
           </div>
           <div className="space-y-2">
-            <div className="bg-white p-2 rounded-md flex items-center justify-center">
+            <div className="flex items-center justify-center rounded-md bg-white p-2">
               列を追加する
             </div>
-            <div className="bg-white p-2 rounded-md flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 rounded-md bg-white p-2">
               {tags.map((t) => {
-                return <Add set={setColumn} tag={t} data={column} />;
+                return <Add key={t.id} set={setColumn} tag={t} data={column} />;
               })}
             </div>
           </div>
         </div>
 
         <div className="w-full overflow-x-scroll">
-          <table className={`w-[${400 + column.length * 200}px]`}>
+          <table>
             <tr className="bg-white ">
-              <th className="text-center py-[10px] w-[200px] sticky top-0 left-0 bg-white"></th>
-              <th className=" text-center py-[10px] w-[200px]">全体</th>
+              <th className="sticky top-0 left-0 w-[200px] bg-white py-[10px] text-center"></th>
+              <th className=" w-[200px] py-[10px] text-center">全体</th>
               {column.length > 0 &&
                 column.map((c, index) => {
                   if (index < 4) {
                     return (
-                      <th className="whitespace-nowrap text-center py-[10px] w-[200px]">
+                      <th
+                        key={index}
+                        className="w-[200px] whitespace-nowrap py-[10px] text-center"
+                      >
                         {c.name}
                       </th>
                     );
@@ -194,23 +203,28 @@ export const TableChart = () => {
             </tr>
             {row.map((row, index) => {
               return (
-                <tr className={index % 2 === 0 ? "bg-[#57b3e8]" : "bg-white"}>
+                <tr
+                  key={index}
+                  className={index % 2 === 0 ? "bg-[#57b3e8]" : "bg-white"}
+                >
                   <th
                     className={`${
                       index % 2 === 0 ? "bg-[#57b3e8] text-white" : "bg-white"
-                    } text-center py-[10px] w-[200px] whitespace-nowrap sticky left-0`}
+                    } sticky left-0 w-[200px] whitespace-nowrap py-[10px] text-center`}
                   >
                     {row.name}
                   </th>
                   <td
                     className={`${
                       index % 2 === 0 && "text-white"
-                    } text-center py-[10px] w-[200px]`}
+                    } w-[200px] py-[10px] text-center`}
                   >
                     {
-                      customersTags.filter((cusTag) =>
-                        cusTag.tags.some((num) => num === row.id)
-                      ).length
+                      customersTags.filter((cusTag) => {
+                        return cusTag.tags.some((num) => {
+                          return num === row.id;
+                        });
+                      }).length
                     }
                   </td>
                   {column.length > 0 &&
@@ -222,9 +236,10 @@ export const TableChart = () => {
                       data2.push({ name: col.name, value });
                       return (
                         <td
+                          key={col.id}
                           className={`${
                             index % 2 === 0 && "text-white"
-                          }  text-center py-[10px] w-[200px]`}
+                          }  w-[200px] py-[10px] text-center`}
                         >
                           {value}
                         </td>

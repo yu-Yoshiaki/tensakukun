@@ -1,6 +1,6 @@
+import type { NextApiRequest, NextApiResponse } from "next";
 import { configClient } from "src/libs/configClient";
 import { getSendableMessage } from "src/pages/message/api/getSendableMessage";
-import type { NextApiRequest, NextApiResponse } from "next";
 
 const getsendablemessage = async (
   req: NextApiRequest,

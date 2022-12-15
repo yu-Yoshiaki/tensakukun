@@ -1,6 +1,6 @@
+import type { NextApiRequest, NextApiResponse } from "next";
 import { configClient } from "src/libs/configClient";
 import { getNumberOfMessagesSentThisMonth } from "src/pages/message/api/getNumberOfMessagesSentThisMonth";
-import type { NextApiRequest, NextApiResponse } from "next";
 
 const getnumberOfMessagesSentThisMonth = async (
   req: NextApiRequest,

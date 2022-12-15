@@ -1,6 +1,6 @@
+import { useRouter } from "next/router";
 import { Layout } from "src/components";
 import { Seo } from "src/components/Seo";
-import { useRouter } from "next/router";
 import { Header } from "src/pages/landing/components/Header";
 
 const Section = (props: {

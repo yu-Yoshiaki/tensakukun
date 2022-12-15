@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useRouter } from "next/router";
+import { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useUserSession } from "src/pages/auth/useUserSession";
-import { useCallback } from "react";
 
 type Form = {
   apiChannelId: string;
@@ -21,29 +21,32 @@ export const SettingFirst = () => {
     handleSubmit,
   } = useForm<Form>({ criteriaMode: "all" });
 
-  const onSubmit = useCallback(async (data: Form) => {
-    try {
-      const { data: config } = await axios.post<{
-        status: "success" | string;
-      }>(`/api/linesdk/${session?.user?.id}/createConfig`, data);
+  const onSubmit = useCallback(
+    async (data: Form) => {
+      try {
+        const { data: config } = await axios.post<{
+          status: "success" | string;
+        }>(`/api/linesdk/${session?.user?.id}/createConfig`, data);
 
-      toast.success(config.status);
-      return push("/");
-    } catch (error: any) {
-      if (axios.isAxiosError(error)) {
-        return console.log("axiosでエラーが発生しています。");
+        toast.success(config.status);
+        return push("/");
+      } catch (error: any) {
+        if (axios.isAxiosError(error)) {
+          return toast.error("axiosでエラーが発生しています。");
+        }
+        toast.error(error.message);
       }
-      toast.error(error.message);
-    }
-  }, []);
+    },
+    [push, session?.user?.id]
+  );
 
   return (
-    <div className="flex items-center justify-center bg-gray-200 h-screen">
-      <div className="w-[700px] space-y-4 rounded-md bg-white py-20 px-24 h-[90vh]">
+    <div className="flex h-screen items-center justify-center bg-gray-200">
+      <div className="h-[90vh] w-[700px] space-y-4 rounded-md bg-white py-20 px-24">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="text-2xl font-bold">
             <p>LINE Webhook APIと連携</p>
-            <span className="text-green-400 text-sm">
+            <span className="text-sm text-green-400">
               Line公式アカウントの「設定」→ 「Messaging API」より
             </span>
           </div>
@@ -51,7 +54,7 @@ export const SettingFirst = () => {
           <label>
             <span className="flex items-center gap-1">
               Messaging API ChannelID
-              <span className="text-red-500 font-semibold">
+              <span className="font-semibold text-red-500">
                 {errors.apiChannelId ? "入力必須です。" : "※"}
               </span>
             </span>
@@ -66,7 +69,7 @@ export const SettingFirst = () => {
           <label>
             <span className="flex items-center gap-1">
               Messaging API ChannelSecret
-              <span className="text-red-500 font-semibold">
+              <span className="font-semibold text-red-500">
                 {errors.apiChannelSecret ? "入力必須です。" : "※"}
               </span>
             </span>
@@ -80,7 +83,7 @@ export const SettingFirst = () => {
 
           <div className="text-2xl font-bold">
             <p>LINEログインと連携</p>{" "}
-            <span className="text-green-400 text-sm">
+            <span className="text-sm text-green-400">
               LINEデベロッパーズコンソールの「LINEログイン」→
               「チャネル基本設定」より
             </span>
@@ -89,7 +92,7 @@ export const SettingFirst = () => {
           <label>
             <span className="flex items-center gap-1">
               LIFF チャネルID
-              <span className="text-red-500 font-semibold">
+              <span className="font-semibold text-red-500">
                 {errors.liffChannelId ? "入力必須です。" : "※"}
               </span>
             </span>
@@ -103,7 +106,7 @@ export const SettingFirst = () => {
           <label>
             <span className="flex items-center gap-1">
               LIFF チャネルシークレット
-              <span className="text-red-500 font-semibold">
+              <span className="font-semibold text-red-500">
                 {errors.liffChannelSecret ? "入力必須です。" : "※"}
               </span>
             </span>

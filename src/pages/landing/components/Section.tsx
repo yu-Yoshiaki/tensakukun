@@ -1,6 +1,5 @@
-import { Center } from "src/lp/components/Center";
-import { ReactNode } from "react";
-
+import type { ReactNode } from "react";
+import { Center } from "src/pages/landing/components/Center";
 export const Section = (props: {
   title: string;
   titleTextSize?: string;
@@ -10,14 +9,14 @@ export const Section = (props: {
   return (
     <section
       id={props.id}
-      className="px-5 py-20 md:p-20 border-b border-gray-200 flex flex-col "
+      className="flex flex-col border-b border-gray-200 px-5 py-20 md:p-20 "
     >
       <Center>
         <h3
-          className={`leading-relaxed tracking-wider font-bold pb-14 text-center ${
+          className={`pb-14 text-center font-bold leading-relaxed tracking-wider ${
             props.titleTextSize
               ? "max-w-[700px] " + props.titleTextSize
-              : "text-xl md:text-3xl max-w-[580px] "
+              : "max-w-[580px] text-xl md:text-3xl "
           }`}
         >
           {props.title}

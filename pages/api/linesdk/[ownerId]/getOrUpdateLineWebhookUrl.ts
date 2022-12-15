@@ -1,7 +1,7 @@
+import type { NextApiRequest, NextApiResponse } from "next";
 import { configClient } from "src/libs/configClient";
 import { getLineWebhookEndpoint } from "src/libs/getLineWebhookEndpoint";
 import { updateLineWebhookEndpoint } from "src/libs/updateLineWebhookEndpoint";
-import type { NextApiRequest, NextApiResponse } from "next";
 
 const getOrUpdateLineBotWebhookUrl = async (
   req: NextApiRequest,

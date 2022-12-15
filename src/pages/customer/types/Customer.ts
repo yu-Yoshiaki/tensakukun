@@ -1,4 +1,4 @@
-import { definitions } from "src/types/supabase";
+import type { definitions } from "src/types/supabase";
 
 export type Customer = definitions["customers"] & {
   customersTags: {

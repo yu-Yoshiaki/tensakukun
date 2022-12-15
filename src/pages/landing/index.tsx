@@ -1,34 +1,52 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
-
-import { Section } from "src/pages/landing/components/Section";
-import { Header } from "./components/Header";
-import { Center } from "src/pages/landing/components/Center";
 import { useState } from "react";
 import { Seo } from "src/components/Seo";
-import dynamic from "next/dynamic";
+import { Center } from "src/pages/landing/components/Center";
+import { Section } from "src/pages/landing/components/Section";
 
-const TagSection = dynamic<{}>(
-  () => import("./components/TagSection").then((module) => module.TagSection),
+import { Header } from "./components/Header";
+
+const TagSection = dynamic<Record<string, unknown>>(
+  async () => {
+    const module = await import("./components/TagSection");
+    return module.TagSection;
+  },
   { ssr: false }
 );
-const UrlSection = dynamic<{}>(
-  () => import("./components/UrlSection").then((module) => module.UrlSection),
+const UrlSection = dynamic<Record<string, unknown>>(
+  async () => {
+    const module = await import("./components/UrlSection");
+    return module.UrlSection;
+  },
   { ssr: false }
 );
-const Analytics = dynamic<{}>(
-  () => import("./components/Analytics").then((module) => module.Analytics),
+const Analytics = dynamic<Record<string, unknown>>(
+  async () => {
+    const module = await import("./components/Analytics");
+    return module.Analytics;
+  },
   { ssr: false }
 );
-const UseSection = dynamic<{}>(
-  () => import("./components/UseSection").then((module) => module.UseSection),
+const UseSection = dynamic<Record<string, unknown>>(
+  async () => {
+    const module = await import("./components/UseSection");
+    return module.UseSection;
+  },
   { ssr: false }
 );
-const Test = dynamic<{}>(
-  () => import("./components/Test").then((module) => module.Test),
+const Test = dynamic<Record<string, unknown>>(
+  async () => {
+    const module = await import("./components/Test");
+    return module.Test;
+  },
   { ssr: false }
 );
-const Contact = dynamic<{}>(
-  () => import("./components/Contact").then((module) => module.Contact),
+const Contact = dynamic<Record<string, unknown>>(
+  async () => {
+    const module = await import("./components/Contact");
+    return module.Contact;
+  },
   { ssr: false }
 );
 
@@ -38,17 +56,17 @@ export const Landing = () => {
     setIsMenuOpen(!isMeneOpen);
   };
   return (
-    <div className="bg-gray-100 text-gray-800 leading-relaxed tracking-wider">
+    <div className="bg-gray-100 leading-relaxed tracking-wider text-gray-800">
       <Seo />
       <div className="grid-cols-[250px,auto] md:grid">
         <div>
           <div className="hidden md:block">
             <Header />
           </div>
-          <div className="md:hidden flex items-center justify-end p-3">
+          <div className="flex items-center justify-end p-3 md:hidden">
             <button
               onClick={handleMenuOpen}
-              className="p-2 text-white bg-black"
+              className="bg-black p-2 text-white"
               id="menu"
             >
               <svg
@@ -57,7 +75,7 @@ export const Landing = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="h-6 w-6"
               >
                 <path
                   strokeLinecap="round"

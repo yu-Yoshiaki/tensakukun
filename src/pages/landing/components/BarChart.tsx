@@ -1,12 +1,11 @@
 import {
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
   Bar,
   BarChart,
-  ResponsiveContainer,
+  CartesianGrid,
+  Legend,
+  Tooltip,
+  XAxis,
+  YAxis,
 } from "recharts";
 
 export const BarChartComponent = (props: {
