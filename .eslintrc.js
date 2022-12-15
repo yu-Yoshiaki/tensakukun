@@ -79,7 +79,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["pages/**/*.page.tsx", "pages/api/**/*.page.ts"],
+      files: ["pages/**/*.tsx", "pages/api/**/*.ts"],
       rules: {
         "import/no-default-export": "off",
         "@typescript-eslint/naming-convention": [
