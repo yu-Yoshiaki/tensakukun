@@ -1,6 +1,4 @@
 // import Link from "next/link";
-import React from "react";
-
 export const Footer = () => {
   return (
     <div className="bg-gray-800 py-8 px-20 text-center text-gray-200">
