@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Footer } from "src/components/Footer";
 
 import { Header } from "./Header";
 
@@ -15,6 +16,7 @@ export const Layout = (props: Props) => {
     <div className="bg-gray-100 text-gray-700 ">
       <Header />
       <main className="min-h-screen">{props.children}</main>
+      <Footer />
     </div>
   );
 };
