@@ -13,8 +13,16 @@ const theme = [
     en: "Tell me one thing that happened today.",
   },
   {
-    ja: "今度の旅行はどこいきたい？　魅力的な場所を教えて",
-    en: "Where do you want to go on your next trip?　Tell us about some fascinating places.",
+    ja: "今度の旅行はどこいきたい？　魅力的な場所が知りたい",
+    en: "Where do you want to go on your next trip? Tell us about some fascinating places.",
+  },
+  {
+    ja: "新しい趣味を始めようと思っているんだけど、休日は何してる？",
+    en: "I'm thinking of starting a new hobby, what do you do on your days off?",
+  },
+  {
+    ja: "最近料理を始めたんだ😊 レパートリーを増やしたいんだけど、好きな食べ物は何？",
+    en: "I've recently started cooking 😊 I'm looking to expand my cooking repertoire, what are some of your favorite foods?",
   },
 ];
 
@@ -28,7 +36,7 @@ const Translation = () => {
   const [explain, setExplain] = useState<string | null>(null);
 
   const num = useMemo(() => {
-    return getRandam(0, 2);
+    return getRandam(0, 4);
   }, []);
 
   const handleSubmit = useCallback(async () => {
@@ -81,7 +89,7 @@ const Translation = () => {
         <textarea
           rows={4}
           className="w-full border"
-          placeholder="お題に沿って回答してください。"
+          placeholder="日本語で書いた回答を英語で書いてみよう。そのまま訳すよりも自然な会話を意識するといいよ😊"
         />
       </Card>
       <button
@@ -145,9 +153,15 @@ const Howto = () => {
           かんたん <span className="font-semibold text-blue-500">3</span>{" "}
           ステップ
         </p>
-        <li className="font-semibold">お題に沿って日本語で回答する</li>
-        <li className="font-semibold">回答を自分で考えて英語で書いてみる</li>
-        <li className="font-semibold">答えを確認し、本場の言い回しを覚える</li>
+        <li className="list-none font-semibold">
+          Step 1 - お題に沿って日本語で回答する
+        </li>
+        <li className="list-none font-semibold">
+          Step 2 - 日本語の回答を英語で書いてみる（自分の頭で考えて書いてみる）
+        </li>
+        <li className="list-none font-semibold">
+          Step 3 - お手本を確認し、言い回しを覚える
+        </li>
       </Card>
     </section>
   );
@@ -172,7 +186,7 @@ export const Index = () => {
     <Layout>
       <div className="space-y-10 py-20 px-5">
         <h2 className="mb-20 text-center text-3xl font-semibold">
-          AIを使ってかんたんに英語力が身に付く。
+          AIを使ってかんたんに英語力が身に付く
         </h2>
         <Translation />
         <Description />
