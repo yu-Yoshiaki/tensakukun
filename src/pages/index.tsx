@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { Layout } from "src/components";
 import { Card } from "src/components/Card";
 
@@ -99,7 +99,7 @@ const Translation = () => {
         <Card>
           <h3 className="text-xl font-bold">お手本</h3>
 
-          <p className="min-h-[100px] w-full border bg-lime-50 rounded-md p-2">
+          <p className="min-h-[100px] w-full rounded-md border bg-lime-50 p-2">
             {translation}
           </p>
         </Card>
@@ -108,7 +108,7 @@ const Translation = () => {
         <Card>
           <h3 className="text-xl font-bold">単語、文言の解説</h3>
 
-          <p className="min-h-[100px] w-full border bg-lime-50 rounded-md p-2">
+          <p className="min-h-[100px] w-full rounded-md border bg-lime-50 p-2">
             {explain ?? "読み込み中..."}
           </p>
         </Card>

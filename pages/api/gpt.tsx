@@ -1,5 +1,5 @@
-import { Configuration, OpenAIApi } from "openai";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
   organization: "org-mNhGs3jBT3ZSV6XkPCGWXaOQ",
