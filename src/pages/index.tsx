@@ -25,7 +25,10 @@ const getRandam = (n: number, m: number) => {
 const Translation = () => {
   const [answer, setAnswer] = useState<string>();
   const [translation, setTranslation] = useState<string | null>(null);
-  const num = useMemo(() => getRandam(0, 2), []);
+
+  const num = useMemo(() => {
+    return getRandam(0, 2);
+  }, []);
 
   const handleSubmit = useCallback(async () => {
     if (!answer) return;
@@ -80,7 +83,7 @@ const Translation = () => {
         className={`mx-auto block w-44 rounded-md ${
           answer
             ? "bg-blue-500 text-white"
-            : "bg-gray-300 text-gray-500 cursor-not-allowed"
+            : "cursor-not-allowed bg-gray-300 text-gray-500"
         } p-3 font-semibold`}
       >
         答え合わせをする
@@ -152,7 +155,7 @@ export const Index = () => {
   return (
     <Layout>
       <div className="space-y-10 py-20 px-5">
-        <h2 className="text-center text-3xl font-semibold mb-20">
+        <h2 className="mb-20 text-center text-3xl font-semibold">
           AIを使ってかんたんに英語力が身に付く。
         </h2>
         <Translation />
