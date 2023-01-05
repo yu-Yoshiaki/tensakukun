@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Layout } from "src/components";
 import { Card } from "src/components/Card";
 
@@ -25,6 +25,7 @@ const getRandam = (n: number, m: number) => {
 const Translation = () => {
   const [answer, setAnswer] = useState<string>();
   const [translation, setTranslation] = useState<string | null>(null);
+  const [explain, setExplain] = useState<string | null>(null);
 
   const num = useMemo(() => {
     return getRandam(0, 2);
@@ -35,7 +36,13 @@ const Translation = () => {
     const { data } = await axios.post("/api/deepl", {
       data: answer,
     });
+
     setTranslation(data.translation);
+
+    const { data: gpt } = await axios.post("/api/gpt", {
+      data: data.translation,
+    });
+    setExplain(gpt.explain);
   }, [answer]);
 
   const handleChange = useCallback((e) => {
@@ -86,14 +93,23 @@ const Translation = () => {
             : "cursor-not-allowed bg-gray-300 text-gray-500"
         } p-3 font-semibold`}
       >
-        答え合わせをする
+        お手本を見る
       </button>
       {translation && (
         <Card>
-          <h3>翻訳</h3>
+          <h3 className="text-xl font-bold">お手本</h3>
 
-          <p className="min-h-[100px] w-full border bg-lime-50">
+          <p className="min-h-[100px] w-full border bg-lime-50 rounded-md p-2">
             {translation}
+          </p>
+        </Card>
+      )}
+      {translation && (
+        <Card>
+          <h3 className="text-xl font-bold">単語、文言の解説</h3>
+
+          <p className="min-h-[100px] w-full border bg-lime-50 rounded-md p-2">
+            {explain ?? "読み込み中..."}
           </p>
         </Card>
       )}
