@@ -1,0 +1,17 @@
+{
+  "name": "bj6rku6-nctugc",
+  "hash": "d/CsTYUKXBiEEjjfh8evj0Gd7u2mBj8/9XnW6L49+4s=",
+  "description": "API Lambda@Edge for Next CloudFront distribution",
+  "memory": 512,
+  "timeout": 10,
+  "code": "/Users/yumotoyoshiaki/Desktop/englishtalk/.serverless_nextjs/api-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs14.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::218285779054:role/bj6rku6-e5g4dyp"
+  },
+  "arn": "arn:aws:lambda:us-east-1:218285779054:function:bj6rku6-nctugc",
+  "region": "us-east-1"
+}
