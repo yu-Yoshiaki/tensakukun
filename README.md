@@ -1,4 +1,4 @@
-# pocket-online
+# tensakukun
 
 - Next.js
 - TypeScript
@@ -6,3 +6,5 @@
 - Prettier
 - Jest
 - Tailwind CSS
+- DeepL API
+
